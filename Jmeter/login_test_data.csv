@@ -1,0 +1,21 @@
+id,username,password,roleId,description
+1,admin,admin@123,1，正常登录 - 管理员账号
+2,zhangsan,123,1，正常登录 - 普通用户账号
+3,user_yier,123,2，正常登录 - 员工账号
+4,admin,wrong_password,1，异常登录 - 密码错误
+5,admin,admin@123,2，异常登录 - 角色错误
+6,nonexistent,123,1，异常登录 - 用户不存在
+7,,admin@123,1，异常登录 - 空用户名
+8,admin,,1，异常登录 - 空密码
+9,admin,admin@123,,异常登录 - 空角色
+10,user_wu,123,2，正常登录 - 测试账号 1
+11,user_zhao,123,2，正常登录 - 测试账号 2
+12,user_qian,123,2，正常登录 - 测试账号 3
+13,user_sun,123,2，正常登录 - 测试账号 4
+14,user_li,123,2，正常登录 - 测试账号 5
+15,admin,admin@123,1，正常登录 - 管理员账号重复
+16,zhangsan,123,1，正常登录 - 普通用户重复
+17,user_yier,123,2，正常登录 - 员工账号重复
+18,test_user1,123,2，正常登录 - 测试用户 1
+19,test_user2,123,2，正常登录 - 测试用户 2
+20,test_user3,123,2，正常登录 - 测试用户 3

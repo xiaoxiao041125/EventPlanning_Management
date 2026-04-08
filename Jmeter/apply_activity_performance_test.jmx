@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="活动策划管理平台 - 活动申请接口性能测试" enabled="true">
+      <stringProp name="TestPlan.comments">活动申请接口性能测试计划，包含正常和异常场景</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="baseUrl" guiclass="Argument" testclass="Argument" testname="baseUrl">
+            <stringProp name="Argument.name">baseUrl</stringProp>
+            <stringProp name="Argument.value">http://localhost:8080/EventPlanning_Management</stringProp>
+            <stringProp name="Argument.metadata"></stringProp>
+            <booleanProp name="Argument.always_encoded">false</booleanProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+      <stringProp name="TestPlan.name">活动策划管理平台 - 活动申请接口性能测试</stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="活动申请性能测试线程组" enabled="true">
+        <stringProp name="ThreadGroup.comments">模拟多用户并发提交活动申请场景</stringProp>
+        <elementProp name="ThreadGroup.main_controller" guiclass="LoopController" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">10</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">15</stringProp>
+        <stringProp name="ThreadGroup.start_time">0</stringProp>
+        <stringProp name="ThreadGroup.end_time">0</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.name">活动申请性能测试线程组</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP 请求默认值" enabled="true">
+          <elementProp name="HTTPSampler.Arguments" guiclass="HTTPArgumentsPanel" testclass="HTTPArguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="HTTPArguments.arguments"></collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.name">HTTP 请求默认值</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP 信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Content-Type" guiclass="Header" testclass="Header" testname="Content-Type">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/x-www-form-urlencoded; charset=UTF-8</stringProp>
+            </elementProp>
+            <elementProp name="Accept" guiclass="Header" testclass="Header" testname="Accept">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+            </elementProp>
+          </collectionProp>
+          <stringProp name="TestPlan.name">HTTP 信息头管理器</stringProp>
+        </HeaderManager>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+          <stringProp name="filename">apply_activity_test_data.csv</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="variableNames">id,userId,activity_place,activity_type,start_time,end_time,activity_people,activity_budget,activity_progress,requirement_desc,phone,name,description</stringProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="share">share.all</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="TestPlan.name">CSV 数据文件设置</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="活动申请接口请求" enabled="true">
+          <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/applyActivity</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <elementProp name="HTTPSampler.Arguments" guiclass="HTTPArgumentsPanel" testclass="HTTPArguments" testname="参数" enabled="true">
+            <collectionProp name="HTTPArguments.arguments">
+              <elementProp name="userId" guiclass="HTTPArgument" testclass="HTTPArgument" testname="userId">
+                <stringProp name="Argument.name">userId</stringProp>
+                <stringProp name="Argument.value">${userId}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="activity_place" guiclass="HTTPArgument" testclass="HTTPArgument" testname="activity_place">
+                <stringProp name="Argument.name">activity_place</stringProp>
+                <stringProp name="Argument.value">${activity_place}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="activity_type" guiclass="HTTPArgument" testclass="HTTPArgument" testname="activity_type">
+                <stringProp name="Argument.name">activity_type</stringProp>
+                <stringProp name="Argument.value">${activity_type}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="start_time" guiclass="HTTPArgument" testclass="HTTPArgument" testname="start_time">
+                <stringProp name="Argument.name">start_time</stringProp>
+                <stringProp name="Argument.value">${start_time}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="end_time" guiclass="HTTPArgument" testclass="HTTPArgument" testname="end_time">
+                <stringProp name="Argument.name">end_time</stringProp>
+                <stringProp name="Argument.value">${end_time}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="activity_people" guiclass="HTTPArgument" testclass="HTTPArgument" testname="activity_people">
+                <stringProp name="Argument.name">activity_people</stringProp>
+                <stringProp name="Argument.value">${activity_people}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="activity_budget" guiclass="HTTPArgument" testclass="HTTPArgument" testname="activity_budget">
+                <stringProp name="Argument.name">activity_budget</stringProp>
+                <stringProp name="Argument.value">${activity_budget}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="activity_progress" guiclass="HTTPArgument" testclass="HTTPArgument" testname="activity_progress">
+                <stringProp name="Argument.name">activity_progress</stringProp>
+                <stringProp name="Argument.value">${activity_progress}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="requirement_desc" guiclass="HTTPArgument" testclass="HTTPArgument" testname="requirement_desc">
+                <stringProp name="Argument.name">requirement_desc</stringProp>
+                <stringProp name="Argument.value">${requirement_desc}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="phone" guiclass="HTTPArgument" testclass="HTTPArgument" testname="phone">
+                <stringProp name="Argument.name">phone</stringProp>
+                <stringProp name="Argument.value">${phone}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+              <elementProp name="name" guiclass="HTTPArgument" testclass="HTTPArgument" testname="name">
+                <stringProp name="Argument.name">name</stringProp>
+                <stringProp name="Argument.value">${name}</stringProp>
+                <stringProp name="Argument.metadata"></stringProp>
+                <booleanProp name="Argument.always_encoded">true</booleanProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.name">活动申请接口请求</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言 - 检查返回格式" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="17760">"code":</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message">响应应该包含 code 字段</stringProp>
+            <stringProp name="TestPlan.name">响应断言 - 检查返回格式</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="TestPlan.name">聚合报告</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="TestPlan.name">察看结果树</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="图形结果" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="TestPlan.name">图形结果</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="用表格查看结果" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <stringProp name="TestPlan.name">用表格查看结果</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
