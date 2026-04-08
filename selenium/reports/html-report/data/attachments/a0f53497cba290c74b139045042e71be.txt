@@ -1,0 +1,88 @@
+[32mINFO    [0m base.driver_manager:driver_manager.py:43 创建chrome浏览器驱动，无头模式: False
+[32mINFO    [0m base.driver_manager:driver_manager.py:103 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+[32mINFO    [0m base.driver_manager:driver_manager.py:211 WebDriver配置完成
+[32mINFO    [0m base.base_page:base_page.py:51 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+[32mINFO    [0m base.base_page:base_page.py:521 页面加载完成
+[32mINFO    [0m base.base_page:base_page.py:156 点击元素: ('id', 'headerLoginBtn')
+[32mINFO    [0m base.base_page:login_page.py:71 已点击顶部登录按钮，登录表单已显示
+[1m[31mERROR   [0m base.base_page:base_page.py:158 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff76efa6f65+78965]
+	GetHandleVerifier [0x0x7ff76efa6fc0+79056]
+	(No symbol) [0x0x7ff76ed39dda]
+	(No symbol) [0x0x7ff76ed982e9]
+	(No symbol) [0x0x7ff76ed95c82]
+	(No symbol) [0x0x7ff76ed92cd1]
+	(No symbol) [0x0x7ff76ed91c44]
+	(No symbol) [0x0x7ff76ed832a4]
+	(No symbol) [0x0x7ff76edb866a]
+	(No symbol) [0x0x7ff76ed82b56]
+	(No symbol) [0x0x7ff76edb8880]
+	(No symbol) [0x0x7ff76ede0dbe]
+	(No symbol) [0x0x7ff76edb8443]
+	(No symbol) [0x0x7ff76ed81311]
+	(No symbol) [0x0x7ff76ed820a3]
+	GetHandleVerifier [0x0x7ff76f25e26d+2926461]
+	GetHandleVerifier [0x0x7ff76f258993+2903715]
+	GetHandleVerifier [0x0x7ff76f276aed+3026941]
+	GetHandleVerifier [0x0x7ff76efc16fe+187406]
+	GetHandleVerifier [0x0x7ff76efc96ef+220159]
+	GetHandleVerifier [0x0x7ff76efafaf4+114692]
+	GetHandleVerifier [0x0x7ff76efafca9+115129]
+	GetHandleVerifier [0x0x7ff76ef964d8+10728]
+	BaseThreadInitThunk [0x0x7ffc7acbe8d7+23]
+	RtlUserThreadStart [0x0x7ffc7ba8c48c+44]
+
+[33mWARNING [0m base.base_page:login_page.py:73 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff76efa6f65+78965]
+	GetHandleVerifier [0x0x7ff76efa6fc0+79056]
+	(No symbol) [0x0x7ff76ed39dda]
+	(No symbol) [0x0x7ff76ed982e9]
+	(No symbol) [0x0x7ff76ed95c82]
+	(No symbol) [0x0x7ff76ed92cd1]
+	(No symbol) [0x0x7ff76ed91c44]
+	(No symbol) [0x0x7ff76ed832a4]
+	(No symbol) [0x0x7ff76edb866a]
+	(No symbol) [0x0x7ff76ed82b56]
+	(No symbol) [0x0x7ff76edb8880]
+	(No symbol) [0x0x7ff76ede0dbe]
+	(No symbol) [0x0x7ff76edb8443]
+	(No symbol) [0x0x7ff76ed81311]
+	(No symbol) [0x0x7ff76ed820a3]
+	GetHandleVerifier [0x0x7ff76f25e26d+2926461]
+	GetHandleVerifier [0x0x7ff76f258993+2903715]
+	GetHandleVerifier [0x0x7ff76f276aed+3026941]
+	GetHandleVerifier [0x0x7ff76efc16fe+187406]
+	GetHandleVerifier [0x0x7ff76efc96ef+220159]
+	GetHandleVerifier [0x0x7ff76efafaf4+114692]
+	GetHandleVerifier [0x0x7ff76efafca9+115129]
+	GetHandleVerifier [0x0x7ff76ef964d8+10728]
+	BaseThreadInitThunk [0x0x7ffc7acbe8d7+23]
+	RtlUserThreadStart [0x0x7ffc7ba8c48c+44]
+
+[32mINFO    [0m base.base_page:base_page.py:174 输入文本到 ('id', 'modalUsername'): user_lisi
+[32mINFO    [0m base.base_page:base_page.py:174 输入文本到 ('id', 'modalPassword'): lisi@456
+[32mINFO    [0m base.base_page:base_page.py:266 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+[32mINFO    [0m base.base_page:base_page.py:156 点击元素: ('id', 'loginBtn')
+[32mINFO    [0m base.base_page:base_page.py:358 接受弹窗: 登录成功！
+[32mINFO    [0m base.base_page:base_page.py:266 选择下拉框 ('id', 'activityLocation') 选项: 上海
+[32mINFO    [0m base.base_page:base_page.py:266 选择下拉框 ('id', 'activityType') 选项: 时尚走秀
+[32mINFO    [0m base.base_page:plan_page.py:125 输入起始时间：2026-09-10 -> 2026-09-10
+[32mINFO    [0m base.base_page:plan_page.py:159 输入结束时间：2026-09-12 -> 2026-09-12
+[32mINFO    [0m base.base_page:base_page.py:266 选择下拉框 ('id', 'participantCount') 选项: 200-500
+[33mWARNING [0m base.base_page:plan_page.py:187 通过文本选择预算失败：20-50 万, 尝试索引方式：Message: Could not locate element with visible text: 20-50 万; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+[32mINFO    [0m base.base_page:plan_page.py:204 选择活动预算：20-50 万 (索引：5)
+[32mINFO    [0m base.base_page:plan_page.py:224 输入手机号：13887654321
+[32mINFO    [0m base.base_page:plan_page.py:239 输入称呼：陈总监
+[32mINFO    [0m base.base_page:plan_page.py:266 输入需求描述：时装发布会，需要 T 台和灯光
+[32mINFO    [0m base.base_page:plan_page.py:279 点击提交按钮
+[32mINFO    [0m base.base_page:base_page.py:358 接受弹窗: 活动需求提交成功！
+[32mINFO    [0m utils.db_cleaner:db_cleaner.py:55 数据库连接成功：localhost:3306/eventplanning_management
+[32mINFO    [0m utils.db_cleaner:db_cleaner.py:82 找到 userid=3004 的活动申请记录：1 条
+[32mINFO    [0m utils.db_cleaner:db_cleaner.py:90 成功删除 userid=3004 的活动申请记录：1 条
+[32mINFO    [0m utils.db_cleaner:db_cleaner.py:64 数据库连接已关闭
+[32mINFO    [0m base.driver_manager:driver_manager.py:220 WebDriver已关闭

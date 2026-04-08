@@ -1,0 +1,30 @@
+[
+  {
+    "id": "GET_MY_SALARY_001",
+    "userId": "1",
+    "year": "2026",
+    "month": "3",
+    "description": "获取我的薪资 - 存在的记录（userId=1, 2026年3月）"
+  },
+  {
+    "id": "GET_MY_SALARY_002",
+    "userId": "3044",
+    "year": "2026",
+    "month": "3",
+    "description": "获取我的薪资 - 业务管理员（userId=3044, 2026年3月）"
+  },
+  {
+    "id": "GET_MY_SALARY_003",
+    "userId": "999999",
+    "year": "2026",
+    "month": "3",
+    "description": "获取我的薪资 - 不存在的用户"
+  },
+  {
+    "id": "GET_MY_SALARY_004",
+    "userId": "",
+    "year": "2026",
+    "month": "3",
+    "description": "获取我的薪资 - 空userId"
+  }
+]

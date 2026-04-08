@@ -1,0 +1,30 @@
+[
+  {
+    "id": "APPROVE_REIMBURSEMENT_001",
+    "reimbursementId": "3",
+    "status": "1",
+    "approverId": "3149",
+    "description": "审批报销申请 - 批准（status=1）"
+  },
+  {
+    "id": "APPROVE_REIMBURSEMENT_002",
+    "reimbursementId": "3",
+    "status": "2",
+    "approverId": "3149",
+    "description": "审批报销申请 - 拒绝（status=2）"
+  },
+  {
+    "id": "APPROVE_REIMBURSEMENT_003",
+    "reimbursementId": "999999",
+    "status": "1",
+    "approverId": "3149",
+    "description": "审批报销申请 - 不存在的报销申请"
+  },
+  {
+    "id": "APPROVE_REIMBURSEMENT_004",
+    "reimbursementId": "",
+    "status": "",
+    "approverId": "",
+    "description": "审批报销申请 - 缺少所有参数"
+  }
+]

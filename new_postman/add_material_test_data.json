@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ADD_MATERIAL_001",
+    "materialType": "测试物料A",
+    "quantity": "10个",
+    "price": "100元/个",
+    "remarks": "测试添加物料",
+    "category": "1",
+    "description": "添加物料 - 正常添加"
+  },
+  {
+    "id": "ADD_MATERIAL_002",
+    "materialType": "",
+    "quantity": "10个",
+    "price": "100元/个",
+    "remarks": "测试缺少物料类型",
+    "category": "1",
+    "description": "添加物料 - 缺少materialType"
+  },
+  {
+    "id": "ADD_MATERIAL_003",
+    "materialType": "测试物料B",
+    "quantity": "",
+    "price": "100元/个",
+    "remarks": "测试缺少数量",
+    "category": "1",
+    "description": "添加物料 - 缺少quantity"
+  },
+  {
+    "id": "ADD_MATERIAL_004",
+    "materialType": "测试物料C",
+    "quantity": "10个",
+    "price": "",
+    "remarks": "测试缺少价格",
+    "category": "1",
+    "description": "添加物料 - 缺少price"
+  }
+]

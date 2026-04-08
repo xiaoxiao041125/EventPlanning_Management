@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试报告</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #1e1e1e; color: #fff; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { text-align: center; margin-bottom: 30px; color: #5bc0de; }
+        .summary { display: flex; justify-content: space-around; margin-bottom: 30px; }
+        .stat { background: #2d2d2d; padding: 20px; border-radius: 8px; text-align: center; min-width: 150px; }
+        .stat-value { font-size: 36px; font-weight: bold; margin-bottom: 10px; }
+        .stat-label { color: #aaa; }
+        .passed { color: #5cb85c; }
+        .failed { color: #d9534f; }
+        .total { color: #5bc0de; }
+        .rate { color: #f0ad4e; }
+        table { width: 100%; border-collapse: collapse; background: #2d2d2d; border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #444; }
+        th { background: #363636; font-weight: bold; color: #5bc0de; }
+        tr:hover { background: #363636; }
+        .status-passed { color: #5cb85c; }
+        .status-failed { color: #d9534f; }
+        .status-broken { color: #f0ad4e; }
+        .status-skipped { color: #aaa; }
+        .footer { text-align: center; margin-top: 30px; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 自动化测试报告</h1>
+        
+        <div class="summary">
+            <div class="stat">
+                <div class="stat-value total">21</div>
+                <div class="stat-label">总计</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value passed">16</div>
+                <div class="stat-label">通过</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value failed">5</div>
+                <div class="stat-label">失败</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value rate">76.2%</div>
+                <div class="stat-label">通过率</div>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>测试用例名称</th>
+                    <th>状态</th>
+                    <th>执行时间 (秒)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-failed">✗ 失败</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-failed">✗ 失败</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-failed">✗ 失败</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-failed">✗ 失败</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-failed">✗ 失败</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>tests.test_plan.TestPlan#test_plan_page_load</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>tests.test_plan.TestPlan#test_plan_submit_with_data</td>
+                    <td class="status-passed">✓ 通过</td>
+                    <td>0.00</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="footer">
+            生成时间：2026-03-28 17:42:50<br>
+            活动策划公司管理系统 - UI 自动化测试
+        </div>
+    </div>
+</body>
+</html>

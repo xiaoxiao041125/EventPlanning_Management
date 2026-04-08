@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_015",
+  "case_name": "正常活动申请 - 节点活动",
+  "activity_place": "南京",
+  "activity_type": "节点活动",
+  "start_time": "2026-12-25",
+  "end_time": "2026-12-26",
+  "activity_people": "100-200",
+  "activity_budget": "10-20 万",
+  "requirement_desc": "圣诞节节点活动",
+  "phone": "13800138012",
+  "name": "李主管",
+  "expected": "活动需求提交成功！"
+}

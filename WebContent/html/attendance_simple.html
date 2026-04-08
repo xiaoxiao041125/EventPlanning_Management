@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考勤管理 - 爱情海文化传媒</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* 隐藏滚动条但保持滚动功能 */
+        /* 对于WebKit浏览器 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 对于Firefox */
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        .attendance-page {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .attendance-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .attendance-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .attendance-header h3 {
+            font-size: 20px;
+            color: #2c74c9;
+            margin: 0;
+        }
+        
+        .work-days-info {
+            background-color: #f0f7ff;
+            padding: 15px 20px;
+            border-radius: 6px;
+            border-left: 4px solid #2c74c9;
+            margin-bottom: 30px;
+        }
+        
+        .work-days-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        
+        .work-days-info .days-number {
+            font-weight: bold;
+            color: #2c74c9;
+            font-size: 18px;
+        }
+        
+        .work-schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .work-schedule-table th,
+        .work-schedule-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .work-schedule-table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .work-schedule-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .work-schedule-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-processing {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+        
+        .status-completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 16px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .error-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: #ff4d4f;
+            font-size: 16px;
+            background-color: #fff1f0;
+            border: 1px solid #ffccc7;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="attendance-page">
+        <div class="container">
+            <h2 class="section-title">考勤管理</h2>
+            
+            <!-- 工作安排列表 -->
+            <div class="attendance-container">
+                <div class="attendance-header">
+                    <h3>工作安排</h3>
+                    <button class="btn btn-primary" id="refreshScheduleBtn">刷新</button>
+                </div>
+                
+                <div class="loading" id="loadingIndicator">加载中</div>
+                <div class="no-data" id="noDataMsg" style="display: none;">暂无工作安排数据</div>
+                
+                <table class="work-schedule-table" id="workScheduleTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>活动名称</th>
+                            <th>起始日期-终结日期</th>
+                            <th>工作地点</th>
+                            <th>工作内容</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody id="workScheduleBody">
+                        <!-- 工作安排数据将通过JavaScript动态添加 -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 工作天数信息 -->
+            <div class="attendance-container">
+                <div class="attendance-header">
+                    <h3>本月工作统计</h3>
+                </div>
+                <div class="work-days-info">
+                    <p>本月工作天数: <span class="days-number" id="monthlyWorkDays">0</span> 天</p>
+                    <p>已完成工作: <span class="days-number" id="completedWorks">0</span> 项</p>
+                    <p>待完成工作: <span class="days-number" id="pendingWorks">0</span> 项</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/employee.js"></script>
+    <script>
+        $(function() {
+            // 初始化页面
+            initAttendancePage();
+            
+            // 刷新按钮点击事件
+            $(document).on('click', '#refreshScheduleBtn', function() {
+                loadWorkSchedule();
+            });
+        });
+        
+        // 初始化考勤页面
+        function initAttendancePage() {
+            // 显示当前月份
+            const now = new Date();
+            const currentMonth = now.getFullYear() + '年' + (now.getMonth() + 1) + '月';
+            $('#currentMonth').text(currentMonth);
+            
+            // 加载工作安排
+            loadWorkSchedule();
+        }
+        
+        // 加载工作安排
+        function loadWorkSchedule() {
+            // 显示加载指示器
+            $('#loadingIndicator').show();
+            $('#workScheduleTable').hide();
+            $('#noDataMsg').hide();
+            
+            // 获取用户ID
+            const userId = localStorage.getItem('userId') || '3045'; // 默认使用示例ID
+            
+            // 调用API获取工作安排
+            const apiUrl = 'http://localhost:8080/EventPlanning_Management/CheckWorkerWorkByUserId';
+            console.log('开始调用API，userId:', userId);
+            console.log('API URL:', apiUrl);
+            
+            // 尝试使用GET方法调用API
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                data: { userId: userId },
+                dataType: 'json',
+                success: function(response) {
+                    console.log('GET API响应:', response);
+                    try {
+                        const data = response;
+                        console.log('解析后的数据:', data);
+                        console.log('data.flag:', data.flag);
+                        console.log('data.data:', data.data);
+                        
+                        if(data.flag === 'success' && data.data) {
+                            console.log('工作安排数据:', data.data);
+                            renderWorkSchedule(data.data);
+                        } else {
+                            console.log('API返回失败或无数据:', data);
+                            showNoData();
+                        }
+                    } catch(e) {
+                        console.error('解析响应失败:', e);
+                        console.log('原始响应:', response);
+                        showNoData();
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('GET请求失败:', status, error);
+                    console.log('XHR状态:', xhr.status);
+                    console.log('XHR响应:', xhr.responseText);
+                    // 如果GET方法失败，尝试使用POST方法
+                    console.log('尝试使用POST方法调用API');
+                    $.ajax({
+                        url: apiUrl,
+                        type: 'POST',
+                        data: { userId: userId },
+                        dataType: 'json',
+                        success: function(response) {
+                            console.log('POST API响应:', response);
+                            try {
+                                const data = response;
+                                console.log('解析后的数据:', data);
+                                console.log('data.flag:', data.flag);
+                                console.log('data.data:', data.data);
+                                
+                                if(data.flag === 'success' && data.data) {
+                                    console.log('工作安排数据:', data.data);
+                                    renderWorkSchedule(data.data);
+                                } else {
+                                    console.log('API返回失败或无数据:', data);
+                                    showNoData();
+                                }
+                            } catch(e) {
+                                console.error('解析响应失败:', e);
+                                console.log('原始响应:', response);
+                                showNoData();
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('POST请求失败:', status, error);
+                            console.log('XHR状态:', xhr.status);
+                            console.log('XHR响应:', xhr.responseText);
+                            showNoData();
+                        }
+                    });
+                }
+            });
+            
+            // 调用新API获取本月工作天数
+            loadMonthlyWorkDays();
+        }
+        
+        // 加载本月工作天数
+        function loadMonthlyWorkDays() {
+            // 获取用户ID
+            const userId = localStorage.getItem('userId') || '3045'; // 默认使用示例ID
+            
+            // 调用API获取本月工作天数
+            $.ajax({
+                url: 'http://localhost:8080/EventPlanning_Management/CalculateMonthlyWorkDays',
+                type: 'GET',
+                data: { userId: userId },
+                success: function(response) {
+                    try {
+                        const data = typeof response === 'string' ? JSON.parse(response) : response;
+                        
+                        if(data.flag === 'success') {
+                            // 更新本月工作天数
+                            $('#monthlyWorkDays').text(data.data || 0);
+                        }
+                    } catch(e) {
+                        console.error('解析工作天数响应失败:', e);
+                    }
+                },
+                error: function() {
+                    console.error('获取本月工作天数失败');
+                }
+            });
+        }
+        
+        // 渲染工作安排
+        function renderWorkSchedule(workSchedule) {
+            const tbody = $('#workScheduleBody');
+            tbody.empty();
+            
+            if(workSchedule.length === 0) {
+                showNoData();
+                return;
+            }
+            
+            workSchedule.forEach(item => {
+                const statusClass = getStatusClass(item.status);
+                const statusText = getStatusText(item.status);
+                
+                // 处理日期显示，使用起始日期-终结日期格式
+                let dateRange = '-';
+                if(item.workDate) {
+                    dateRange = item.workDate;
+                }
+                
+                const row = `
+                    <tr>
+                        <td>${item.activityName || '未命名活动'}</td>
+                        <td>${dateRange}</td>
+                        <td>${item.workLocation || '-'}</td>
+                        <td>${item.workContent || '-'}</td>
+                        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+                    </tr>
+                `;
+                tbody.append(row);
+            });
+            
+            // 统计已完成和待完成的工作
+            calculateWorkStatus(workSchedule);
+            
+            $('#loadingIndicator').hide();
+            $('#workScheduleTable').show();
+        }
+        
+        // 统计已完成和待完成的工作
+        function calculateWorkStatus(workSchedule) {
+            const now = new Date();
+            const currentMonth = now.getMonth() + 1;
+            const currentYear = now.getFullYear();
+            
+            // 筛选本月的工作安排
+            const monthlyWorks = workSchedule.filter(item => {
+                if(item.workDate) {
+                    const workDate = new Date(item.workDate);
+                    return workDate.getMonth() + 1 === currentMonth && workDate.getFullYear() === currentYear;
+                }
+                return false;
+            });
+            
+            // 统计已完成和待完成的工作
+            const completedWorks = monthlyWorks.filter(item => item.status === 'completed' || item.status === '已完成').length;
+            const pendingWorks = monthlyWorks.filter(item => item.status === 'pending' || item.status === '待完成' || item.status === 'processing' || item.status === '进行中').length;
+            
+            // 更新显示
+            $('#completedWorks').text(completedWorks);
+            $('#pendingWorks').text(pendingWorks);
+        }
+        
+        // 获取状态样式类
+        function getStatusClass(status) {
+            switch(status) {
+                case 'pending':
+                case '待完成':
+                    return 'status-pending';
+                case 'processing':
+                case '进行中':
+                    return 'status-processing';
+                case 'completed':
+                case '已完成':
+                    return 'status-completed';
+                default:
+                    return 'status-pending';
+            }
+        }
+        
+        // 获取状态文本
+        function getStatusText(status) {
+            switch(status) {
+                case 'pending':
+                    return '待完成';
+                case 'processing':
+                    return '进行中';
+                case 'completed':
+                    return '已完成';
+                default:
+                    return status || '未知';
+            }
+        }
+        
+        // 显示无数据提示
+        function showNoData() {
+            $('#loadingIndicator').hide();
+            $('#workScheduleTable').hide();
+            $('#noDataMsg').show();
+        }
+    </script>
+</body>
+</html>

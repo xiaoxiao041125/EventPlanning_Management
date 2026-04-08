@@ -1,0 +1,26 @@
+[
+  {
+    "id": "CANCEL_001",
+    "demand_id": "3149",
+    "userId": "16",
+    "description": "正常取消活动 - 审核中的活动"
+  },
+  {
+    "id": "CANCEL_002",
+    "demand_id": "5",
+    "userId": "2",
+    "description": "正常取消活动 - 普通用户"
+  },
+  {
+    "id": "CANCEL_003",
+    "demand_id": "999999",
+    "userId": "1",
+    "description": "异常取消活动 - 不存在的活动"
+  },
+  {
+    "id": "CANCEL_004",
+    "demand_id": "",
+    "userId": "1",
+    "description": "异常取消活动 - 空 demand_id"
+  }
+]

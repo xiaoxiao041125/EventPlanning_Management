@@ -1,0 +1,37 @@
+[
+  {
+    "id": "HANDLE_REG_001",
+    "registerId": "1",
+    "status": "1",
+    "post": "工人",
+    "description": "处理员工注册 - 通过申请（status=1）"
+  },
+  {
+    "id": "HANDLE_REG_002",
+    "registerId": "2",
+    "status": "2",
+    "post": "工人",
+    "description": "处理员工注册 - 拒绝申请（status=2）"
+  },
+  {
+    "id": "HANDLE_REG_003",
+    "registerId": "999999",
+    "status": "1",
+    "post": "工人",
+    "description": "处理员工注册 - 不存在的注册申请"
+  },
+  {
+    "id": "HANDLE_REG_004",
+    "registerId": "",
+    "status": "1",
+    "post": "工人",
+    "description": "处理员工注册 - 空registerId"
+  },
+  {
+    "id": "HANDLE_REG_005",
+    "registerId": "3",
+    "status": "",
+    "post": "工人",
+    "description": "处理员工注册 - 空status"
+  }
+]

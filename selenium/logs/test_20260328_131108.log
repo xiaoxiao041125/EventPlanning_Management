@@ -1,0 +1,81 @@
+2026-03-28 13:11:08,901 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:08,902 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:11,046 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:11,617 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:11:14,850 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:14,853 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:17,081 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:20,077 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:11:22,941 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:22,943 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:24,817 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:25,556 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:11:28,604 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:28,607 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:30,895 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:31,903 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:11:34,968 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:34,969 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:37,719 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:02,974 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:03,828 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:12:06,102 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:12:06,102 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:12:07,227 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:07,710 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:12:09,967 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:12:09,968 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:12:10,827 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:18,128 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:28,565 - WDM - INFO - There is no [win64] chromedriver "137.0.7151.119" for browser google-chrome "137.0.7151" in cache
+2026-03-28 13:12:28,566 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:29,897 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:12:32,139 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:12:32,139 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:12:33,111 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:34,722 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:37,840 - WDM - INFO - There is no [win64] chromedriver "137.0.7151.119" for browser google-chrome "137.0.7151" in cache
+2026-03-28 13:12:37,840 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:38,601 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:12:40,948 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:12:40,948 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:12:42,003 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:42,487 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:12:44,891 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:12:44,892 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:12:46,065 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:47,028 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:12:49,446 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:12:49,447 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:12:50,665 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:51,198 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:12:53,613 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:12:53,613 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:12:54,726 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:11,394 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:12,378 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:13:14,653 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:13:14,655 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:13:15,820 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:16,820 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:21,937 - WDM - INFO - There is no [win64] chromedriver "137.0.7151.119" for browser google-chrome "137.0.7151" in cache
+2026-03-28 13:13:21,938 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:22,944 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:13:25,291 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:13:25,293 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:13:26,122 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:27,146 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:13:29,518 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:13:29,519 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:13:30,346 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:31,385 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:13:33,728 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:13:33,730 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:13:34,695 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:41,225 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:48,273 - WDM - INFO - There is no [win64] chromedriver "137.0.7151.119" for browser google-chrome "137.0.7151" in cache
+2026-03-28 13:13:48,275 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:13:53,015 - WDM - INFO - WebDriver version 137.0.7151.119 selected
+2026-03-28 13:13:53,018 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/win32/chromedriver-win32.zip
+2026-03-28 13:13:53,018 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/win32/chromedriver-win32.zip
+2026-03-28 13:13:54,940 - WDM - INFO - Driver downloading response is 200

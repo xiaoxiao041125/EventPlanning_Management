@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工权限管理 - 爱情海文化传媒</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* 隐藏滚动条但保持滚动功能 */
+        /* 对于WebKit浏览器 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 对于Firefox */
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../IMG/LOGO.jpg" alt="爱情海文化传媒">
+                <span class="logo-text">活动策划管理平台</span>
+            </div>
+            <div class="city-selector">
+                <div class="city-current">
+                    武汉 <span class="arrow">↓</span>
+                </div>
+                <div class="city-dropdown">
+                    <div class="business-distribution">业务分布</div>
+                    <div class="city-grid">
+                        <div class="city-row">
+                            <div class="city-item">武汉</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">南京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">杭州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">苏州</div>
+                        </div>
+                        <div class="city-row">
+                            <div class="city-item">北京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">广州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">深圳</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">其他</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+            </ul>
+            <div class="navbar-user-info" id="navbarUserInfo">
+            </div>
+            <button class="login-btn" id="headerLoginBtn">登录</button>
+            <button class="switch-version-btn" id="switchVersionBtn">切换员工版</button>
+        </div>
+    </nav>
+
+    <!-- 员工权限管理内容 -->
+    <section class="permission-management">
+        <div class="container">
+            <h2 class="section-title">员工权限管理</h2>
+            
+            <div class="permission-container">
+                <!-- 选项卡 -->
+                <div class="permission-tabs">
+                    <button class="tab-btn active" data-tab="all">员工</button>
+                </div>
+                
+                <!-- 员工权限管理 -->
+                <div class="tab-content active" id="all">
+                    <div class="permission-search">
+                        <div class="search-group">
+                            <label for="allSearch">员工搜索：</label>
+                            <input type="text" id="allSearch" placeholder="输入工号或姓名">
+                            <button class="search-btn">搜索</button>
+                        </div>
+                    </div>
+                    
+                    <div class="permission-list">
+                        <table class="permission-table">
+                            <thead>
+                                <tr>
+                                <th>工号</th>
+                                <th>用户名</th>
+                                <th>姓名</th>
+                                <th>职位</th>
+                                <th>城市</th>
+                                <th>联系电话</th>
+                                <th>当前权限</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- 分页 -->
+                    <div class="pagination">
+                        <button class="page-btn" disabled>上一页</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn">5</button>
+                        <button class="page-btn">下一页</button>
+                        <span class="page-info">共 0 条记录，每页 10 条，共 0 页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 修改权限弹窗 -->
+    <div class="modal" id="permissionModal">
+        <div class="modal-content">
+            <span class="modal-close" id="permissionModalClose">&times;</span>
+            <div class="modal-header">
+                <h2>修改权限</h2>
+            </div>
+            <div class="modal-body">
+                <form id="permissionForm">
+                    <div class="form-group">
+                        <label for="permissionUser">用户/员工：</label>
+                        <input type="text" id="permissionUser" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPermission">新职位：</label>
+                        <select id="newPermission">
+                            <option value="">请选择职位</option>
+                            <option value="普通用户">普通用户</option>
+                            <option value="用户管理员">用户管理员</option>
+                            <option value="业务管理员">业务管理员</option>
+                            <option value="仓库管理员">仓库管理员</option>
+                            <option value="会计">会计</option>
+                            <option value="工人">工人</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="permissionForm" class="modal-btn login-modal-btn">确认修改</button>
+                <button type="button" class="modal-btn register-modal-btn" id="permissionModalCancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .permission-management {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .permission-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .permission-tabs {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #666;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-right: 10px;
+        }
+        
+        .tab-btn:hover {
+            color: #2c74c9;
+        }
+        
+        .tab-btn.active {
+            color: #2c74c9;
+            border-bottom-color: #2c74c9;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .permission-search {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .search-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .search-group label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .search-group input {
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+            width: 200px;
+        }
+        
+        .search-btn {
+            padding: 8px 15px;
+            background-color: #2c74c9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-btn:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .permission-list {
+            overflow-x: auto;
+        }
+        
+        .permission-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .permission-table th,
+        .permission-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+        
+        .permission-table th:first-child,
+        .permission-table td:first-child {
+            width: 80px;
+        }
+        
+        .permission-table th:nth-child(2),
+        .permission-table td:nth-child(2) {
+            width: 120px;
+        }
+        
+        .permission-table th:nth-child(3),
+        .permission-table td:nth-child(3) {
+            width: 100px;
+        }
+        
+        .permission-table th:nth-child(4),
+        .permission-table td:nth-child(4) {
+            width: 120px;
+        }
+        
+        .permission-table th:nth-child(5),
+        .permission-table td:nth-child(5) {
+            width: 120px;
+        }
+        
+        .permission-table th:nth-child(6),
+        .permission-table td:nth-child(6) {
+            width: 150px;
+        }
+        
+        .permission-table th:nth-child(7),
+        .permission-table td:nth-child(7) {
+            width: 120px;
+        }
+        
+        .permission-table th:nth-child(8),
+        .permission-table td:nth-child(8) {
+            width: 100px;
+        }
+        
+        .permission-table th {
+            font-weight: bold;
+            color: #333;
+            background-color: #fafafa;
+        }
+        
+        .permission-table td {
+            color: #666;
+        }
+        
+        .permission-table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .edit-permission-btn {
+            padding: 6px 12px;
+            background-color: #2c74c9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .edit-permission-btn:hover {
+            background-color: #1a5cb5;
+        }
+        
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            animation: slideIn 0.3s;
+        }
+        
+        .modal-header {
+            background-color: #2c74c9;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        .modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            cursor: pointer;
+        }
+        
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+        }
+        
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .login-modal-btn {
+            background-color: #2c74c9;
+            color: #fff;
+        }
+        
+        .login-modal-btn:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .register-modal-btn {
+            background-color: #fff;
+            color: #666;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .register-modal-btn:hover {
+            border-color: #2c74c9;
+            color: #2c74c9;
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        @keyframes slideIn {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .page-btn {
+            padding: 8px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover:not(:disabled) {
+            border-color: #2c74c9;
+            color: #2c74c9;
+        }
+        
+        .page-btn.active {
+            background-color: #2c74c9;
+            color: #fff;
+            border-color: #2c74c9;
+        }
+        
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .page-info {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px 0;
+            color: #999;
+            font-size: 16px;
+        }
+    </style>
+
+    <script src="../JS/jquery-3.4.1.min.js"></script>
+    <script src="../JS/login.js"></script>
+    <script src="../JS/employee.js"></script>
+    <script>
+        // 选项卡切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tableBody = document.querySelector('.permission-table tbody');
+            
+            // 分页相关变量
+            let currentPage = 1;
+            let pageSize = 10;
+            let allEmployees = [];
+            let filteredEmployees = [];
+            
+            // 绑定修改权限按钮事件
+            function bindEditPermissionEvents() {
+                const editButtons = document.querySelectorAll('.edit-permission-btn');
+                editButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const employeeId = this.getAttribute('data-id');
+                        const employeeName = this.closest('tr').querySelector('td:nth-child(3)').textContent;
+                        
+                        // 设置表单数据
+                        const permissionForm = document.getElementById('permissionForm');
+                        permissionForm.setAttribute('data-employee-id', employeeId);
+                        document.getElementById('permissionUser').value = `${employeeName} (ID: ${employeeId})`;
+                        
+                        // 显示模态框
+                        document.getElementById('permissionModal').style.display = 'block';
+                    });
+                });
+            }
+            
+            // 页面加载时获取所有员工数据
+            function loadAllEmployees() {
+                // 显示加载状态
+            tableBody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">正在加载员工数据...</td></tr>';
+                
+                // 调用后端API获取所有员工
+                fetch('http://localhost:8080/EventPlanning_Management/ShowEmployee')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('API返回数据:', data);
+                        
+                        // 处理返回数据
+                        if (data && data.flag === 'success' && data.data && data.data.length > 0) {
+                            allEmployees = data.data;
+                            filteredEmployees = allEmployees;
+                            currentPage = 1;
+                            renderPagination();
+                        } else {
+                            // 无数据
+                            tableBody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">暂无员工数据</td></tr>';
+                            updatePagination(0);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('加载员工数据失败:', error);
+                        tableBody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px; color: red;">加载员工数据失败，请检查网络连接</td></tr>';
+                        updatePagination(0);
+                    });
+            }
+            
+            // 渲染分页
+            function renderPagination() {
+                var totalPages = Math.ceil(filteredEmployees.length / pageSize);
+                var startPage = Math.max(1, currentPage - 2);
+                var endPage = Math.min(totalPages, startPage + 4);
+                
+                // 渲染员工列表
+                var startIndex = (currentPage - 1) * pageSize;
+                var endIndex = startIndex + pageSize;
+                var pageEmployees = filteredEmployees.slice(startIndex, endIndex);
+                renderEmployees(pageEmployees);
+                
+                // 更新分页信息
+                updatePagination(filteredEmployees.length, totalPages, startPage, endPage);
+            }
+            
+            // 渲染员工列表
+            function renderEmployees(employees) {
+                // 清空表格内容
+                tableBody.innerHTML = '';
+                
+                if (employees.length === 0) {
+                    tableBody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">未找到匹配的员工信息</td></tr>';
+                    return;
+                }
+                
+                // 渲染员工数据
+                employees.forEach((employee, index) => {
+                    const city = employee.city || employee.city_name || employee.location || "-";
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${employee.employee_id || '-'}</td>
+                        <td>${employee.username || '-'}</td>
+                        <td>${employee.name || '-'}</td>
+                        <td>${employee.post || '-'}</td>
+                        <td>${city}</td>
+                        <td>${employee.phone || '-'}</td>
+                        <td>${employee.post || '-'}</td>
+                        <td>
+                            <button class="edit-permission-btn" data-id="${employee.employee_id}">修改权限</button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+                
+                // 重新绑定修改权限按钮事件
+                bindEditPermissionEvents();
+            }
+            
+            // 更新分页信息
+            function updatePagination(totalEmployees, totalPages, startPage, endPage) {
+                // 设置默认值
+                startPage = startPage || 1;
+                endPage = endPage || Math.min(totalPages, startPage + 4);
+                
+                // 更新分页信息显示
+                const pageInfo = document.querySelector('.page-info');
+                if (pageInfo) {
+                    pageInfo.textContent = `共 ${totalEmployees} 条记录，每页 ${pageSize} 条，共 ${totalPages} 页`;
+                }
+                
+                // 更新分页按钮
+                const pagination = document.querySelector('.pagination');
+                if (pagination) {
+                    // 保存上一页和下一页按钮
+                    const prevBtn = pagination.querySelector('.page-btn:first-child');
+                    const nextBtn = pagination.querySelector('.page-btn:last-child');
+                    
+                    // 清空所有按钮
+                    pagination.innerHTML = '';
+                    
+                    // 重新添加上一页按钮
+                    if (prevBtn) {
+                        pagination.appendChild(prevBtn);
+                        prevBtn.disabled = currentPage === 1;
+                    }
+                    
+                    // 生成页码按钮
+                    for (let i = startPage; i <= endPage; i++) {
+                        const pageBtn = document.createElement('button');
+                        pageBtn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+                        pageBtn.textContent = i;
+                        pagination.appendChild(pageBtn);
+                    }
+                    
+                    // 重新添加下一页按钮
+                    if (nextBtn) {
+                        pagination.appendChild(nextBtn);
+                        nextBtn.disabled = currentPage === totalPages || totalPages <= 1;
+                    }
+                    
+                    // 重新添加分页信息
+                    if (pageInfo) {
+                        pagination.appendChild(pageInfo);
+                    }
+                }
+            }
+            
+            // 绑定分页按钮点击事件
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('page-btn')) {
+                    const text = e.target.textContent;
+                    
+                    if (text === '上一页') {
+                        if (currentPage > 1) {
+                            currentPage--;
+                            renderPagination();
+                        }
+                    } else if (text === '下一页') {
+                        if (currentPage < Math.ceil(filteredEmployees.length / pageSize)) {
+                            currentPage++;
+                            renderPagination();
+                        }
+                    } else if (!isNaN(parseInt(text))) {
+                        currentPage = parseInt(text);
+                        renderPagination();
+                    }
+                }
+            });
+            
+            // 选项卡切换功能
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // 移除所有按钮的active类
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    // 添加当前按钮的active类
+                    this.classList.add('active');
+                    
+                    // 隐藏所有内容
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    // 显示当前内容
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+            
+            // 关闭模态框
+            document.getElementById('permissionModalClose').addEventListener('click', function() {
+                document.getElementById('permissionModal').style.display = 'none';
+                document.getElementById('permissionForm').reset();
+            });
+            
+            document.getElementById('permissionModalCancel').addEventListener('click', function() {
+                document.getElementById('permissionModal').style.display = 'none';
+                document.getElementById('permissionForm').reset();
+            });
+            
+            // 点击模态框外部关闭
+            window.addEventListener('click', function(event) {
+                if (event.target == document.getElementById('permissionModal')) {
+                    document.getElementById('permissionModal').style.display = 'none';
+                    document.getElementById('permissionForm').reset();
+                }
+            });
+            
+            // 表单提交
+            document.getElementById('permissionForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 获取员工工号和新职位
+                const employeeId = this.getAttribute('data-employee-id');
+                const newPost = document.getElementById('newPermission').value;
+                
+                // 验证新职位是否选择
+                if (!newPost) {
+                    alert('请选择新职位');
+                    return;
+                }
+                
+                if(confirm('确定要修改该员工的权限吗？')) {
+                    // 构建API请求URL
+                    const apiUrl = `http://localhost:8080/EventPlanning_Management/UpdateEmployeePost?employeeId=${encodeURIComponent(employeeId)}&post=${encodeURIComponent(newPost)}`;
+                    
+                    // 调用API
+                    fetch(apiUrl, {
+                        method: 'GET', // 可以使用GET或POST
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // 处理API响应
+                        if (data && data.flag === 'success') {
+                            alert('权限修改成功！');
+                            // 关闭模态框并重置表单
+                            document.getElementById('permissionModal').style.display = 'none';
+                            document.getElementById('permissionForm').reset();
+                            // 重新加载员工数据
+                            loadAllEmployees(); // 重新加载数据以获取最新信息
+                        } else {
+                            alert('权限修改失败：' + (data.msg || data.data || '未知错误'));
+                        }
+                    })
+                    .catch(error => {
+                        console.error('权限修改失败:', error);
+                        alert('权限修改失败，请检查网络连接');
+                    });
+                }
+            });
+            
+            // 初始化：加载所有员工数据
+            loadAllEmployees();
+        });
+        
+        $(function() {
+            $("#switchToUserBtn").click(function() {
+                $("body").addClass("fade-out");
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 300);
+            });
+        });
+        
+        // 搜索功能实现
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取搜索按钮和搜索输入框
+            const searchBtn = document.querySelector('.search-btn');
+            const searchInput = document.getElementById('allSearch');
+            
+            // 搜索按钮点击事件
+            searchBtn.addEventListener('click', function() {
+                performSearch();
+            });
+            
+            // 回车键搜索
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // 执行搜索
+            function performSearch() {
+                const keyword = searchInput.value.trim();
+                let url;
+                
+                // 显示加载状态
+                const tableBody = document.querySelector('.permission-table tbody');
+                tableBody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">正在加载员工数据...</td></tr>';
+                
+                // 根据关键词是否为空决定调用哪个API
+                if (!keyword) {
+                    // 关键词为空，使用原有的全量数据
+                    filteredEmployees = allEmployees;
+                    currentPage = 1;
+                    renderPagination();
+                } else {
+                    // 关键词不为空，根据搜索类型调用不同接口
+                    const isEmployeeIdSearch = /^\d+$/.test(keyword);
+                    if (isEmployeeIdSearch) {
+                        // 工号搜索接口
+                        url = `http://localhost:8080/EventPlanning_Management/SearchEmployeeById?employeeId=${encodeURIComponent(keyword)}`;
+                    } else {
+                        // 姓名搜索接口
+                        url = `http://localhost:8080/EventPlanning_Management/SearchEmployeeByName?name=${encodeURIComponent(keyword)}`;
+                    }
+                    
+                    // 调用后端接口
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('搜索API返回数据:', data);
+                            let searchResults = [];
+                            
+                            // 处理返回数据
+                            if (data && data.flag === 'success' && data.data) {
+                                if (Array.isArray(data.data)) {
+                                    searchResults = data.data;
+                                } else if (typeof data.data === 'object') {
+                                    searchResults = [data.data];
+                                }
+                            }
+                            
+                            filteredEmployees = searchResults;
+                            currentPage = 1;
+                            renderPagination();
+                        })
+                        .catch(error => {
+                        console.error('加载员工数据失败:', error);
+                        tableBody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px; color: red;">加载员工数据失败，请检查网络连接</td></tr>';
+                        updatePagination(0);
+                    });
+                }
+            }
+        });
+    </script>
+    <script src="../JS/index.js"></script>
+</body>
+</html>

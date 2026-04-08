@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_001",
+  "case_name": "正常活动申请-公司年会",
+  "activity_place": "北京",
+  "activity_type": "公司年会",
+  "start_time": "2026-05-01",
+  "end_time": "2026-05-02",
+  "activity_people": "50-100",
+  "activity_budget": "5-10 万",
+  "requirement_desc": "需要音响设备和舞台布置，要求专业灯光效果",
+  "phone": "13800138000",
+  "name": "张三",
+  "expected": "活动需求提交成功！"
+}

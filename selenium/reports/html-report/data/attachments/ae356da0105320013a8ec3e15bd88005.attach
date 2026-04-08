@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_013",
+  "case_name": "正常活动申请 - 时尚走秀",
+  "activity_place": "上海",
+  "activity_type": "时尚走秀",
+  "start_time": "2026-09-10",
+  "end_time": "2026-09-12",
+  "activity_people": "200-500",
+  "activity_budget": "20-50 万",
+  "requirement_desc": "时装发布会，需要 T 台和灯光",
+  "phone": "13887654321",
+  "name": "陈总监",
+  "expected": "活动需求提交成功！"
+}

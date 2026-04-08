@@ -1,0 +1,13 @@
+2026-03-28 13:57:00,785 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:57:00,788 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 13:57:02,106 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 13:57:02,255 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 13:57:02,269 - base.base_page - INFO - 页面加载完成
+2026-03-28 13:57:12,790 - base.base_page - ERROR - 查找可见元素超时: ('xpath', "//a[contains(text(),'登录') or contains(@class,'login')]")
+2026-03-28 13:57:13,857 - base.base_page - INFO - 截图保存: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\screenshots\element_not_visible_1774677432
+2026-03-28 13:57:13,857 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: 元素不可见: ('xpath', "//a[contains(text(),'登录') or contains(@class,'login')]")
+
+2026-03-28 13:57:13,876 - base.base_page - DEBUG - 找到元素: ('id', 'loginBtn')
+2026-03-28 13:57:24,436 - base.base_page - ERROR - 查找元素超时: ('id', 'username')
+2026-03-28 13:57:25,416 - base.base_page - INFO - 截图保存: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\screenshots\element_not_found_1774677444
+2026-03-28 13:57:27,595 - base.driver_manager - INFO - WebDriver已关闭

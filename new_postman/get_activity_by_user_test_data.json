@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ACT_USER_001",
+    "userId": "1",
+    "description": "根据用户ID获取活动需求 - 存在的用户（有活动需求）"
+  },
+  {
+    "id": "ACT_USER_002",
+    "userId": "2",
+    "description": "根据用户ID获取活动需求 - 存在的用户（有活动需求）"
+  },
+  {
+    "id": "ACT_USER_003",
+    "userId": "3044",
+    "description": "根据用户ID获取活动需求 - 存在的用户（业务管理员）"
+  },
+  {
+    "id": "ACT_USER_004",
+    "userId": "3045",
+    "description": "根据用户ID获取活动需求 - 用户（无活动需求）"
+  },
+  {
+    "id": "ACT_USER_005",
+    "userId": "999999",
+    "description": "根据用户ID获取活动需求 - 不在范围内（不在的用户）"
+  },
+  {
+    "id": "ACT_USER_006",
+    "userId": "",
+    "description": "根据用户ID获取活动需求 - 空用户ID"
+  },
+  {
+    "id": "ACT_USER_007",
+    "userId": "abc",
+    "description": "根据用户ID获取活动需求 - 非数字用户ID"
+  }
+]

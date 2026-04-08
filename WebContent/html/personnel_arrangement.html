@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人员安排 - 爱情海文化传媒</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* 隐藏滚动条但保持滚动功能 */
+        /* 对于WebKit浏览器 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 对于Firefox */
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../IMG/LOGO.jpg" alt="爱情海文化传媒">
+                <span class="logo-text">活动策划管理平台</span>
+            </div>
+            <div class="city-selector">
+                <div class="city-current">
+                    武汉 <span class="arrow">↓</span>
+                </div>
+                <div class="city-dropdown">
+                    <div class="business-distribution">业务分布</div>
+                    <div class="city-grid">
+                        <div class="city-row">
+                            <div class="city-item">武汉</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">南京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">杭州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">苏州</div>
+                        </div>
+                        <div class="city-row">
+                            <div class="city-item">北京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">广州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">深圳</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">其他</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="employee.html">员工主页</a></li>
+                <li><a href="salary.html">我的薪资</a></li>
+                <li><a href="employee_list.html">员工花名册</a></li>
+                <li><a href="approval.html">审批/报销</a></li>
+                <li><a href="personnel_arrangement.html" class="active">人员安排</a></li>
+                <li><a href="index.html">用户版首页</a></li>
+            </ul>
+            <div class="navbar-user-info" id="navbarUserInfo">
+            </div>
+            <button class="login-btn" id="headerLoginBtn">退出登录</button>
+            <button class="switch-version-btn" id="switchToUserBtn">切换用户版</button>
+        </div>
+    </nav>
+
+    <!-- 人员安排内容 -->
+    <section class="personnel-arrangement">
+        <div class="container">
+            <h2 class="section-title">人员安排</h2>
+            
+            <div class="personnel-container">
+                <!-- 筛选 -->
+                <div class="employee-filter">
+                    <div class="filter-group">
+                        <label for="startDate">起始时间：</label>
+                        <input type="date" id="startDate">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="endDate">终止时间：</label>
+                        <input type="date" id="endDate">
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="cityFilter">城市：</label>
+                        <select id="cityFilter">
+                            <option value="">全部城市</option>
+                            <option value="武汉">武汉</option>
+                            <option value="南京">南京</option>
+                            <option value="杭州">杭州</option>
+                            <option value="苏州">苏州</option>
+                            <option value="北京">北京</option>
+                            <option value="广州">广州</option>
+                            <option value="深圳">深圳</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="searchInput">搜索：</label>
+                        <input type="text" id="searchInput" placeholder="输入员工姓名或工号">
+                        <button class="search-btn" id="searchBtn">搜索</button>
+                        <button class="reset-btn" id="resetBtn">清空</button>
+                    </div>
+                </div>
+                
+                <!-- 工人列表 -->
+                <div class="employee-table-container">
+                    <table class="employee-table" id="workerTable">
+                        <thead>
+                            <tr>
+                                <th>工号</th>
+                                <th>用户ID</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>城市</th>
+                                <th>联系电话</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 工人数据将通过AJAX动态加载 -->
+                            <tr>
+                                <td colspan="8" style="text-align: center; color: #999;">加载中...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 分页 -->
+                <div class="pagination">
+                    <button class="page-btn" disabled>上一页</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <button class="page-btn">下一页</button>
+                    <span class="page-info">共 0 条记录，每页 10 条，共 0 页</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安排任务弹窗 -->
+    <div class="modal" id="taskModal">
+        <div class="modal-content">
+            <span class="modal-close" id="taskModalClose">&times;</span>
+            <div class="modal-header">
+                <h2>安排任务</h2>
+            </div>
+            <div class="modal-body">
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskWorker">工人：</label>
+                        <input type="text" id="taskWorker" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskActivity">活动选择：</label>
+                        <select id="taskActivity" placeholder="请选择活动">
+                            <option value="">请选择活动</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskStartTime">开始时间：</label>
+                        <input type="datetime-local" id="taskStartTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="taskEndTime">结束时间：</label>
+                        <input type="datetime-local" id="taskEndTime">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="taskForm" class="modal-btn login-modal-btn">确认安排</button>
+                <button type="button" class="modal-btn register-modal-btn" id="taskModalCancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .personnel-arrangement {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .personnel-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .employee-filter {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-group label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .filter-group input {
+            width: 200px;
+        }
+        
+        .search-btn {
+            padding: 8px 15px;
+            background-color: #2c74c9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-btn:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .reset-btn {
+            padding: 8px 15px;
+            background-color: #f0f0f0;
+            color: #666;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+        
+        .reset-btn:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .employee-table-container {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        
+        .employee-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        
+        .employee-table thead {
+            background-color: #fafafa;
+        }
+        
+        .employee-table th,
+        .employee-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+        
+        .employee-table th:first-child,
+        .employee-table td:first-child {
+            width: 10%;
+        }
+        
+        .employee-table th:nth-child(2),
+        .employee-table td:nth-child(2) {
+            width: 12%;
+        }
+        
+        .employee-table th:nth-child(3),
+        .employee-table td:nth-child(3) {
+            width: 10%;
+        }
+        
+        .employee-table th:nth-child(4),
+        .employee-table td:nth-child(4) {
+            width: 8%;
+        }
+        
+        .employee-table th:nth-child(5),
+        .employee-table td:nth-child(5) {
+            width: 15%;
+        }
+        
+        .employee-table th:nth-child(6),
+        .employee-table td:nth-child(6) {
+            width: 17%;
+        }
+        
+        .employee-table th:nth-child(7),
+        .employee-table td:nth-child(7) {
+            width: 10%;
+        }
+        
+        .employee-table th:nth-child(8),
+        .employee-table td:nth-child(8) {
+            width: 8%;
+        }
+        
+        .employee-table th {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .employee-table td {
+            color: #666;
+        }
+        
+        .employee-table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .status-available {
+            color: #52c41a;
+            font-weight: bold;
+        }
+        
+        .status-busy {
+            color: #ff4d4f;
+            font-weight: bold;
+        }
+        
+        .arrange-btn {
+            padding: 6px 12px;
+            background-color: #2c74c9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .arrange-btn:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .arrange-btn:disabled {
+            background-color: #d9d9d9;
+            cursor: not-allowed;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .page-btn {
+            padding: 8px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover:not(:disabled) {
+            border-color: #2c74c9;
+            color: #2c74c9;
+        }
+        
+        .page-btn.active {
+            background-color: #2c74c9;
+            color: #fff;
+            border-color: #2c74c9;
+        }
+        
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .page-info {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            animation: slideIn 0.3s;
+        }
+        
+        .modal-header {
+            background-color: #2c74c9;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        .modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            cursor: pointer;
+        }
+        
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+        }
+        
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .login-modal-btn {
+            background-color: #2c74c9;
+            color: #fff;
+        }
+        
+        .login-modal-btn:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .register-modal-btn {
+            background-color: #fff;
+            color: #666;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .register-modal-btn:hover {
+            border-color: #2c74c9;
+            color: #2c74c9;
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        @keyframes slideIn {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+    </style>
+
+    <script src="../JS/jquery-3.4.1.min.js"></script>
+    <script src="../JS/login.js"></script>
+    <script src="../JS/employee.js"></script>
+    <script>
+        $(function() {
+            // 切换用户版按钮
+            $("#switchToUserBtn").click(function() {
+                $("body").addClass("fade-out");
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 300);
+            });
+            
+            // 分页相关变量
+            var currentPage = 1;
+            var pageSize = 10;
+            var totalWorkers = [];
+            var filteredWorkers = [];
+            
+            // 页面加载时获取所有工人
+            getAllWorkers();
+            
+            // 起始时间筛选
+            $("#startDate").change(function() {
+                currentPage = 1;
+                getAllWorkers();
+            });
+            
+            // 终止时间筛选
+            $("#endDate").change(function() {
+                currentPage = 1;
+                getAllWorkers();
+            });
+            
+            // 城市筛选
+            $("#cityFilter").change(function() {
+                currentPage = 1;
+                getAllWorkers();
+            });
+            
+            // 搜索功能
+            $("#searchInput").on("input", function() {
+                currentPage = 1;
+                getAllWorkers();
+            });
+            
+            // 搜索按钮点击事件
+            $("#searchBtn").click(function() {
+                currentPage = 1;
+                getAllWorkers();
+            });
+            
+            // 清空按钮点击事件
+            $("#resetBtn").click(function() {
+                // 清空所有搜索条件
+                $("#startDate").val('');
+                $("#endDate").val('');
+                $("#cityFilter").val('');
+                $("#searchInput").val('');
+                
+                // 重新加载数据
+                currentPage = 1;
+                getAllWorkers();
+            });
+            
+            // 分页按钮点击事件
+            $(document).on("click", ".page-btn", function() {
+                if($(this).is(":disabled")) return;
+                
+                var text = $(this).text();
+                
+                if(text === "上一页") {
+                    if(currentPage > 1) {
+                        currentPage--;
+                        renderPagination();
+                    }
+                } else if(text === "下一页") {
+                    if(currentPage < Math.ceil(filteredWorkers.length / pageSize)) {
+                        currentPage++;
+                        renderPagination();
+                    }
+                } else {
+                    currentPage = parseInt(text);
+                    renderPagination();
+                }
+            });
+            
+            // 获取所有工人
+            function getAllWorkers() {
+                // 调用SearchEmployeeCombined API获取工人数据
+                var startDate = $("#startDate").val();
+                var endDate = $("#endDate").val();
+                var city = $("#cityFilter").val();
+                var keyword = $("#searchInput").val().trim();
+                
+                // 构建API参数
+                var params = {};
+                
+                if(startDate) {
+                    params.startTime = startDate + ' 00:00:00';
+                }
+                
+                if(endDate) {
+                    params.endTime = endDate + ' 23:59:59';
+                }
+                
+                if(city) {
+                    params.city = city;
+                }
+                
+                if(keyword) {
+                    params.keyword = keyword;
+                }
+                
+                $.ajax({
+                    url: "http://localhost:8080/EventPlanning_Management/SearchEmployeeCombined",
+                    type: "GET",
+                    data: params,
+                    dataType: "json",
+                    success: function(result) {
+                        if(result.flag === "success" && result.data && result.data.length > 0) {
+                            // 使用API返回的工人数据
+                            totalWorkers = result.data;
+                            
+                            // 为每个工人添加默认状态字段
+                            totalWorkers.forEach(function(worker) {
+                                // 默认状态：1为可安排（空闲）
+                                worker.status = worker.status || 1;
+                            });
+                            
+                            filterWorkers();
+                        } else {
+                            // 如果SearchEmployeeCombined API返回空数据，使用ShowEmployeeWork API作为备选
+                            $.ajax({
+                                url: "http://localhost:8080/EventPlanning_Management/ShowEmployeeWork",
+                                type: "GET",
+                                dataType: "json",
+                                success: function(backupResult) {
+                                    if(backupResult.flag === "success" && backupResult.data && backupResult.data.length > 0) {
+                                        // 使用API返回的工人数据，包含状态信息
+                                        totalWorkers = backupResult.data;
+                                        
+                                        filterWorkers();
+                                    } else {
+                                        // 如果ShowEmployeeWork API也返回空数据，使用ShowEmployee API作为备选
+                                        $.ajax({
+                                            url: "http://localhost:8080/EventPlanning_Management/ShowEmployee",
+                                            type: "GET",
+                                            dataType: "json",
+                                            success: function(finalBackupResult) {
+                                                if(finalBackupResult.flag === "success") {
+                                                    // 筛选出职位为工人的员工
+                                                    totalWorkers = finalBackupResult.data.filter(function(employee) {
+                                                        return employee.post === "工人";
+                                                    });
+                                                    
+                                                    // 为每个工人添加默认状态字段
+                                                    totalWorkers.forEach(function(worker) {
+                                                        // 默认状态：1为可安排（空闲）
+                                                        worker.status = worker.status || 1;
+                                                    });
+                                                    
+                                                    filterWorkers();
+                                                } else {
+                                                    alert("获取员工列表失败：" + finalBackupResult.msg);
+                                                }
+                                            },
+                                            error: function() {
+                                                alert("获取员工列表失败，请检查网络连接");
+                                            }
+                                        });
+                                    }
+                                },
+                                error: function() {
+                                    // 如果ShowEmployeeWork API调用失败，使用ShowEmployee API作为备选
+                                    $.ajax({
+                                        url: "http://localhost:8080/EventPlanning_Management/ShowEmployee",
+                                        type: "GET",
+                                        dataType: "json",
+                                        success: function(finalBackupResult) {
+                                            if(finalBackupResult.flag === "success") {
+                                                // 筛选出职位为工人的员工
+                                                totalWorkers = finalBackupResult.data.filter(function(employee) {
+                                                    return employee.post === "工人";
+                                                });
+                                                
+                                                // 为每个工人添加默认状态字段
+                                                totalWorkers.forEach(function(worker) {
+                                                    // 默认状态：1为可安排
+                                                    worker.status = worker.status || 1;
+                                                });
+                                                
+                                                filterWorkers();
+                                            } else {
+                                                alert("获取员工列表失败：" + finalBackupResult.msg);
+                                            }
+                                        },
+                                        error: function() {
+                                            alert("获取员工列表失败，请检查网络连接");
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    },
+                    error: function() {
+                        // 如果SearchEmployeeCombined API调用失败，使用ShowEmployeeWork API作为备选
+                        $.ajax({
+                            url: "http://localhost:8080/EventPlanning_Management/ShowEmployeeWork",
+                            type: "GET",
+                            dataType: "json",
+                            success: function(backupResult) {
+                                if(backupResult.flag === "success" && backupResult.data && backupResult.data.length > 0) {
+                                    // 使用API返回的工人数据，包含状态信息
+                                    totalWorkers = backupResult.data;
+                                    
+                                    filterWorkers();
+                                } else {
+                                    // 如果ShowEmployeeWork API也返回空数据，使用ShowEmployee API作为备选
+                                    $.ajax({
+                                        url: "http://localhost:8080/EventPlanning_Management/ShowEmployee",
+                                        type: "GET",
+                                        dataType: "json",
+                                        success: function(finalBackupResult) {
+                                            if(finalBackupResult.flag === "success") {
+                                                // 筛选出职位为工人的员工
+                                                totalWorkers = finalBackupResult.data.filter(function(employee) {
+                                                    return employee.post === "工人";
+                                                });
+                                                
+                                                // 为每个工人添加默认状态字段
+                                                totalWorkers.forEach(function(worker) {
+                                                    // 默认状态：1为可安排
+                                                    worker.status = worker.status || 1;
+                                                });
+                                                
+                                                filterWorkers();
+                                            } else {
+                                                alert("获取员工列表失败：" + finalBackupResult.msg);
+                                            }
+                                        },
+                                        error: function() {
+                                            alert("获取员工列表失败，请检查网络连接");
+                                        }
+                                    });
+                                }
+                            },
+                            error: function() {
+                                // 如果ShowEmployeeWork API调用失败，使用ShowEmployee API作为备选
+                                $.ajax({
+                                    url: "http://localhost:8080/EventPlanning_Management/ShowEmployee",
+                                    type: "GET",
+                                    dataType: "json",
+                                    success: function(finalBackupResult) {
+                                        if(finalBackupResult.flag === "success") {
+                                            // 筛选出职位为工人的员工
+                                            totalWorkers = finalBackupResult.data.filter(function(employee) {
+                                                return employee.post === "工人";
+                                            });
+                                            
+                                            // 为每个工人添加默认状态字段
+                                            totalWorkers.forEach(function(worker) {
+                                                // 默认状态：1为可安排
+                                                worker.status = worker.status || 1;
+                                            });
+                                            
+                                            filterWorkers();
+                                        } else {
+                                            alert("获取员工列表失败：" + finalBackupResult.msg);
+                                        }
+                                    },
+                                    error: function() {
+                                        alert("获取员工列表失败，请检查网络连接");
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // 过滤工人
+            function filterWorkers() {
+                // 直接使用totalWorkers，因为API已经返回了过滤后的数据
+                filteredWorkers = totalWorkers;
+                
+                currentPage = 1;
+                renderPagination();
+            }
+            
+            // 渲染分页
+            function renderPagination() {
+                var totalPages = Math.ceil(filteredWorkers.length / pageSize);
+                var startPage = Math.max(1, currentPage - 2);
+                var endPage = Math.min(totalPages, startPage + 4);
+                
+                // 渲染工人列表
+                var startIndex = (currentPage - 1) * pageSize;
+                var endIndex = startIndex + pageSize;
+                var pageWorkers = filteredWorkers.slice(startIndex, endIndex);
+                renderWorkers(pageWorkers);
+                
+                // 更新分页信息
+                updatePagination(filteredWorkers.length, totalPages, startPage, endPage);
+            }
+            
+            // 渲染工人列表
+            function renderWorkers(workers) {
+                var tbody = $("#workerTable tbody");
+                tbody.empty();
+                
+                if(workers.length === 0) {
+                    tbody.append("<tr><td colspan='8' style='text-align: center; color: #999;'>暂无工人数据</td></tr>");
+                    return;
+                }
+                
+                $.each(workers, function(index, worker) {
+                    var statusNum = parseInt(worker.status);
+                    var statusText = statusNum === 1 ? "可安排" : "忙碌";
+                    var statusClass = statusNum === 1 ? "status-available" : "status-busy";
+                    var arrangeBtnDisabled = "";
+                    var city = worker.city || worker.city_name || worker.location || "-";
+                    var userId = worker.userid || worker.userId || worker.id || "-";
+                    
+                    var row = "<tr>" +
+                        "<td>" + worker.employee_id + "</td>" +
+                        "<td>" + userId + "</td>" +
+                        "<td>" + worker.name + "</td>" +
+                        "<td>" + worker.sex + "</td>" +
+                        "<td>" + city + "</td>" +
+                        "<td>" + worker.phone + "</td>" +
+                        "<td class='" + statusClass + "'>" + statusText + "</td>" +
+                        "<td><button class='arrange-btn' " + arrangeBtnDisabled + " data-id='" + worker.employee_id + "' data-userid='" + userId + "' data-name='" + worker.name + "'>安排</button></td>" +
+                        "</tr>";
+                    tbody.append(row);
+                });
+                
+                // 绑定安排按钮事件
+                bindArrangeEvents();
+            }
+            
+            // 绑定安排按钮事件
+            function bindArrangeEvents() {
+                $(".arrange-btn").click(function() {
+                    var workerId = $(this).data("id");
+                    var userId = $(this).data("userid");
+                    var workerName = $(this).data("name");
+                    
+                    // 设置表单数据
+                    $("#taskWorker").val(workerName + " (ID: " + workerId + ")");
+                    $("#taskForm").data("worker-id", workerId);
+                    $("#taskForm").data("user-id", userId);
+                    
+                    // 重置活动选择下拉框
+                    $("#taskActivity").html('<option value="">请选择活动</option>');
+                    
+                    // 显示模态框
+                    $("#taskModal").show();
+                });
+            }
+            
+            // 绑定活动选择下拉框点击事件
+            $("#taskActivity").click(function() {
+                var $select = $(this);
+                
+                // 如果下拉框已经有选项（除了默认选项），则不再加载
+                if ($select.find('option').length > 1) {
+                    return;
+                }
+                
+                // 显示加载状态
+                $select.html('<option value="">加载中...</option>');
+                
+                // 调用API获取活动列表
+                $.ajax({
+                    url: "http://localhost:8080/EventPlanning_Management/ShowAllActivityDemand",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(result) {
+                        console.log('API返回结果:', result);
+                        if(result.flag === "success" && result.data && result.data.length > 0) {
+                            // 筛选出活动进度 >= 2的活动
+                            var eligibleActivities = result.data.filter(function(activity) {
+                                console.log('活动数据:', activity);
+                                var progress = parseInt(activity.activity_progress || activity.status || 0);
+                                return progress >= 2;
+                            });
+                            
+                            console.log('符合条件的活动:', eligibleActivities);
+                            // 更新下拉框选项
+                            var options = '<option value="">请选择活动</option>';
+                            eligibleActivities.forEach(function(activity) {
+                                console.log('处理活动数据:', activity);
+                                var activityId = activity.demand_id || activity.id || activity.demandId;
+                                var activityPlace = activity.activity_place || activity.place || '';
+                                var activityType = activity.activity_type || activity.type || '';
+                                var activityName = (activityPlace + activityType) || '活动 ' + activityId;
+                                console.log('生成活动选项:', activityId, activityName);
+                                options += '<option value="' + activityId + '" data-name="' + activityName + '">' + activityName + '</option>';
+                            });
+                            console.log('生成的下拉框选项:', options);
+                            $select.html(options);
+                        } else {
+                            // 没有符合条件的活动
+                            $select.html('<option value="">暂无符合条件的活动</option>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        // API调用失败
+                        console.error('API调用失败:', status, error);
+                        $select.html('<option value="">加载活动失败</option>');
+                    }
+                });
+            });
+            
+            // 更新分页信息
+            function updatePagination(totalWorkers, totalPages, startPage, endPage) {
+                var pagination = $(".pagination");
+                pagination.empty();
+                
+                // 上一页按钮
+                var prevBtn = $("<button class='page-btn'>上一页</button>");
+                if(currentPage === 1) {
+                    prevBtn.prop("disabled", true);
+                }
+                pagination.append(prevBtn);
+                
+                // 页码按钮
+                for(var i = startPage; i <= endPage; i++) {
+                    var pageBtn = $("<button class='page-btn'>" + i + "</button>");
+                    if(i === currentPage) {
+                        pageBtn.addClass("active");
+                    }
+                    pagination.append(pageBtn);
+                }
+                
+                // 下一页按钮
+                var nextBtn = $("<button class='page-btn'>下一页</button>");
+                if(currentPage === totalPages || totalPages === 0) {
+                    nextBtn.prop("disabled", true);
+                }
+                pagination.append(nextBtn);
+                
+                // 分页信息
+                var pageInfo = $("<span class='page-info'>共 " + totalWorkers + " 条记录，每页 " + pageSize + " 条，共 " + totalPages + " 页</span>");
+                pagination.append(pageInfo);
+            }
+            
+            // 关闭任务模态框
+            $("#taskModalClose").click(function() {
+                $("#taskModal").hide();
+                $("#taskForm")[0].reset();
+            });
+            
+            $("#taskModalCancel").click(function() {
+                $("#taskModal").hide();
+                $("#taskForm")[0].reset();
+            });
+            
+            // 点击模态框外部关闭
+            $(window).click(function(event) {
+                if (event.target == $("#taskModal")[0]) {
+                    $("#taskModal").hide();
+                    $("#taskForm")[0].reset();
+                }
+            });
+            
+            // 任务表单提交
+            $("#taskForm").submit(function(e) {
+                e.preventDefault();
+                
+                var workerId = $(this).data("worker-id");
+                var userId = $(this).data("user-id");
+                var activityId = $("#taskActivity").val();
+                var startTime = $("#taskStartTime").val();
+                var endTime = $("#taskEndTime").val();
+                
+                // 验证表单
+                if(!activityId) {
+                    alert("请选择活动");
+                    return;
+                }
+                
+                if(!startTime || !endTime) {
+                    alert("请选择任务时间");
+                    return;
+                }
+                
+                if(new Date(startTime) >= new Date(endTime)) {
+                    alert("开始时间必须早于结束时间");
+                    return;
+                }
+                
+                if(!userId || userId === "-") {
+                    alert("无法获取员工的用户ID，请刷新页面后重试");
+                    return;
+                }
+                
+                if(confirm("确定要安排此任务吗？")) {
+                    // 调用安排任务API
+                    var apiUrl = "http://localhost:8080/EventPlanning_Management/UpdateEmployeeWorkStatus";
+                    var params = {
+                        userId: userId,
+                        workStartTime: startTime.replace('T', ' '),
+                        workEndTime: endTime.replace('T', ' '),
+                        demandId: activityId
+                    };
+                    
+                    console.log('提交的参数:', params);
+                    console.log('API请求URL:', apiUrl);
+                    
+                    $.ajax({
+                        url: apiUrl,
+                        type: "GET",
+                        data: params,
+                        dataType: "json",
+                        success: function(result) {
+                            console.log('API返回结果:', result);
+                            if(result.flag === "success") {
+                                alert("任务安排成功！");
+                                
+                                // 更新工人状态为忙碌
+                                totalWorkers.forEach(function(worker) {
+                                    if(worker.employee_id == workerId) {
+                                        worker.status = 0;
+                                    }
+                                });
+                                
+                                // 重新渲染
+                                filterWorkers();
+                                
+                                // 关闭模态框
+                                $("#taskModal").hide();
+                                $("#taskForm")[0].reset();
+                            } else {
+                                console.log('任务安排失败，返回结果:', result);
+                                // 使用result.data或result.msg作为错误信息
+                                var errorMsg = result.data || result.msg || "未知错误";
+                                alert("任务安排失败：" + errorMsg);
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('API调用失败:', status, error);
+                            console.error('响应状态:', xhr.status);
+                            console.error('响应文本:', xhr.responseText);
+                            alert("任务安排失败，请检查网络连接");
+                        }
+                    });
+                }
+            });
+            
+            // 退出登录
+            $("#headerLoginBtn").click(function() {
+                if(confirm('确定要退出登录吗？')) {
+                    window.location.href = 'login.html';
+                }
+            });
+            
+            // 切换到用户版
+            $("#switchToUserBtn").click(function() {
+                $(".navbar").addClass("fade-out");
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 300);
+            });
+        })
+    </script>
+    <script src="../JS/index.js"></script>
+</body>
+</html>

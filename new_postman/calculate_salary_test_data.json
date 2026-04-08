@@ -1,0 +1,30 @@
+[
+  {
+    "id": "CALC_SALARY_001",
+    "userId": "1",
+    "year": "2026",
+    "month": "5",
+    "description": "计算薪资 - 存在的员工（userId=1）"
+  },
+  {
+    "id": "CALC_SALARY_002",
+    "userId": "3044",
+    "year": "2026",
+    "month": "5",
+    "description": "计算薪资 - 业务管理员（userId=3044）"
+  },
+  {
+    "id": "CALC_SALARY_003",
+    "userId": "999999",
+    "year": "2026",
+    "month": "5",
+    "description": "计算薪资 - 不在的员工"
+  },
+  {
+    "id": "CALC_SALARY_004",
+    "userId": "",
+    "year": "2026",
+    "month": "5",
+    "description": "计算薪资 - 空userId"
+  }
+]

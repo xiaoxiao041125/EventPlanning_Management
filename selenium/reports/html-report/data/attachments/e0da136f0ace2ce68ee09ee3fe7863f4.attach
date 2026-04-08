@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_009",
+  "case_name": "无效称呼-包含特殊字符",
+  "activity_place": "苏州",
+  "activity_type": "嘉年华",
+  "start_time": "2026-12-01",
+  "end_time": "2026-12-02",
+  "activity_people": "200-500",
+  "activity_budget": "20-50 万",
+  "requirement_desc": "测试称呼包含特殊字符",
+  "phone": "13800138006",
+  "name": "张三@#",
+  "expected": "称呼只能包含中文或英文字母"
+}

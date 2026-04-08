@@ -1,0 +1,34 @@
+[
+    {
+        "id": "UPDATE_001",
+        "demandId": "15",
+        "activityProgress": "2",
+        "refuseReason": "",
+        "principalUserId": "3044",
+        "description": "正常更新活动 - 审核中的活动"
+    },
+    {
+        "id": "UPDATE_002",
+        "demandId": "999",
+        "activityProgress": "2",
+        "refuseReason": "",
+        "principalUserId": "3044",
+        "description": "异常更新活动 - 不存在的活动"
+    },
+    {
+        "id": "UPDATE_003",
+        "demandId": "15",
+        "activityProgress": "3",
+        "refuseReason": "",
+        "principalUserId": "3044",
+        "description": "正常更新活动 - 更新为已通过"
+    },
+    {
+        "id": "UPDATE_004",
+        "demandId": "",
+        "activityProgress": "2",
+        "refuseReason": "",
+        "principalUserId": "3044",
+        "description": "异常更新活动 - 空 demandId"
+    }
+]

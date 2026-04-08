@@ -1,0 +1,38 @@
+[
+  {
+    "id": "OUTBOUND_001",
+    "demandId": "4",
+    "materialId": "52",
+    "materialTotalPrice": "2400",
+    "quantity": "1",
+    "userId": "1",
+    "description": "物料出库 - 正常出库（materialId=52, 库存1套）"
+  },
+  {
+    "id": "OUTBOUND_002",
+    "demandId": "4",
+    "materialId": "999999",
+    "materialTotalPrice": "100",
+    "quantity": "1",
+    "userId": "1",
+    "description": "物料出库 - 不存在的物料"
+  },
+  {
+    "id": "OUTBOUND_003",
+    "demandId": "4",
+    "materialId": "51",
+    "materialTotalPrice": "2400",
+    "quantity": "100",
+    "userId": "1",
+    "description": "物料出库 - 库存不足（materialId=51只有1套）"
+  },
+  {
+    "id": "OUTBOUND_004",
+    "demandId": "",
+    "materialId": "",
+    "materialTotalPrice": "",
+    "quantity": "",
+    "userId": "",
+    "description": "物料出库 - 缺少所有参数"
+  }
+]

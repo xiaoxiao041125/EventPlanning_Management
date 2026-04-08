@@ -1,0 +1,21 @@
+# 核心依赖
+selenium>=4.15.0
+webdriver-manager>=4.0.1
+
+# 测试框架
+pytest>=7.4.0
+pytest-html>=4.1.1
+pytest-xdist>=3.3.1
+pytest-timeout>=2.2.0
+
+# 报告生成
+allure-pytest>=2.13.2
+allure-python-commons>=2.13.2
+
+# 数据处理
+openpyxl>=3.1.2
+PyYAML>=6.0.1
+
+# 日志和工具
+python-dateutil>=2.8.2
+requests>=2.31.0

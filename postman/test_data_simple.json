@@ -1,0 +1,150 @@
+[
+  {
+    "case_id": "LOGIN_001",
+    "case_name": "用户登录成功",
+    "endpoint": "login",
+    "username": "admin",
+    "password": "admin@123",
+    "roleId": "2",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "LOGIN_002",
+    "case_name": "用户登录失败 - 密码错误",
+    "endpoint": "login",
+    "username": "admin",
+    "password": "wrongpassword",
+    "roleId": "2",
+    "expected_flag": "fail",
+    "should_have_data": true
+  },
+  {
+    "case_id": "LOGIN_003",
+    "case_name": "用户登录失败 - 角色错误",
+    "endpoint": "login",
+    "username": "admin",
+    "password": "admin@123",
+    "roleId": "999",
+    "expected_flag": "fail",
+    "should_have_data": true
+  },
+  {
+    "case_id": "USER_001",
+    "case_name": "查询所有用户",
+    "endpoint": "ShowAllUser",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "USER_002",
+    "case_name": "根据 ID 查询用户 - 成功",
+    "endpoint": "showUserByID",
+    "userId": "1",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "USER_003",
+    "case_name": "根据 ID 查询用户 - 不存在",
+    "endpoint": "showUserByID",
+    "userId": "99999",
+    "expected_flag": "fail",
+    "should_have_data": true
+  },
+  {
+    "case_id": "ACTIVITY_001",
+    "case_name": "查询所有活动需求",
+    "endpoint": "ShowAllActivityDemand",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "ACTIVITY_002",
+    "case_name": "根据 ID 查询活动 - 成功",
+    "endpoint": "ShowActivityDemandById",
+    "demandId": "1",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "ACTIVITY_003",
+    "case_name": "根据 ID 查询活动 - 不存在",
+    "endpoint": "ShowActivityDemandById",
+    "demandId": "99999",
+    "expected_flag": "fail",
+    "should_have_data": true
+  },
+  {
+    "case_id": "ACTIVITY_004",
+    "case_name": "根据用户 ID 查询活动",
+    "endpoint": "ShowActivityDemandByUserId",
+    "userId": "1",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "EMPLOYEE_001",
+    "case_name": "查询所有员工",
+    "endpoint": "ShowEmployee",
+    "city": "",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "EMPLOYEE_002",
+    "case_name": "根据 ID 查询员工 - 成功",
+    "endpoint": "ShowEmployeeById",
+    "employeeId": "1",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "EMPLOYEE_003",
+    "case_name": "根据用户 ID 查询员工",
+    "endpoint": "SearchEmployeeByUserId",
+    "userId": "1",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "MATERIAL_001",
+    "case_name": "获取所有物料",
+    "endpoint": "GetWarehouseMaterials",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "MATERIAL_002",
+    "case_name": "根据分类获取物料",
+    "endpoint": "GetMaterialsByCategory",
+    "category": "7",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "SALARY_001",
+    "case_name": "获取所有薪资记录",
+    "endpoint": "GetAllSalaryRecords",
+    "year": "2026",
+    "month": "3",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "REIMBURSE_001",
+    "case_name": "获取所有报销申请",
+    "endpoint": "GetAllReimbursementApplications",
+    "status": "",
+    "expected_flag": "success",
+    "should_have_data": true
+  },
+  {
+    "case_id": "REIMBURSE_002",
+    "case_name": "根据用户 ID 获取报销申请",
+    "endpoint": "GetReimbursementApplicationsByUserId",
+    "userId": "1",
+    "expected_flag": "success",
+    "should_have_data": true
+  }
+]

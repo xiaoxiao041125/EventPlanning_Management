@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_011",
+  "case_name": "边界测试 - 最大有效称呼",
+  "activity_place": "深圳",
+  "activity_type": "展会展览",
+  "start_time": "2026-06-20",
+  "end_time": "2026-06-21",
+  "activity_people": "100-200",
+  "activity_budget": "5-10 万",
+  "requirement_desc": "测试最大有效称呼长度",
+  "phone": "13800138009",
+  "name": "这是一个二十个字符的称呼",
+  "expected": "活动需求提交成功！"
+}

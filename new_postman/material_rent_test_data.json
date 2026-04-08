@@ -1,0 +1,22 @@
+[
+  {
+    "id": "RENT_001",
+    "materialId": "51",
+    "rentQuantity": "1",
+    "unitPrice": "10",
+    "rentUserName": "测试用户",
+    "rentPhone": "13800138000",
+    "returnTime": "2026-12-31 12:00:00",
+    "description": "物料租赁 - 正常租赁（materialId=51, 库存6个）"
+  },
+  {
+    "id": "RENT_004",
+    "materialId": "",
+    "rentQuantity": "",
+    "unitPrice": "",
+    "rentUserName": "",
+    "rentPhone": "",
+    "returnTime": "",
+    "description": "物料租赁 - 缺少所有参数"
+  }
+]

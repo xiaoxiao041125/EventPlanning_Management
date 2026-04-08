@@ -1,0 +1,60 @@
+{
+  "description": "登录测试数据",
+  "login_cases": [
+    {
+      "case_id": "LOGIN_001",
+      "case_name": "有效用户登录-用户角色",
+      "username": "user_lisi",
+      "password": "lisi@456",
+      "roleId": "1",
+      "expected": "登录成功！",
+      "description": "使用有效的用户账号登录"
+    },
+    {
+      "case_id": "LOGIN_002",
+      "case_name": "有效用户登录-员工角色",
+      "username": "admin",
+      "password": "admin@123",
+      "roleId": "2",
+      "expected": "登录成功！",
+      "description": "使用有效的员工账号登录"
+    },
+
+    {
+      "case_id": "LOGIN_003",
+      "case_name": "无效用户登录-错误密码",
+      "username": "user_lisi",
+      "password": "wrong_password",
+      "roleId": "1",
+      "expected": "密码错误！",
+      "description": "使用错误的密码登录"
+    },
+    {
+      "case_id": "LOGIN_004",
+      "case_name": "无效用户登录-不存在的用户",
+      "username": "nonexistent_user",
+      "password": "123456",
+      "roleId": "1",
+      "expected": "用户名不存在",
+      "description": "使用不存在的用户名登录"
+    },
+    {
+      "case_id": "LOGIN_005",
+      "case_name": "无效用户登录-空用户名",
+      "username": "",
+      "password": "123456",
+      "roleId": "1",
+      "expected": "请填写所有必填项",
+      "description": "使用空用户名登录"
+    },
+    {
+      "case_id": "LOGIN_006",
+      "case_name": "无效用户登录-空密码",
+      "username": "admin",
+      "password": "",
+      "roleId": "1",
+      "expected": "请填写所有必填项",
+      "description": "使用空密码登录"
+    }
+  ]
+}

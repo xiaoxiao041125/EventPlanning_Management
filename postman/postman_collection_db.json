@@ -1,0 +1,560 @@
+{
+  "info": {
+    "name": "活动策划公司管理系统 - 数据库驱动测试",
+    "description": "基于数据库实际数据的接口测试集合，包含严格的数据验证",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "3.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/EventPlanning_Management",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "用户管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. 检查 HTTP 状态码",
+                  "pm.test('HTTP 状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// 2. 检查响应是否为 JSON 格式",
+                  "pm.test('响应为 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "// 3. 检查 data 字段是否存在",
+              "pm.test('data 字段存在', function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property('data');",
+              "});",
+              "",
+              "// 4. 根据 should_have_data 判断 data 是否为空",
+              "pm.test('data 非空验证', function () {",
+              "    var jsonData = pm.response.json();",
+              "    var shouldHaveData = pm.variables.get('should_have_data');",
+              "    ",
+              "    if (shouldHaveData === true || shouldHaveData === 'true') {",
+              "        pm.expect(jsonData.data).to.not.be.null;",
+              "        pm.expect(jsonData.data).to.not.be.undefined;",
+              "        ",
+              "        // 如果是数组，检查长度",
+              "        if (Array.isArray(jsonData.data)) {",
+              "            pm.expect(jsonData.data.length).to.be.above(0, 'data 数组不应为空');",
+              "        }",
+              "        // 如果是对象，检查是否有属性",
+              "        else if (typeof jsonData.data === 'object') {",
+              "            pm.expect(Object.keys(jsonData.data).length).to.be.above(0, 'data 对象不应为空');",
+              "        }",
+              "    }",
+              "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text",
+                  "disabled": "{{#unless username}}true{{/unless}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text",
+                  "disabled": "{{#unless password}}true{{/unless}}"
+                },
+                {
+                  "key": "roleId",
+                  "value": "{{roleId}}",
+                  "type": "text",
+                  "disabled": "{{#unless roleId}}true{{/unless}}"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text",
+                  "disabled": "{{#unless userId}}true{{/unless}}"
+                },
+                {
+                  "key": "city",
+                  "value": "{{city}}",
+                  "type": "text",
+                  "disabled": "{{#unless city}}true{{/unless}}"
+                },
+                {
+                  "key": "demandId",
+                  "value": "{{demandId}}",
+                  "type": "text",
+                  "disabled": "{{#unless demandId}}true{{/unless}}"
+                },
+                {
+                  "key": "year",
+                  "value": "{{year}}",
+                  "type": "text",
+                  "disabled": "{{#unless year}}true{{/unless}}"
+                },
+                {
+                  "key": "month",
+                  "value": "{{month}}",
+                  "type": "text",
+                  "disabled": "{{#unless month}}true{{/unless}}"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text",
+                  "disabled": "{{#unless status}}true{{/unless}}"
+                },
+                {
+                  "key": "category",
+                  "value": "{{category}}",
+                  "type": "text",
+                  "disabled": "{{#unless category}}true{{/unless}}"
+                },
+                {
+                  "key": "employeeId",
+                  "value": "{{employeeId}}",
+                  "type": "text",
+                  "disabled": "{{#unless employeeId}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "活动管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. 检查 HTTP 状态码",
+                  "pm.test('HTTP 状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// 2. 检查响应是否为 JSON 格式",
+                  "pm.test('响应为 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "// 3. 检查 data 字段是否存在",
+                  "pm.test('data 字段存在', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('data');",
+                  "});",
+                  "",
+                  "// 4. 根据 should_have_data 判断 data 是否为空",
+                  "pm.test('data 非空验证', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var shouldHaveData = pm.variables.get('should_have_data');",
+                  "    ",
+                  "    if (shouldHaveData === true || shouldHaveData === 'true') {",
+                  "        pm.expect(jsonData.data).to.not.be.null;",
+                  "        pm.expect(jsonData.data).to.not.be.undefined;",
+                  "        ",
+                  "        if (Array.isArray(jsonData.data)) {",
+                  "            pm.expect(jsonData.data.length).to.be.above(0);",
+                  "        } else if (typeof jsonData.data === 'object') {",
+                  "            pm.expect(Object.keys(jsonData.data).length).to.be.above(0);",
+                  "        }",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "demandId",
+                  "value": "{{demandId}}",
+                  "type": "text",
+                  "disabled": "{{#unless demandId}}true{{/unless}}"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text",
+                  "disabled": "{{#unless userId}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "人员管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. 检查 HTTP 状态码",
+                  "pm.test('HTTP 状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// 2. 检查响应是否为 JSON 格式",
+                  "pm.test('响应为 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "// 3. 检查 data 字段是否存在",
+                  "pm.test('data 字段存在', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('data');",
+                  "});",
+                  "",
+                  "// 4. 根据 should_have_data 判断 data 是否为空",
+                  "pm.test('data 非空验证', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var shouldHaveData = pm.variables.get('should_have_data');",
+                  "    ",
+                  "    if (shouldHaveData === true || shouldHaveData === 'true') {",
+                  "        pm.expect(jsonData.data).to.not.be.null;",
+                  "        pm.expect(jsonData.data).to.not.be.undefined;",
+                  "        ",
+                  "        if (Array.isArray(jsonData.data)) {",
+                  "            pm.expect(jsonData.data.length).to.be.above(0);",
+                  "        } else if (typeof jsonData.data === 'object') {",
+                  "            pm.expect(Object.keys(jsonData.data).length).to.be.above(0);",
+                  "        }",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "employeeId",
+                  "value": "{{employeeId}}",
+                  "type": "text",
+                  "disabled": "{{#unless employeeId}}true{{/unless}}"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text",
+                  "disabled": "{{#unless userId}}true{{/unless}}"
+                },
+                {
+                  "key": "city",
+                  "value": "{{city}}",
+                  "type": "text",
+                  "disabled": "{{#unless city}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "物料管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. 检查 HTTP 状态码",
+                  "pm.test('HTTP 状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// 2. 检查响应是否为 JSON 格式",
+                  "pm.test('响应为 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "// 3. 检查 data 字段是否存在",
+                  "pm.test('data 字段存在', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('data');",
+                  "});",
+                  "",
+                  "// 4. 根据 should_have_data 判断 data 是否为空",
+                  "pm.test('data 非空验证', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var shouldHaveData = pm.variables.get('should_have_data');",
+                  "    ",
+                  "    if (shouldHaveData === true || shouldHaveData === 'true') {",
+                  "        pm.expect(jsonData.data).to.not.be.null;",
+                  "        pm.expect(jsonData.data).to.not.be.undefined;",
+                  "        ",
+                  "        if (Array.isArray(jsonData.data)) {",
+                  "            pm.expect(jsonData.data.length).to.be.above(0);",
+                  "        } else if (typeof jsonData.data === 'object') {",
+                  "            pm.expect(Object.keys(jsonData.data).length).to.be.above(0);",
+                  "        }",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "category",
+                  "value": "{{category}}",
+                  "type": "text",
+                  "disabled": "{{#unless category}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "薪资管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. 检查 HTTP 状态码",
+                  "pm.test('HTTP 状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// 2. 检查响应是否为 JSON 格式",
+                  "pm.test('响应为 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "// 3. 检查 data 字段是否存在",
+                  "pm.test('data 字段存在', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('data');",
+                  "});",
+                  "",
+                  "// 4. 根据 should_have_data 判断 data 是否为空",
+                  "pm.test('data 非空验证', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var shouldHaveData = pm.variables.get('should_have_data');",
+                  "    ",
+                  "    if (shouldHaveData === true || shouldHaveData === 'true') {",
+                  "        pm.expect(jsonData.data).to.not.be.null;",
+                  "        pm.expect(jsonData.data).to.not.be.undefined;",
+                  "        ",
+                  "        if (Array.isArray(jsonData.data)) {",
+                  "            pm.expect(jsonData.data.length).to.be.above(0);",
+                  "        } else if (typeof jsonData.data === 'object') {",
+                  "            pm.expect(Object.keys(jsonData.data).length).to.be.above(0);",
+                  "        }",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "year",
+                  "value": "{{year}}",
+                  "type": "text",
+                  "disabled": "{{#unless year}}true{{/unless}}"
+                },
+                {
+                  "key": "month",
+                  "value": "{{month}}",
+                  "type": "text",
+                  "disabled": "{{#unless month}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "报销管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// 1. 检查 HTTP 状态码",
+                  "pm.test('HTTP 状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// 2. 检查响应是否为 JSON 格式",
+                  "pm.test('响应为 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "// 3. 检查 data 字段是否存在",
+                  "pm.test('data 字段存在', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('data');",
+                  "});",
+                  "",
+                  "// 4. 根据 should_have_data 判断 data 是否为空",
+                  "pm.test('data 非空验证', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var shouldHaveData = pm.variables.get('should_have_data');",
+                  "    ",
+                  "    if (shouldHaveData === true || shouldHaveData === 'true') {",
+                  "        pm.expect(jsonData.data).to.not.be.null;",
+                  "        pm.expect(jsonData.data).to.not.be.undefined;",
+                  "        ",
+                  "        if (Array.isArray(jsonData.data)) {",
+                  "            pm.expect(jsonData.data.length).to.be.above(0);",
+                  "        } else if (typeof jsonData.data === 'object') {",
+                  "            pm.expect(Object.keys(jsonData.data).length).to.be.above(0);",
+                  "        }",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text",
+                  "disabled": "{{#unless userId}}true{{/unless}}"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text",
+                  "disabled": "{{#unless status}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

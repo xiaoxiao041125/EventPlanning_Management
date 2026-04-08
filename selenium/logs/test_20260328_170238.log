@@ -1,0 +1,1794 @@
+2026-03-28 17:02:38,210 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:02:38,211 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:02:39,546 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:02:39,707 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:02:39,801 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:02:39,970 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:02:40,517 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:02:41,606 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:02:41,608 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:02:41,732 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:02:41,903 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:02:41,995 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:02:42,123 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:02:42,634 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:02:44,771 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:02:44,773 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:02:44,774 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:02:44,774 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:02:46,893 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:02:46,896 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:02:46,896 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:02:48,026 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:02:48,178 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:02:48,188 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:02:48,337 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:02:48,882 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:02:49,995 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:02:49,995 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:02:50,184 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:02:50,330 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:02:50,417 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:02:50,553 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:02:51,062 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:02:53,191 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 北京
+2026-03-28 17:02:53,242 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 公司年会
+2026-03-28 17:02:53,268 - base.base_page - INFO - 输入起始时间：2026-05-01
+2026-03-28 17:02:53,297 - base.base_page - INFO - 输入结束时间：2026-05-02
+2026-03-28 17:02:53,377 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 50-100
+2026-03-28 17:02:53,479 - base.base_page - INFO - 选择活动预算：5-10 万 (索引：3)
+2026-03-28 17:02:53,638 - base.base_page - INFO - 输入手机号：13800138000
+2026-03-28 17:02:53,771 - base.base_page - INFO - 输入称呼：张三
+2026-03-28 17:02:53,951 - base.base_page - INFO - 输入需求描述：需要音响设备和舞台布置，要求专业灯光效果
+2026-03-28 17:02:54,020 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:02:54,534 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:02:54,542 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:02:54,544 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:02:54,551 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:02:54,553 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:02:56,715 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:02:56,718 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:02:56,719 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:02:57,856 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:02:57,997 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:02:58,047 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:02:58,215 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:02:58,764 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:02:59,900 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:02:59,902 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:03:00,027 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:03:00,185 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:03:00,256 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:03:00,361 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:03:00,871 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:03:03,012 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 上海
+2026-03-28 17:03:03,090 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 周年庆典
+2026-03-28 17:03:03,116 - base.base_page - INFO - 输入起始时间：2026-06-15
+2026-03-28 17:03:03,141 - base.base_page - INFO - 输入结束时间：2026-06-16
+2026-03-28 17:03:03,221 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 100-200
+2026-03-28 17:03:03,362 - base.base_page - INFO - 选择活动预算：10-20 万 (索引：4)
+2026-03-28 17:03:03,533 - base.base_page - INFO - 输入手机号：13900139000
+2026-03-28 17:03:03,665 - base.base_page - INFO - 输入称呼：李四
+2026-03-28 17:03:03,828 - base.base_page - INFO - 输入需求描述：周年庆典活动，需要红毯和背景板
+2026-03-28 17:03:03,893 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:03:04,404 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:03:04,412 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:03:04,414 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:03:04,419 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:03:04,420 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:03:06,565 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:03:06,568 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:03:06,569 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:03:07,718 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:03:07,908 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:03:07,920 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:03:08,099 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:03:08,645 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:03:09,737 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:03:09,738 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:03:09,857 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:03:10,029 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:03:10,102 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:03:10,213 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:03:10,722 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:03:22,832 - base.base_page - ERROR - 选择下拉框失败: ('id', 'activityLocation'), 错误: Message: Could not locate element with visible text: 天津; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 17:03:22,912 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 公司年会
+2026-03-28 17:03:22,937 - base.base_page - INFO - 输入起始时间：2026-05-01
+2026-03-28 17:03:22,965 - base.base_page - INFO - 输入结束时间：2026-05-02
+2026-03-28 17:03:23,092 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 50-100
+2026-03-28 17:03:23,187 - base.base_page - INFO - 选择活动预算：5-10 万 (索引：3)
+2026-03-28 17:03:23,326 - base.base_page - INFO - 输入手机号：13800138001
+2026-03-28 17:03:23,467 - base.base_page - INFO - 输入称呼：王五
+2026-03-28 17:03:23,595 - base.base_page - INFO - 输入需求描述：测试无效城市
+2026-03-28 17:03:23,666 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:03:29,215 - base.base_page - WARNING - 等待弹窗超时
+2026-03-28 17:03:29,510 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:03:29,513 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:03:29,514 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:03:29,516 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:03:31,663 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:03:31,668 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:03:31,668 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:03:33,118 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:03:33,272 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:03:33,288 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:03:33,504 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:03:34,062 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:03:35,142 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:03:35,144 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:03:35,279 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:03:35,422 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:03:35,497 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:03:35,615 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:03:36,178 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:03:39,027 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 广州
+2026-03-28 17:03:49,099 - base.base_page - ERROR - 选择下拉框失败: ('id', 'activityType'), 错误: Message: Could not locate element with visible text: 生日派对; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 17:03:49,134 - base.base_page - INFO - 输入起始时间：2026-05-01
+2026-03-28 17:03:49,161 - base.base_page - INFO - 输入结束时间：2026-05-02
+2026-03-28 17:03:49,206 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 10-50
+2026-03-28 17:03:49,296 - base.base_page - INFO - 选择活动预算：1-3 万 (索引：1)
+2026-03-28 17:03:49,417 - base.base_page - INFO - 输入手机号：13800138002
+2026-03-28 17:03:49,544 - base.base_page - INFO - 输入称呼：赵六
+2026-03-28 17:03:49,657 - base.base_page - INFO - 输入需求描述：测试无效活动类型
+2026-03-28 17:03:49,723 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:03:55,262 - base.base_page - WARNING - 等待弹窗超时
+2026-03-28 17:03:55,296 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:03:55,297 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:03:55,299 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:03:55,300 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:03:57,431 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:03:57,435 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:03:57,435 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:03:58,616 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:03:58,814 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:03:58,851 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:03:59,076 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:03:59,621 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:04:00,738 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:00,741 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:00,861 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:04:01,033 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:04:01,101 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:04:01,226 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:04:01,733 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:04:03,896 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 深圳
+2026-03-28 17:04:03,969 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 新品发布会
+2026-03-28 17:04:03,996 - base.base_page - INFO - 输入起始时间：2026-05-10
+2026-03-28 17:04:04,039 - base.base_page - INFO - 输入结束时间：2026-05-05
+2026-03-28 17:04:04,129 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 50-100
+2026-03-28 17:04:04,248 - base.base_page - INFO - 选择活动预算：3-5 万 (索引：2)
+2026-03-28 17:04:04,406 - base.base_page - INFO - 输入手机号：13800138003
+2026-03-28 17:04:04,546 - base.base_page - INFO - 输入称呼：孙七
+2026-03-28 17:04:04,681 - base.base_page - INFO - 输入需求描述：测试时间错误
+2026-03-28 17:04:04,742 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:04:05,261 - base.base_page - INFO - 接受弹窗: 提交失败：结束时间必须晚于起始时间
+2026-03-28 17:04:05,283 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:04:05,285 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:05,287 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:05,287 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:04:07,432 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:04:07,435 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:04:07,435 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:04:08,739 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:04:08,891 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:04:08,929 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:04:09,122 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:04:09,674 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:04:10,754 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:10,756 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:10,883 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:04:11,041 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:04:11,136 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:04:11,256 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:04:11,768 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:04:14,004 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 杭州
+2026-03-28 17:04:14,131 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 团建拓展
+2026-03-28 17:04:14,177 - base.base_page - INFO - 输入起始时间：2026-07-01
+2026-03-28 17:04:14,229 - base.base_page - INFO - 输入结束时间：2026-07-02
+2026-03-28 17:04:14,313 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 10-50
+2026-03-28 17:04:14,471 - base.base_page - INFO - 选择活动预算：1-3 万 (索引：1)
+2026-03-28 17:04:14,658 - base.base_page - INFO - 输入称呼：周八
+2026-03-28 17:04:14,811 - base.base_page - INFO - 输入需求描述：测试空手机号
+2026-03-28 17:04:14,896 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:04:15,404 - base.base_page - INFO - 接受弹窗: 提交失败：手机号不能为空
+2026-03-28 17:04:15,412 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:04:15,413 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:15,414 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:15,416 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:04:17,568 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:04:17,573 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:04:17,575 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:04:18,919 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:04:19,085 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:04:19,097 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:04:19,320 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:04:19,878 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:04:20,982 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:20,983 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:21,102 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:04:21,236 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:04:21,331 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:04:21,467 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:04:21,979 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:04:24,166 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 南京
+2026-03-28 17:04:24,253 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 会议论坛
+2026-03-28 17:04:24,284 - base.base_page - INFO - 输入起始时间：2026-08-01
+2026-03-28 17:04:24,318 - base.base_page - INFO - 输入结束时间：2026-08-02
+2026-03-28 17:04:24,452 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 50-100
+2026-03-28 17:04:24,575 - base.base_page - INFO - 选择活动预算：1-3 万 (索引：1)
+2026-03-28 17:04:24,748 - base.base_page - INFO - 输入手机号：12345678901
+2026-03-28 17:04:24,905 - base.base_page - INFO - 输入称呼：吴九
+2026-03-28 17:04:25,055 - base.base_page - INFO - 输入需求描述：测试手机号格式错误
+2026-03-28 17:04:25,138 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:04:25,645 - base.base_page - INFO - 接受弹窗: 提交失败：手机号格式不正确，请输入11位有效手机号
+2026-03-28 17:04:25,669 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:04:25,670 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:25,672 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:25,675 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:04:27,818 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:04:27,822 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:04:27,822 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:04:29,138 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:04:29,294 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:04:29,319 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:04:29,556 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:04:30,107 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:04:31,235 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:31,236 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:31,390 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:04:31,535 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:04:31,650 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:04:31,787 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:04:32,296 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:04:34,505 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 成都
+2026-03-28 17:04:34,601 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 开业庆典
+2026-03-28 17:04:34,635 - base.base_page - INFO - 输入起始时间：2026-09-01
+2026-03-28 17:04:34,668 - base.base_page - INFO - 输入结束时间：2026-09-02
+2026-03-28 17:04:34,734 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 10-50
+2026-03-28 17:04:34,863 - base.base_page - INFO - 选择活动预算：1-3 万 (索引：1)
+2026-03-28 17:04:35,043 - base.base_page - INFO - 输入手机号：138001
+2026-03-28 17:04:35,259 - base.base_page - INFO - 输入称呼：郑十
+2026-03-28 17:04:35,422 - base.base_page - INFO - 输入需求描述：测试手机号长度不足
+2026-03-28 17:04:35,629 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:04:36,141 - base.base_page - INFO - 接受弹窗: 提交失败：手机号格式不正确，请输入11位有效手机号
+2026-03-28 17:04:36,153 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:04:36,156 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:36,158 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:36,162 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:04:38,398 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:04:38,403 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:04:38,405 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:04:39,695 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:04:39,889 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:04:39,928 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:04:40,200 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:04:40,753 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:04:41,852 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:41,854 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:42,211 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:04:42,605 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:04:43,036 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:04:43,971 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:04:44,488 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:04:46,734 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 重庆
+2026-03-28 17:04:46,812 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 答谢会
+2026-03-28 17:04:46,835 - base.base_page - INFO - 输入起始时间：2026-10-01
+2026-03-28 17:04:46,862 - base.base_page - INFO - 输入结束时间：2026-10-02
+2026-03-28 17:04:46,951 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 100-200
+2026-03-28 17:04:47,065 - base.base_page - INFO - 选择活动预算：5-10 万 (索引：3)
+2026-03-28 17:04:47,237 - base.base_page - INFO - 输入手机号：13800138004
+2026-03-28 17:04:47,395 - base.base_page - INFO - 输入需求描述：测试空称呼
+2026-03-28 17:04:47,495 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:04:48,001 - base.base_page - INFO - 接受弹窗: 提交失败：称呼不能为空
+2026-03-28 17:04:48,009 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:04:48,012 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:48,014 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:48,015 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:04:50,160 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:04:50,164 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:04:50,164 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:04:51,413 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:04:51,623 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:04:51,642 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:04:51,805 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:04:52,356 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:04:53,463 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:53,464 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:04:53,647 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:04:53,846 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:04:53,962 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:04:54,107 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:04:54,616 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:04:56,781 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 武汉
+2026-03-28 17:04:56,860 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 家庭日
+2026-03-28 17:04:56,892 - base.base_page - INFO - 输入起始时间：2026-11-01
+2026-03-28 17:04:56,956 - base.base_page - INFO - 输入结束时间：2026-11-02
+2026-03-28 17:04:57,017 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 10-50
+2026-03-28 17:04:57,457 - base.base_page - INFO - 选择活动预算：1-3 万 (索引：1)
+2026-03-28 17:04:57,744 - base.base_page - INFO - 输入手机号：13800138005
+2026-03-28 17:04:57,975 - base.base_page - INFO - 输入称呼：A
+2026-03-28 17:04:58,191 - base.base_page - INFO - 输入需求描述：测试称呼长度太短
+2026-03-28 17:04:58,293 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:04:58,799 - base.base_page - INFO - 接受弹窗: 提交失败：称呼长度应在2-20个字符之间
+2026-03-28 17:04:58,824 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:04:58,825 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:58,827 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:04:58,828 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:05:01,014 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:05:01,019 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:05:01,020 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:05:02,410 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:05:02,580 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:05:02,653 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:05:03,004 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:05:03,620 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:05:04,835 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:04,835 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:04,956 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:05:05,060 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:05:05,127 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:05:05,244 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:05:05,750 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:05:07,930 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 苏州
+2026-03-28 17:05:08,032 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 嘉年华
+2026-03-28 17:05:08,068 - base.base_page - INFO - 输入起始时间：2026-12-01
+2026-03-28 17:05:08,100 - base.base_page - INFO - 输入结束时间：2026-12-02
+2026-03-28 17:05:08,201 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 200-500
+2026-03-28 17:05:08,372 - base.base_page - INFO - 选择活动预算：20-50 万 (索引：5)
+2026-03-28 17:05:08,500 - base.base_page - INFO - 输入手机号：13800138006
+2026-03-28 17:05:08,627 - base.base_page - INFO - 输入称呼：张三@#
+2026-03-28 17:05:08,745 - base.base_page - INFO - 输入需求描述：测试称呼包含特殊字符
+2026-03-28 17:05:08,814 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:05:09,320 - base.base_page - INFO - 接受弹窗: 提交失败：称呼只能包含中文或英文字母
+2026-03-28 17:05:09,326 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:05:09,327 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:05:09,328 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:05:09,329 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:05:11,403 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:05:11,409 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:05:11,410 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:05:12,700 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:05:12,864 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:05:12,889 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:05:13,066 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:05:13,621 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:05:14,759 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:14,760 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:14,978 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:05:15,219 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:05:15,322 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:05:15,489 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:05:15,999 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:05:18,192 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 北京
+2026-03-28 17:05:18,288 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 演唱会
+2026-03-28 17:05:18,332 - base.base_page - INFO - 输入起始时间：2026/05/01
+2026-03-28 17:05:18,374 - base.base_page - INFO - 输入结束时间：2026-05-02
+2026-03-28 17:05:18,482 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 500-1000
+2026-03-28 17:05:18,678 - base.base_page - INFO - 选择活动预算：50 万+ (索引：6)
+2026-03-28 17:05:18,839 - base.base_page - INFO - 输入手机号：13800138007
+2026-03-28 17:05:18,981 - base.base_page - INFO - 输入称呼：钱十一
+2026-03-28 17:05:19,124 - base.base_page - INFO - 输入需求描述：测试非法日期格式
+2026-03-28 17:05:19,215 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:05:19,720 - base.base_page - INFO - 接受弹窗: 提交失败：起始时间不能为空
+2026-03-28 17:05:19,735 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:05:19,735 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-28 17:05:19,737 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-28 17:05:19,738 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:05:21,907 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:05:21,914 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:05:21,914 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:05:23,082 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:05:23,239 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:05:23,253 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:05:23,524 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:05:23,587 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:05:24,891 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:24,891 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:25,039 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:05:25,160 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:05:25,242 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:05:25,369 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:05:25,875 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:05:28,331 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 广州
+2026-03-28 17:05:28,567 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 其他活动
+2026-03-28 17:05:28,654 - base.base_page - INFO - 输入起始时间：2026-05-20
+2026-03-28 17:05:28,790 - base.base_page - INFO - 输入结束时间：2026-05-21
+2026-03-28 17:05:28,994 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 10-50
+2026-03-28 17:05:29,263 - base.base_page - INFO - 选择活动预算：少于 1 万 (索引：0)
+2026-03-28 17:05:29,660 - base.base_page - INFO - 输入手机号：13800138008
+2026-03-28 17:05:29,958 - base.base_page - INFO - 输入称呼：AB
+2026-03-28 17:05:30,284 - base.base_page - INFO - 输入需求描述：测试最小有效称呼长度
+2026-03-28 17:05:30,435 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:05:30,950 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:05:30,983 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:05:30,986 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:05:30,993 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:05:30,999 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:05:33,381 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:05:33,390 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:05:33,394 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:05:35,260 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:05:35,605 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:05:35,622 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:05:35,898 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:05:36,458 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:05:37,633 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:37,635 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:37,991 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:05:38,598 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:05:39,093 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:05:39,386 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:05:39,910 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:05:42,244 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 深圳
+2026-03-28 17:05:42,321 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 展会展览
+2026-03-28 17:05:42,356 - base.base_page - INFO - 输入起始时间：2026-06-20
+2026-03-28 17:05:42,392 - base.base_page - INFO - 输入结束时间：2026-06-21
+2026-03-28 17:05:42,474 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 100-200
+2026-03-28 17:05:42,590 - base.base_page - INFO - 选择活动预算：5-10 万 (索引：3)
+2026-03-28 17:05:42,767 - base.base_page - INFO - 输入手机号：13800138009
+2026-03-28 17:05:42,949 - base.base_page - INFO - 输入称呼：这是一个二十个字符的称呼
+2026-03-28 17:05:43,147 - base.base_page - INFO - 输入需求描述：测试最大有效称呼长度
+2026-03-28 17:05:43,225 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:05:43,742 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:05:43,751 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:05:43,752 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:05:43,760 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:05:43,762 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:05:45,977 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:05:45,986 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:05:45,987 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:05:48,150 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:05:48,608 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:05:48,721 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:05:49,367 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:05:49,928 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:05:51,082 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 32). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:51,083 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 32). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:05:51,435 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:05:51,778 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:05:51,991 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:05:52,400 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:05:52,931 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:05:55,557 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 杭州
+2026-03-28 17:05:55,881 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 路演巡展
+2026-03-28 17:05:56,001 - base.base_page - INFO - 输入起始时间：2026-07-15
+2026-03-28 17:05:56,100 - base.base_page - INFO - 输入结束时间：2026-07-20
+2026-03-28 17:05:56,352 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 100-200
+2026-03-28 17:05:56,749 - base.base_page - INFO - 选择活动预算：10-20 万 (索引：4)
+2026-03-28 17:05:57,090 - base.base_page - INFO - 输入手机号：13912345678
+2026-03-28 17:05:57,454 - base.base_page - INFO - 输入称呼：刘经理
+2026-03-28 17:05:57,731 - base.base_page - INFO - 输入需求描述：连续 5 天的路演活动，需要移动舞台
+2026-03-28 17:05:57,880 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:05:58,400 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:05:58,429 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:05:58,433 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:05:58,439 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:05:58,443 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:06:00,741 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:06:00,765 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:06:00,768 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:06:03,066 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:06:03,406 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:06:03,479 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:06:03,970 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:06:04,008 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:06:05,197 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:06:05,199 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:06:05,542 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:06:05,764 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:06:05,885 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:06:06,119 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:06:06,627 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:06:09,453 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 上海
+2026-03-28 17:06:09,880 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 时尚走秀
+2026-03-28 17:06:10,036 - base.base_page - INFO - 输入起始时间：2026-09-10
+2026-03-28 17:06:10,150 - base.base_page - INFO - 输入结束时间：2026-09-12
+2026-03-28 17:06:10,530 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 200-500
+2026-03-28 17:06:11,055 - base.base_page - INFO - 选择活动预算：20-50 万 (索引：5)
+2026-03-28 17:06:11,456 - base.base_page - INFO - 输入手机号：13887654321
+2026-03-28 17:06:11,842 - base.base_page - INFO - 输入称呼：陈总监
+2026-03-28 17:06:12,321 - base.base_page - INFO - 输入需求描述：时装发布会，需要 T 台和灯光
+2026-03-28 17:06:12,522 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:06:13,047 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:06:13,064 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:06:13,066 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:06:13,077 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:06:13,081 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:06:15,421 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:06:15,444 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:06:15,446 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:06:17,733 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:06:18,064 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:06:18,111 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:06:18,975 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:06:19,045 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:06:20,314 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 32). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:06:20,316 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 32). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:06:20,654 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:06:20,943 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:06:21,122 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:06:21,558 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:06:22,075 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:06:24,756 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 北京
+2026-03-28 17:06:25,006 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 酒会宴会
+2026-03-28 17:06:25,081 - base.base_page - INFO - 输入起始时间：2026-08-08
+2026-03-28 17:06:25,162 - base.base_page - INFO - 输入结束时间：2026-08-09
+2026-03-28 17:06:25,386 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 50-100
+2026-03-28 17:06:25,665 - base.base_page - INFO - 选择活动预算：3-5 万 (索引：2)
+2026-03-28 17:06:26,048 - base.base_page - INFO - 输入手机号：13800138010
+2026-03-28 17:06:26,541 - base.base_page - INFO - 输入称呼：这是一个超过二十个字符的超长称呼测试
+2026-03-28 17:06:26,931 - base.base_page - INFO - 输入需求描述：测试超长称呼
+2026-03-28 17:06:27,135 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:06:27,671 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:06:27,874 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:06:27,876 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:06:27,884 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:06:27,892 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:06:30,328 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:06:30,338 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:06:30,341 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:06:32,391 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:06:32,821 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:06:32,844 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:06:33,234 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:06:33,804 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:06:35,026 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:06:35,031 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:06:35,506 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:06:35,833 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:06:36,052 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:06:36,587 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:06:37,116 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:06:39,770 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 成都
+2026-03-28 17:06:40,084 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 仪式活动
+2026-03-28 17:06:40,178 - base.base_page - INFO - 输入起始时间：2026-10-10
+2026-03-28 17:06:40,259 - base.base_page - INFO - 输入结束时间：2026-10-10
+2026-03-28 17:06:40,430 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 10-50
+2026-03-28 17:06:40,724 - base.base_page - INFO - 选择活动预算：1-3 万 (索引：1)
+2026-03-28 17:06:41,151 - base.base_page - INFO - 输入手机号：13800138011
+2026-03-28 17:06:41,501 - base.base_page - INFO - 输入称呼：王经理
+2026-03-28 17:06:41,787 - base.base_page - INFO - 输入需求描述：单日仪式活动
+2026-03-28 17:06:41,930 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:06:42,445 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:06:42,473 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:06:42,481 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:06:42,496 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:06:42,501 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:06:44,878 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:06:44,895 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:06:44,898 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:06:47,118 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:06:47,522 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:06:47,630 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:06:48,119 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:06:48,731 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:06:50,157 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 32). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:06:50,158 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 32). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:06:50,485 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:06:51,034 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:06:51,243 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:06:51,626 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:06:52,144 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:06:54,718 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 南京
+2026-03-28 17:06:54,967 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 节点活动
+2026-03-28 17:06:55,052 - base.base_page - INFO - 输入起始时间：2026-12-25
+2026-03-28 17:06:55,153 - base.base_page - INFO - 输入结束时间：2026-12-26
+2026-03-28 17:06:55,385 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 100-200
+2026-03-28 17:06:55,764 - base.base_page - INFO - 选择活动预算：10-20 万 (索引：4)
+2026-03-28 17:06:56,208 - base.base_page - INFO - 输入手机号：13800138012
+2026-03-28 17:06:56,648 - base.base_page - INFO - 输入称呼：李主管
+2026-03-28 17:06:57,064 - base.base_page - INFO - 输入需求描述：圣诞节节点活动
+2026-03-28 17:06:57,237 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:06:57,750 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:06:57,779 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:06:57,781 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:06:57,788 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:06:57,794 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:07:00,279 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 17:07:00,300 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 17:07:00,303 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 17:07:02,791 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 17:07:03,062 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 17:07:03,175 - base.base_page - INFO - 页面加载完成
+2026-03-28 17:07:03,601 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 17:07:04,175 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 17:07:05,553 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:07:05,555 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7eb2a6f65+78965]
+	GetHandleVerifier [0x0x7ff7eb2a6fc0+79056]
+	(No symbol) [0x0x7ff7eb039dda]
+	(No symbol) [0x0x7ff7eb0982e9]
+	(No symbol) [0x0x7ff7eb095c82]
+	(No symbol) [0x0x7ff7eb092cd1]
+	(No symbol) [0x0x7ff7eb091c44]
+	(No symbol) [0x0x7ff7eb0832a4]
+	(No symbol) [0x0x7ff7eb0b866a]
+	(No symbol) [0x0x7ff7eb082b56]
+	(No symbol) [0x0x7ff7eb0b8880]
+	(No symbol) [0x0x7ff7eb0e0dbe]
+	(No symbol) [0x0x7ff7eb0b8443]
+	(No symbol) [0x0x7ff7eb081311]
+	(No symbol) [0x0x7ff7eb0820a3]
+	GetHandleVerifier [0x0x7ff7eb55e26d+2926461]
+	GetHandleVerifier [0x0x7ff7eb558993+2903715]
+	GetHandleVerifier [0x0x7ff7eb576aed+3026941]
+	GetHandleVerifier [0x0x7ff7eb2c16fe+187406]
+	GetHandleVerifier [0x0x7ff7eb2c96ef+220159]
+	GetHandleVerifier [0x0x7ff7eb2afaf4+114692]
+	GetHandleVerifier [0x0x7ff7eb2afca9+115129]
+	GetHandleVerifier [0x0x7ff7eb2964d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 17:07:06,555 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 17:07:07,339 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 17:07:07,579 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 17:07:08,064 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 17:07:08,580 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 17:07:11,020 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 公司年会
+2026-03-28 17:07:11,123 - base.base_page - INFO - 输入起始时间：2026-05-01
+2026-03-28 17:07:11,204 - base.base_page - INFO - 输入结束时间：2026-05-02
+2026-03-28 17:07:11,464 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 50-100
+2026-03-28 17:07:11,732 - base.base_page - INFO - 选择活动预算：5-10 万 (索引：3)
+2026-03-28 17:07:12,064 - base.base_page - INFO - 输入手机号：13800138013
+2026-03-28 17:07:12,378 - base.base_page - INFO - 输入称呼：赵经理
+2026-03-28 17:07:12,672 - base.base_page - INFO - 输入需求描述：测试空城市
+2026-03-28 17:07:12,863 - base.base_page - INFO - 点击提交按钮
+2026-03-28 17:07:13,374 - base.base_page - INFO - 接受弹窗: 活动需求提交成功！
+2026-03-28 17:07:13,429 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-28 17:07:13,432 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：1 条
+2026-03-28 17:07:13,439 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：1 条
+2026-03-28 17:07:13,443 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-28 17:07:15,771 - base.driver_manager - INFO - WebDriver已关闭

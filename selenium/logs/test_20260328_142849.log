@@ -1,0 +1,136 @@
+2026-03-28 14:28:49,739 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:28:49,741 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:28:50,919 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:28:51,111 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:28:51,120 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:28:51,373 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:28:51,921 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:28:51,933 - base.base_page - DEBUG - 找到元素: ('id', 'loginBtn')
+2026-03-28 14:28:51,941 - base.base_page - DEBUG - 找到元素: ('id', 'modalUsername')
+2026-03-28 14:28:51,955 - base.base_page - DEBUG - 找到元素: ('id', 'modalPassword')
+2026-03-28 14:28:51,971 - base.base_page - DEBUG - 找到元素: ('id', 'loginBtn')
+2026-03-28 14:28:54,124 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:28:58,168 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:28:58,169 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:28:59,362 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:28:59,514 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:28:59,622 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:28:59,790 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:29:00,337 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:29:00,444 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:29:00,596 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:29:00,691 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:29:00,810 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:29:04,188 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:29:04,191 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:29:04,192 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:29:05,309 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:29:05,461 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:29:05,506 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:29:05,714 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:29:06,275 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:29:06,393 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): employee1
+2026-03-28 14:29:06,526 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:29:06,638 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 员工
+2026-03-28 14:29:06,741 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:29:13,965 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:29:13,968 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:29:13,970 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:29:15,081 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:29:15,228 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:29:15,291 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:29:15,488 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:29:16,028 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:29:16,154 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:29:16,352 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): wrong_password
+2026-03-28 14:29:16,435 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:29:16,556 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:29:19,248 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:29:19,251 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:29:19,251 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:29:20,416 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:29:20,550 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:29:20,580 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:29:20,805 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:29:21,393 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:29:21,594 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): nonexistent_user
+2026-03-28 14:29:21,795 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:29:21,915 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:29:22,087 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:29:33,059 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:29:33,063 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:29:33,065 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:29:34,126 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:29:34,283 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:29:34,300 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:29:34,580 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:29:35,165 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:29:35,248 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): 
+2026-03-28 14:29:35,410 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:29:35,481 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:29:35,601 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:29:37,903 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:29:37,907 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:29:37,909 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:29:38,986 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:29:39,137 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:29:39,152 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:29:39,343 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:29:39,891 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:29:40,014 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:29:40,133 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 
+2026-03-28 14:29:40,203 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:29:40,321 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:29:42,589 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:29:42,595 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:29:42,596 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:29:43,662 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:29:43,888 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:29:43,905 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:29:44,115 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:29:44,686 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:29:44,792 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:29:44,942 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:29:45,024 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:29:45,150 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:29:52,476 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:29:52,482 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:29:52,483 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:29:53,520 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:29:53,679 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:29:53,713 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:29:53,918 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:29:54,464 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:29:54,646 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): employee1
+2026-03-28 14:29:54,810 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:29:54,938 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 员工
+2026-03-28 14:29:55,064 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:29:58,359 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:29:58,364 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:29:58,366 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:29:59,433 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:29:59,780 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:29:59,821 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:30:00,045 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:30:00,618 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:30:00,728 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:30:00,892 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): wrong_password
+2026-03-28 14:30:00,980 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:30:01,093 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:30:08,485 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:30:08,491 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:30:08,491 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:30:09,615 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:30:09,796 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:30:09,810 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:30:10,001 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:30:10,551 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:30:10,698 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): nonexistent_user
+2026-03-28 14:30:10,856 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:30:10,944 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:30:11,056 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:30:14,281 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:30:14,286 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:30:14,288 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:30:15,394 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:30:17,674 - base.driver_manager - INFO - WebDriver已关闭

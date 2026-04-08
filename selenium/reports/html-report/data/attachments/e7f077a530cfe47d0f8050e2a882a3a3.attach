@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_010",
+  "case_name": "边界测试-最小有效称呼",
+  "activity_place": "广州",
+  "activity_type": "其他活动",
+  "start_time": "2026-05-20",
+  "end_time": "2026-05-21",
+  "activity_people": "10-50",
+  "activity_budget": "少于 1 万",
+  "requirement_desc": "测试最小有效称呼长度",
+  "phone": "13800138008",
+  "name": "AB",
+  "expected": "活动需求提交成功！"
+}

@@ -1,0 +1,161 @@
+2026-03-28 14:05:33,177 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:05:33,178 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:05:34,370 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:05:34,579 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:05:34,603 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:05:34,798 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:05:35,347 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:05:35,361 - base.base_page - DEBUG - 找到元素: ('id', 'loginBtn')
+2026-03-28 14:05:35,372 - base.base_page - DEBUG - 找到元素: ('id', 'modalUsername')
+2026-03-28 14:05:35,384 - base.base_page - DEBUG - 找到元素: ('id', 'modalPassword')
+2026-03-28 14:05:35,391 - base.base_page - DEBUG - 找到元素: ('id', 'loginBtn')
+2026-03-28 14:05:37,546 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:05:41,609 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:05:41,610 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:05:42,743 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:05:42,910 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:05:42,929 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:05:43,161 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:05:43,717 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:05:43,822 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:05:43,981 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:05:54,035 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 用户; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:05:56,533 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:05:56,539 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:05:56,540 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:05:57,992 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:05:58,209 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:05:58,227 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:05:58,524 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:05:59,097 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:05:59,314 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): business_admin
+2026-03-28 14:05:59,515 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:06:09,706 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 业务管理员; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:06:11,987 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:06:12,154 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:06:12,182 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:06:13,540 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:06:13,747 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:06:13,766 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:06:14,053 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:06:14,625 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:06:14,756 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): warehouse_admin
+2026-03-28 14:06:14,888 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:06:25,003 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 仓库管理员; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:06:27,230 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:06:27,235 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:06:27,236 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:06:28,347 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:06:28,527 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:06:28,589 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:06:28,892 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:06:29,485 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:06:29,667 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): accountant
+2026-03-28 14:06:29,936 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:06:40,090 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 会计; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:06:54,430 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:06:54,435 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:06:54,435 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:06:55,516 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:06:55,656 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:06:55,687 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:06:55,908 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:06:56,458 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:06:56,573 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:06:56,759 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): wrong_password
+2026-03-28 14:07:00,876 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: 'NoneType' object is not iterable
+2026-03-28 14:07:03,048 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:07:03,053 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:07:03,053 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:07:04,131 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:07:04,268 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:07:04,278 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:07:04,487 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:07:04,520 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:07:04,765 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): nonexistent_user
+2026-03-28 14:07:05,043 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:07:15,130 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 用户; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:07:17,238 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:07:17,243 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:07:17,244 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:07:18,369 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:07:18,579 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:07:18,601 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:07:18,839 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:07:18,873 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:07:19,004 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): 
+2026-03-28 14:07:19,167 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:07:29,230 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 用户; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:07:39,513 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:07:39,517 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:07:39,518 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:07:40,755 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:07:41,032 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:07:41,084 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:07:41,404 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:07:41,975 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:07:42,085 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:07:42,197 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 
+2026-03-28 14:07:52,273 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 用户; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:07:54,447 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:07:54,454 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:07:54,455 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:07:55,619 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:07:56,646 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:07:56,689 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:07:56,982 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:07:57,567 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:07:57,891 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:07:58,261 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:08:08,456 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 用户; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:08:10,694 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:08:10,699 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:08:10,700 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:08:12,090 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:08:12,472 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:08:12,512 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:08:12,909 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:08:12,979 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:08:13,247 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): business_admin
+2026-03-28 14:08:13,450 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:08:23,601 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 业务管理员; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:08:34,012 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:08:34,018 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:08:34,020 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:08:35,533 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:08:35,767 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:08:35,798 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:08:36,170 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:08:36,758 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:08:36,898 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user1
+2026-03-28 14:08:37,084 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): wrong_password
+2026-03-28 14:08:47,206 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: Message: Could not locate element with visible text: 用户; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-28 14:08:49,416 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:08:49,419 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:08:49,420 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:08:50,789 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:08:50,935 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 14:08:50,945 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:08:51,164 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:08:51,204 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:08:51,429 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): nonexistent_user
+2026-03-28 14:08:51,605 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): 123456
+2026-03-28 14:09:07,534 - base.base_page - ERROR - 选择下拉框失败: ('id', 'loginRole'), 错误: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2026-03-28 14:09:15,802 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F411ED06E0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/1fb88bc411f10338cbccfd4ce93f4499
+2026-03-28 14:09:19,869 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F411EA20C0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/1fb88bc411f10338cbccfd4ce93f4499
+2026-03-28 14:09:23,936 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F411FE28D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/1fb88bc411f10338cbccfd4ce93f4499
+2026-03-28 14:09:32,099 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 14:09:32,105 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:09:32,107 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:09:33,317 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:09:35,546 - base.driver_manager - INFO - WebDriver已关闭

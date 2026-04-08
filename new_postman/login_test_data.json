@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "username": "admin",
+    "password": "admin@123",
+    "roleId": "1",
+    "description": "正常登录 - 管理员账号"
+  },
+  {
+    "id": "2",
+    "username": "zhangsan",
+    "password": "123",
+    "roleId": "1",
+    "description": "正常登录 - 普通用户账号"
+  },
+  {
+    "id": "3",
+    "username": "user_lisi",
+    "password": "lisi@456",
+    "roleId": "2",
+    "description": "正常登录 - 员工账号"
+  },
+  {
+    "id": "4",
+    "username": "admin",
+    "password": "wrong_password",
+    "roleId": "1",
+    "description": "异常登录 - 密码错误"
+  },
+  {
+    "id": "5",
+    "username": "admin",
+    "password": "admin@123",
+    "roleId": "2",
+    "description": "异常登录 - 角色错误"
+  },
+  {
+    "id": "6",
+    "username": "nonexistent",
+    "password": "123",
+    "roleId": "1",
+    "description": "异常登录 - 用户不存在"
+  },
+  {
+    "id": "7",
+    "username": "",
+    "password": "admin@123",
+    "roleId": "1",
+    "description": "异常登录 - 空用户名"
+  },
+  {
+    "id": "8",
+    "username": "admin",
+    "password": "",
+    "roleId": "1",
+    "description": "异常登录 - 空密码"
+  },
+  {
+    "id": "9",
+    "username": "admin",
+    "password": "admin@123",
+    "roleId": "",
+    "description": "异常登录 - 空角色"
+  },
+  {
+    "id": "10",
+    "username": "user_yier",
+    "password": "123",
+    "roleId": "2",
+    "description": "异常登录 - 禁用账号"
+  }
+]

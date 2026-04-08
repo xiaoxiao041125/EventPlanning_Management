@@ -1,0 +1,49 @@
+[
+  {
+    "case_id": "LOGIN_004",
+    "case_name": "用户登录失败 - 用户名不存在",
+    "endpoint": "login",
+    "username": "nonexistent",
+    "password": "123",
+    "roleId": "1",
+    "expected_flag": "fail",
+    "expected_data_contains": "用户名不存在",
+    "expected_message": ""
+  },
+  {
+    "case_id": "USER_001",
+    "case_name": "查询所有用户",
+    "endpoint": "ShowAllUser",
+    "expected_flag": "success",
+    "expected_data_contains": "",
+    "expected_message": ""
+  },
+  {
+    "case_id": "USER_007",
+    "case_name": "修改密码失败 - 原密码错误",
+    "endpoint": "changePassword",
+    "userId": "3004",
+    "oldPassword": "wrongpassword",
+    "newPassword": "789",
+    "expected_flag": "fail",
+    "expected_data_contains": "原密码错误",
+    "expected_message": ""
+  },
+  {
+    "case_id": "ACTIVITY_001",
+    "case_name": "查询所有活动需求",
+    "endpoint": "ShowAllActivityDemand",
+    "expected_flag": "success",
+    "expected_data_contains": "",
+    "expected_message": ""
+  },
+  {
+    "case_id": "EMPLOYEE_001",
+    "case_name": "查询所有员工",
+    "endpoint": "ShowEmployee",
+    "city": "",
+    "expected_flag": "success",
+    "expected_data_contains": "",
+    "expected_message": ""
+  }
+]

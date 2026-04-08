@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工搜索 - 爱情海文化传媒</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* 隐藏滚动条但保持滚动功能 */
+        /* 对于WebKit浏览器 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 对于Firefox */
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../IMG/LOGO.jpg" alt="爱情海文化传媒">
+                <span class="logo-text">活动策划管理平台</span>
+            </div>
+            <div class="city-selector">
+                <div class="city-current">
+                    武汉 <span class="arrow">↓</span>
+                </div>
+                <div class="city-dropdown">
+                    <div class="business-distribution">业务分布</div>
+                    <div class="city-grid">
+                        <div class="city-row">
+                            <div class="city-item">武汉</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">南京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">杭州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">苏州</div>
+                        </div>
+                        <div class="city-row">
+                            <div class="city-item">北京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">广州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">深圳</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">其他</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="employee.html">员工主页</a></li>
+                <li><a href="salary.html">我的薪资</a></li>
+                <li><a href="employee_list.html">员工花名册</a></li>
+                <li><a href="employee_search.html" class="active">员工搜索</a></li>
+                <li><a href="approval.html">审批/报销</a></li>
+                <li><a href="index.html">用户版首页</a></li>
+            </ul>
+            <div class="navbar-user-info" id="navbarUserInfo">
+            </div>
+            <button class="login-btn" id="headerLoginBtn">退出登录</button>
+            <button class="switch-version-btn" id="switchToUserBtn">切换用户版</button>
+        </div>
+    </nav>
+
+    <!-- 员工搜索内容 -->
+    <section class="employee-search">
+        <div class="container">
+            <h2 class="section-title">员工搜索</h2>
+            
+            <div class="employee-container">
+                <!-- 搜索表单 -->
+                <div class="employee-filter">
+                    <div class="filter-group">
+                        <label for="statusFilter">状态：</label>
+                        <select id="statusFilter">
+                            <option value="">全部状态</option>
+                            <option value="1">可安排</option>
+                            <option value="0">忙碌</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="cityFilter">城市：</label>
+                        <select id="cityFilter">
+                            <option value="">全部城市</option>
+                            <option value="武汉">武汉</option>
+                            <option value="南京">南京</option>
+                            <option value="杭州">杭州</option>
+                            <option value="苏州">苏州</option>
+                            <option value="北京">北京</option>
+                            <option value="广州">广州</option>
+                            <option value="深圳">深圳</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="keywordInput">关键词：</label>
+                        <input type="text" id="keywordInput" placeholder="输入员工姓名或工号">
+                        <button class="search-btn" id="searchBtn">搜索</button>
+                    </div>
+                </div>
+                
+                <!-- 员工列表 -->
+                <div class="employee-table-container">
+                    <table class="employee-table" id="employeeTable">
+                        <thead>
+                            <tr>
+                                <th>工号</th>
+                                <th>姓名</th>
+                                <th>用户名</th>
+                                <th>性别</th>
+                                <th>职位</th>
+                                <th>城市</th>
+                                <th>联系电话</th>
+                                <th>创建时间</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 员工数据将通过AJAX动态加载 -->
+                            <tr>
+                                <td colspan="9" style="text-align: center; color: #999;">加载中...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 分页 -->
+                <div class="pagination">
+                    <button class="page-btn" disabled>上一页</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <button class="page-btn">下一页</button>
+                    <span class="page-info">共 0 条记录，每页 10 条，共 0 页</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .employee-search {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .employee-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .employee-filter {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-group label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .filter-group input {
+            width: 200px;
+        }
+        
+        .search-btn {
+            padding: 8px 15px;
+            background-color: #2c74c9;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-btn:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .employee-table-container {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        
+        .employee-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .employee-table thead {
+            background-color: #fafafa;
+        }
+        
+        .employee-table th,
+        .employee-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+        
+        .employee-table th:first-child,
+        .employee-table td:first-child {
+            width: 80px;
+        }
+        
+        .employee-table th:nth-child(2),
+        .employee-table td:nth-child(2) {
+            width: 120px;
+        }
+        
+        .employee-table th:nth-child(3),
+        .employee-table td:nth-child(3) {
+            width: 150px;
+        }
+        
+        .employee-table th:nth-child(4),
+        .employee-table td:nth-child(4) {
+            width: 80px;
+        }
+        
+        .employee-table th:nth-child(5),
+        .employee-table td:nth-child(5) {
+            width: 120px;
+        }
+        
+        .employee-table th:nth-child(6),
+        .employee-table td:nth-child(6) {
+            width: 120px;
+        }
+        
+        .employee-table th:nth-child(7),
+        .employee-table td:nth-child(7) {
+            width: 150px;
+        }
+        
+        .employee-table th:nth-child(8),
+        .employee-table td:nth-child(8) {
+            width: 150px;
+        }
+        
+        .employee-table th:nth-child(9),
+        .employee-table td:nth-child(9) {
+            width: 120px;
+        }
+        
+        .employee-table th {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .employee-table td {
+            color: #666;
+        }
+        
+        .employee-table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .status-available {
+            color: #52c41a;
+            font-weight: bold;
+        }
+        
+        .status-busy {
+            color: #ff4d4f;
+            font-weight: bold;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .page-btn {
+            padding: 8px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover:not(:disabled) {
+            border-color: #2c74c9;
+            color: #2c74c9;
+        }
+        
+        .page-btn.active {
+            background-color: #2c74c9;
+            color: #fff;
+            border-color: #2c74c9;
+        }
+        
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .page-info {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+
+    <script src="../JS/jquery-3.4.1.min.js"></script>
+    <script src="../JS/login.js"></script>
+    <script src="../JS/employee.js"></script>
+    <script>
+        $(function() {
+            // 切换用户版按钮
+            $("#switchToUserBtn").click(function() {
+                $("body").addClass("fade-out");
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 300);
+            });
+            
+            // 分页相关变量
+            var currentPage = 1;
+            var pageSize = 10;
+            var totalEmployees = [];
+            var filteredEmployees = [];
+            
+            // 页面加载时获取所有员工
+            searchEmployees();
+            
+            // 状态筛选
+            $("#statusFilter").change(function() {
+                currentPage = 1;
+                searchEmployees();
+            });
+            
+            // 城市筛选
+            $("#cityFilter").change(function() {
+                currentPage = 1;
+                searchEmployees();
+            });
+            
+            // 搜索功能
+            $("#keywordInput").on("input", function() {
+                currentPage = 1;
+                searchEmployees();
+            });
+            
+            // 搜索按钮点击事件
+            $("#searchBtn").click(function() {
+                currentPage = 1;
+                searchEmployees();
+            });
+            
+            // 分页按钮点击事件
+            $(document).on("click", ".page-btn", function() {
+                if($(this).is(":disabled")) return;
+                
+                var text = $(this).text();
+                
+                if(text === "上一页") {
+                    if(currentPage > 1) {
+                        currentPage--;
+                        renderPagination();
+                    }
+                } else if(text === "下一页") {
+                    if(currentPage < Math.ceil(filteredEmployees.length / pageSize)) {
+                        currentPage++;
+                        renderPagination();
+                    }
+                } else {
+                    currentPage = parseInt(text);
+                    renderPagination();
+                }
+            });
+            
+            // 搜索员工
+            function searchEmployees() {
+                var status = $("#statusFilter").val();
+                var city = $("#cityFilter").val();
+                var keyword = $("#keywordInput").val().trim();
+                
+                // 构建API请求URL
+                var apiUrl = "http://localhost:8080/EventPlanning_Management/SearchEmployee";
+                var params = [];
+                
+                if(status !== "") {
+                    params.push("status=" + status);
+                }
+                
+                if(city) {
+                    params.push("city=" + encodeURIComponent(city));
+                }
+                
+                if(keyword) {
+                    params.push("keyword=" + encodeURIComponent(keyword));
+                }
+                
+                if(params.length > 0) {
+                    apiUrl += "?" + params.join("&");
+                }
+                
+                // 显示加载状态
+                $("#employeeTable tbody").html("<tr><td colspan='9' style='text-align: center; color: #999;'>搜索中...</td></tr>");
+                
+                // 调用API
+                $.ajax({
+                    url: apiUrl,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(result) {
+                        if(result.flag === "success") {
+                            totalEmployees = result.data;
+                            filteredEmployees = totalEmployees;
+                            currentPage = 1;
+                            renderPagination();
+                        } else {
+                            alert("搜索失败：" + result.msg);
+                            $("#employeeTable tbody").html("<tr><td colspan='9' style='text-align: center; color: #999;'>" + result.msg + "</td></tr>");
+                        }
+                    },
+                    error: function() {
+                        alert("搜索失败，请检查网络连接");
+                        $("#employeeTable tbody").html("<tr><td colspan='9' style='text-align: center; color: #999;'>搜索失败，请检查网络连接</td></tr>");
+                    }
+                });
+            }
+            
+            // 渲染分页
+            function renderPagination() {
+                var totalPages = Math.ceil(filteredEmployees.length / pageSize);
+                var startPage = Math.max(1, currentPage - 2);
+                var endPage = Math.min(totalPages, startPage + 4);
+                
+                // 渲染员工列表
+                var startIndex = (currentPage - 1) * pageSize;
+                var endIndex = startIndex + pageSize;
+                var pageEmployees = filteredEmployees.slice(startIndex, endIndex);
+                renderEmployees(pageEmployees);
+                
+                // 更新分页信息
+                updatePagination(filteredEmployees.length, totalPages, startPage, endPage);
+            }
+            
+            // 渲染员工列表
+            function renderEmployees(employees) {
+                var tbody = $("#employeeTable tbody");
+                tbody.empty();
+                
+                if(employees.length === 0) {
+                    tbody.append("<tr><td colspan='9' style='text-align: center; color: #999;'>未找到匹配的员工信息</td></tr>");
+                    return;
+                }
+                
+                $.each(employees, function(index, employee) {
+                    var statusText = employee.status === 1 ? "可安排" : "忙碌";
+                    var statusClass = employee.status === 1 ? "status-available" : "status-busy";
+                    var createTime = employee.start_day || employee.create_time || "-";
+                    var city = employee.city || "-";
+                    
+                    var row = "<tr>" +
+                        "<td>" + (employee.employee_id || "-") + "</td>" +
+                        "<td>" + (employee.name || "-") + "</td>" +
+                        "<td>" + (employee.username || "-") + "</td>" +
+                        "<td>" + (employee.sex || "-") + "</td>" +
+                        "<td>" + (employee.post || "-") + "</td>" +
+                        "<td>" + city + "</td>" +
+                        "<td>" + (employee.phone || "-") + "</td>" +
+                        "<td>" + createTime + "</td>" +
+                        "<td class='" + statusClass + "'>" + statusText + "</td>" +
+                        "</tr>";
+                    tbody.append(row);
+                });
+            }
+            
+            // 更新分页信息
+            function updatePagination(totalEmployees, totalPages, startPage, endPage) {
+                var pagination = $(".pagination");
+                pagination.empty();
+                
+                // 上一页按钮
+                var prevBtn = $("<button class='page-btn'>上一页</button>");
+                if(currentPage === 1) {
+                    prevBtn.prop("disabled", true);
+                }
+                pagination.append(prevBtn);
+                
+                // 页码按钮
+                for(var i = startPage; i <= endPage; i++) {
+                    var pageBtn = $("<button class='page-btn'>" + i + "</button>");
+                    if(i === currentPage) {
+                        pageBtn.addClass("active");
+                    }
+                    pagination.append(pageBtn);
+                }
+                
+                // 下一页按钮
+                var nextBtn = $("<button class='page-btn'>下一页</button>");
+                if(currentPage === totalPages || totalPages === 0) {
+                    nextBtn.prop("disabled", true);
+                }
+                pagination.append(nextBtn);
+                
+                // 分页信息
+                var pageInfo = $("<span class='page-info'>共 " + totalEmployees + " 条记录，每页 " + pageSize + " 条，共 " + totalPages + " 页</span>");
+                pagination.append(pageInfo);
+            }
+        })
+    </script>
+    <script src="../JS/index.js"></script>
+</body>
+</html>

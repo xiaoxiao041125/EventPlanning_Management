@@ -1,0 +1,834 @@
+{
+  "info": {
+    "name": "活动策划公司管理系统 - 全面参数化测试",
+    "description": "使用数据驱动的参数化接口测试集合，覆盖 80+ 个接口测试用例",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "2.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/EventPlanning_Management",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "用户管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"状态码为 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 flag\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.flag).to.eql(pm.variables.get(\"expected_flag\"));",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 data 内容\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var expectedData = pm.variables.get(\"expected_data_contains\");",
+                  "    if (expectedData && expectedData.trim() !== \"\") {",
+                  "        var dataStr = JSON.stringify(jsonData.data);",
+                  "        pm.expect(dataStr).to.include(expectedData);",
+                  "    }",
+                  "});",
+                  "",
+                  "pm.test(\"记录测试结果\", function () {",
+                  "    var caseId = pm.variables.get(\"case_id\");",
+                  "    var caseName = pm.variables.get(\"case_name\");",
+                  "    var flag = pm.variables.get(\"expected_flag\");",
+                  "    var actualFlag = pm.response.json().flag;",
+                  "    ",
+                  "    if (flag === actualFlag) {",
+                  "        console.log('✅ ' + caseId + ' - ' + caseName + ': 通过');",
+                  "    } else {",
+                  "        console.log('❌ ' + caseId + ' - ' + caseName + ': 失败');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text",
+                  "disabled": "{{#unless username}}true{{/unless}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text",
+                  "disabled": "{{#unless password}}true{{/unless}}"
+                },
+                {
+                  "key": "roleId",
+                  "value": "{{roleId}}",
+                  "type": "text",
+                  "disabled": "{{#unless roleId}}true{{/unless}}"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text",
+                  "disabled": "{{#unless userId}}true{{/unless}}"
+                },
+                {
+                  "key": "name",
+                  "value": "{{name}}",
+                  "type": "text",
+                  "disabled": "{{#unless name}}true{{/unless}}"
+                },
+                {
+                  "key": "sex",
+                  "value": "{{sex}}",
+                  "type": "text",
+                  "disabled": "{{#unless sex}}true{{/unless}}"
+                },
+                {
+                  "key": "phone",
+                  "value": "{{phone}}",
+                  "type": "text",
+                  "disabled": "{{#unless phone}}true{{/unless}}"
+                },
+                {
+                  "key": "oldPassword",
+                  "value": "{{oldPassword}}",
+                  "type": "text",
+                  "disabled": "{{#unless oldPassword}}true{{/unless}}"
+                },
+                {
+                  "key": "newPassword",
+                  "value": "{{newPassword}}",
+                  "type": "text",
+                  "disabled": "{{#unless newPassword}}true{{/unless}}"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text",
+                  "disabled": "{{#unless status}}true{{/unless}}"
+                },
+                {
+                  "key": "realName",
+                  "value": "{{realName}}",
+                  "type": "text",
+                  "disabled": "{{#unless realName}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "活动管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"状态码为 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 flag\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.flag).to.eql(pm.variables.get(\"expected_flag\"));",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 data 内容\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var expectedData = pm.variables.get(\"expected_data_contains\");",
+                  "    if (expectedData && expectedData.trim() !== \"\") {",
+                  "        var dataStr = JSON.stringify(jsonData.data);",
+                  "        pm.expect(dataStr).to.include(expectedData);",
+                  "    }",
+                  "});",
+                  "",
+                  "pm.test(\"记录测试结果\", function () {",
+                  "    var caseId = pm.variables.get(\"case_id\");",
+                  "    var caseName = pm.variables.get(\"case_name\");",
+                  "    var flag = pm.variables.get(\"expected_flag\");",
+                  "    var actualFlag = pm.response.json().flag;",
+                  "    ",
+                  "    if (flag === actualFlag) {",
+                  "        console.log('✅ ' + caseId + ' - ' + caseName + ': 通过');",
+                  "    } else {",
+                  "        console.log('❌ ' + caseId + ' - ' + caseName + ': 失败');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text",
+                  "disabled": "{{#unless userId}}true{{/unless}}"
+                },
+                {
+                  "key": "activity_place",
+                  "value": "{{activity_place}}",
+                  "type": "text",
+                  "disabled": "{{#unless activity_place}}true{{/unless}}"
+                },
+                {
+                  "key": "activity_type",
+                  "value": "{{activity_type}}",
+                  "type": "text",
+                  "disabled": "{{#unless activity_type}}true{{/unless}}"
+                },
+                {
+                  "key": "start_time",
+                  "value": "{{start_time}}",
+                  "type": "text",
+                  "disabled": "{{#unless start_time}}true{{/unless}}"
+                },
+                {
+                  "key": "end_time",
+                  "value": "{{end_time}}",
+                  "type": "text",
+                  "disabled": "{{#unless end_time}}true{{/unless}}"
+                },
+                {
+                  "key": "activity_people",
+                  "value": "{{activity_people}}",
+                  "type": "text",
+                  "disabled": "{{#unless activity_people}}true{{/unless}}"
+                },
+                {
+                  "key": "activity_budget",
+                  "value": "{{activity_budget}}",
+                  "type": "text",
+                  "disabled": "{{#unless activity_budget}}true{{/unless}}"
+                },
+                {
+                  "key": "requirement_desc",
+                  "value": "{{requirement_desc}}",
+                  "type": "text",
+                  "disabled": "{{#unless requirement_desc}}true{{/unless}}"
+                },
+                {
+                  "key": "demandId",
+                  "value": "{{demandId}}",
+                  "type": "text",
+                  "disabled": "{{#unless demandId}}true{{/unless}}"
+                },
+                {
+                  "key": "activityProgress",
+                  "value": "{{activityProgress}}",
+                  "type": "text",
+                  "disabled": "{{#unless activityProgress}}true{{/unless}}"
+                },
+                {
+                  "key": "refuseReason",
+                  "value": "{{refuseReason}}",
+                  "type": "text",
+                  "disabled": "{{#unless refuseReason}}true{{/unless}}"
+                },
+                {
+                  "key": "principalUserId",
+                  "value": "{{principalUserId}}",
+                  "type": "text",
+                  "disabled": "{{#unless principalUserId}}true{{/unless}}"
+                },
+                {
+                  "key": "income",
+                  "value": "{{income}}",
+                  "type": "text",
+                  "disabled": "{{#unless income}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "人员管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"状态码为 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 flag\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.flag).to.eql(pm.variables.get(\"expected_flag\"));",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 data 内容\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var expectedData = pm.variables.get(\"expected_data_contains\");",
+                  "    if (expectedData && expectedData.trim() !== \"\") {",
+                  "        var dataStr = JSON.stringify(jsonData.data);",
+                  "        pm.expect(dataStr).to.include(expectedData);",
+                  "    }",
+                  "});",
+                  "",
+                  "pm.test(\"记录测试结果\", function () {",
+                  "    var caseId = pm.variables.get(\"case_id\");",
+                  "    var caseName = pm.variables.get(\"case_name\");",
+                  "    var flag = pm.variables.get(\"expected_flag\");",
+                  "    var actualFlag = pm.response.json().flag;",
+                  "    ",
+                  "    if (flag === actualFlag) {",
+                  "        console.log('✅ ' + caseId + ' - ' + caseName + ': 通过');",
+                  "    } else {",
+                  "        console.log('❌ ' + caseId + ' - ' + caseName + ': 失败');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "city",
+                  "value": "{{city}}",
+                  "type": "text",
+                  "disabled": "{{#unless city}}true{{/unless}}"
+                },
+                {
+                  "key": "employeeId",
+                  "value": "{{employeeId}}",
+                  "type": "text",
+                  "disabled": "{{#unless employeeId}}true{{/unless}}"
+                },
+                {
+                  "key": "post",
+                  "value": "{{post}}",
+                  "type": "text",
+                  "disabled": "{{#unless post}}true{{/unless}}"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text",
+                  "disabled": "{{#unless status}}true{{/unless}}"
+                },
+                {
+                  "key": "employeeNo",
+                  "value": "{{employeeNo}}",
+                  "type": "text",
+                  "disabled": "{{#unless employeeNo}}true{{/unless}}"
+                },
+                {
+                  "key": "employeeName",
+                  "value": "{{employeeName}}",
+                  "type": "text",
+                  "disabled": "{{#unless employeeName}}true{{/unless}}"
+                },
+                {
+                  "key": "startDate",
+                  "value": "{{startDate}}",
+                  "type": "text",
+                  "disabled": "{{#unless startDate}}true{{/unless}}"
+                },
+                {
+                  "key": "endDate",
+                  "value": "{{endDate}}",
+                  "type": "text",
+                  "disabled": "{{#unless endDate}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "物料管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"状态码为 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 flag\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.flag).to.eql(pm.variables.get(\"expected_flag\"));",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 data 内容\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var expectedData = pm.variables.get(\"expected_data_contains\");",
+                  "    if (expectedData && expectedData.trim() !== \"\") {",
+                  "        var dataStr = JSON.stringify(jsonData.data);",
+                  "        pm.expect(dataStr).to.include(expectedData);",
+                  "    }",
+                  "});",
+                  "",
+                  "pm.test(\"记录测试结果\", function () {",
+                  "    var caseId = pm.variables.get(\"case_id\");",
+                  "    var caseName = pm.variables.get(\"case_name\");",
+                  "    var flag = pm.variables.get(\"expected_flag\");",
+                  "    var actualFlag = pm.response.json().flag;",
+                  "    ",
+                  "    if (flag === actualFlag) {",
+                  "        console.log('✅ ' + caseId + ' - ' + caseName + ': 通过');",
+                  "    } else {",
+                  "        console.log('❌ ' + caseId + ' - ' + caseName + ': 失败');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text",
+                  "disabled": "{{#unless status}}true{{/unless}}"
+                },
+                {
+                  "key": "category",
+                  "value": "{{category}}",
+                  "type": "text",
+                  "disabled": "{{#unless category}}true{{/unless}}"
+                },
+                {
+                  "key": "materialType",
+                  "value": "{{materialType}}",
+                  "type": "text",
+                  "disabled": "{{#unless materialType}}true{{/unless}}"
+                },
+                {
+                  "key": "quantity",
+                  "value": "{{quantity}}",
+                  "type": "text",
+                  "disabled": "{{#unless quantity}}true{{/unless}}"
+                },
+                {
+                  "key": "price",
+                  "value": "{{price}}",
+                  "type": "text",
+                  "disabled": "{{#unless price}}true{{/unless}}"
+                },
+                {
+                  "key": "remarks",
+                  "value": "{{remarks}}",
+                  "type": "text",
+                  "disabled": "{{#unless remarks}}true{{/unless}}"
+                },
+                {
+                  "key": "materialId",
+                  "value": "{{materialId}}",
+                  "type": "text",
+                  "disabled": "{{#unless materialId}}true{{/unless}}"
+                },
+                {
+                  "key": "demandId",
+                  "value": "{{demandId}}",
+                  "type": "text",
+                  "disabled": "{{#unless demandId}}true{{/unless}}"
+                },
+                {
+                  "key": "materialTotalPrice",
+                  "value": "{{materialTotalPrice}}",
+                  "type": "text",
+                  "disabled": "{{#unless materialTotalPrice}}true{{/unless}}"
+                },
+                {
+                  "key": "outboundId",
+                  "value": "{{outboundId}}",
+                  "type": "text",
+                  "disabled": "{{#unless outboundId}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "薪资管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"状态码为 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 flag\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.flag).to.eql(pm.variables.get(\"expected_flag\"));",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 data 内容\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var expectedData = pm.variables.get(\"expected_data_contains\");",
+                  "    if (expectedData && expectedData.trim() !== \"\") {",
+                  "        var dataStr = JSON.stringify(jsonData.data);",
+                  "        pm.expect(dataStr).to.include(expectedData);",
+                  "    }",
+                  "});",
+                  "",
+                  "pm.test(\"记录测试结果\", function () {",
+                  "    var caseId = pm.variables.get(\"case_id\");",
+                  "    var caseName = pm.variables.get(\"case_name\");",
+                  "    var flag = pm.variables.get(\"expected_flag\");",
+                  "    var actualFlag = pm.response.json().flag;",
+                  "    ",
+                  "    if (flag === actualFlag) {",
+                  "        console.log('✅ ' + caseId + ' - ' + caseName + ': 通过');",
+                  "    } else {",
+                  "        console.log('❌ ' + caseId + ' - ' + caseName + ': 失败');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "year",
+                  "value": "{{year}}",
+                  "type": "text",
+                  "disabled": "{{#unless year}}true{{/unless}}"
+                },
+                {
+                  "key": "month",
+                  "value": "{{month}}",
+                  "type": "text",
+                  "disabled": "{{#unless month}}true{{/unless}}"
+                },
+                {
+                  "key": "employeeNo",
+                  "value": "{{employeeNo}}",
+                  "type": "text",
+                  "disabled": "{{#unless employeeNo}}true{{/unless}}"
+                },
+                {
+                  "key": "employeeName",
+                  "value": "{{employeeName}}",
+                  "type": "text",
+                  "disabled": "{{#unless employeeName}}true{{/unless}}"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text",
+                  "disabled": "{{#unless userId}}true{{/unless}}"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text",
+                  "disabled": "{{#unless status}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "财务管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"状态码为 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 flag\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.flag).to.eql(pm.variables.get(\"expected_flag\"));",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 data 内容\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var expectedData = pm.variables.get(\"expected_data_contains\");",
+                  "    if (expectedData && expectedData.trim() !== \"\") {",
+                  "        var dataStr = JSON.stringify(jsonData.data);",
+                  "        pm.expect(dataStr).to.include(expectedData);",
+                  "    }",
+                  "});",
+                  "",
+                  "pm.test(\"记录测试结果\", function () {",
+                  "    var caseId = pm.variables.get(\"case_id\");",
+                  "    var caseName = pm.variables.get(\"case_name\");",
+                  "    var flag = pm.variables.get(\"expected_flag\");",
+                  "    var actualFlag = pm.response.json().flag;",
+                  "    ",
+                  "    if (flag === actualFlag) {",
+                  "        console.log('✅ ' + caseId + ' - ' + caseName + ': 通过');",
+                  "    } else {",
+                  "        console.log('❌ ' + caseId + ' - ' + caseName + ': 失败');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "activityName",
+                  "value": "{{activityName}}",
+                  "type": "text",
+                  "disabled": "{{#unless activityName}}true{{/unless}}"
+                },
+                {
+                  "key": "startDate",
+                  "value": "{{startDate}}",
+                  "type": "text",
+                  "disabled": "{{#unless startDate}}true{{/unless}}"
+                },
+                {
+                  "key": "endDate",
+                  "value": "{{endDate}}",
+                  "type": "text",
+                  "disabled": "{{#unless endDate}}true{{/unless}}"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text",
+                  "disabled": "{{#unless status}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "报销管理接口测试",
+      "item": [
+        {
+          "name": "{{case_id}} - {{case_name}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"状态码为 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 flag\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.flag).to.eql(pm.variables.get(\"expected_flag\"));",
+                  "});",
+                  "",
+                  "pm.test(\"验证返回 data 内容\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var expectedData = pm.variables.get(\"expected_data_contains\");",
+                  "    if (expectedData && expectedData.trim() !== \"\") {",
+                  "        var dataStr = JSON.stringify(jsonData.data);",
+                  "        pm.expect(dataStr).to.include(expectedData);",
+                  "    }",
+                  "});",
+                  "",
+                  "pm.test(\"记录测试结果\", function () {",
+                  "    var caseId = pm.variables.get(\"case_id\");",
+                  "    var caseName = pm.variables.get(\"case_name\");",
+                  "    var flag = pm.variables.get(\"expected_flag\");",
+                  "    var actualFlag = pm.response.json().flag;",
+                  "    ",
+                  "    if (flag === actualFlag) {",
+                  "        console.log('✅ ' + caseId + ' - ' + caseName + ': 通过');",
+                  "    } else {",
+                  "        console.log('❌ ' + caseId + ' - ' + caseName + ': 失败');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text",
+                  "disabled": "{{#unless userId}}true{{/unless}}"
+                },
+                {
+                  "key": "reimbursementType",
+                  "value": "{{reimbursementType}}",
+                  "type": "text",
+                  "disabled": "{{#unless reimbursementType}}true{{/unless}}"
+                },
+                {
+                  "key": "amount",
+                  "value": "{{amount}}",
+                  "type": "text",
+                  "disabled": "{{#unless amount}}true{{/unless}}"
+                },
+                {
+                  "key": "expenseDate",
+                  "value": "{{expenseDate}}",
+                  "type": "text",
+                  "disabled": "{{#unless expenseDate}}true{{/unless}}"
+                },
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text",
+                  "disabled": "{{#unless description}}true{{/unless}}"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text",
+                  "disabled": "{{#unless status}}true{{/unless}}"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/{{endpoint}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{endpoint}}"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+2026-03-30 15:32:18,441 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-30 15:32:18,443 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-30 15:32:19,863 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-30 15:32:20,132 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-30 15:32:20,158 - base.base_page - INFO - 页面加载完成
+2026-03-30 15:32:20,462 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-30 15:32:21,034 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-30 15:32:22,247 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7a3826f65+78965]
+	GetHandleVerifier [0x0x7ff7a3826fc0+79056]
+	(No symbol) [0x0x7ff7a35b9dda]
+	(No symbol) [0x0x7ff7a36182e9]
+	(No symbol) [0x0x7ff7a3615c82]
+	(No symbol) [0x0x7ff7a3612cd1]
+	(No symbol) [0x0x7ff7a3611c44]
+	(No symbol) [0x0x7ff7a36032a4]
+	(No symbol) [0x0x7ff7a363866a]
+	(No symbol) [0x0x7ff7a3602b56]
+	(No symbol) [0x0x7ff7a3638880]
+	(No symbol) [0x0x7ff7a3660dbe]
+	(No symbol) [0x0x7ff7a3638443]
+	(No symbol) [0x0x7ff7a3601311]
+	(No symbol) [0x0x7ff7a36020a3]
+	GetHandleVerifier [0x0x7ff7a3ade26d+2926461]
+	GetHandleVerifier [0x0x7ff7a3ad8993+2903715]
+	GetHandleVerifier [0x0x7ff7a3af6aed+3026941]
+	GetHandleVerifier [0x0x7ff7a38416fe+187406]
+	GetHandleVerifier [0x0x7ff7a38496ef+220159]
+	GetHandleVerifier [0x0x7ff7a382faf4+114692]
+	GetHandleVerifier [0x0x7ff7a382fca9+115129]
+	GetHandleVerifier [0x0x7ff7a38164d8+10728]
+	BaseThreadInitThunk [0x0x7ffc7acbe8d7+23]
+	RtlUserThreadStart [0x0x7ffc7ba8c48c+44]
+
+2026-03-30 15:32:22,251 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7a3826f65+78965]
+	GetHandleVerifier [0x0x7ff7a3826fc0+79056]
+	(No symbol) [0x0x7ff7a35b9dda]
+	(No symbol) [0x0x7ff7a36182e9]
+	(No symbol) [0x0x7ff7a3615c82]
+	(No symbol) [0x0x7ff7a3612cd1]
+	(No symbol) [0x0x7ff7a3611c44]
+	(No symbol) [0x0x7ff7a36032a4]
+	(No symbol) [0x0x7ff7a363866a]
+	(No symbol) [0x0x7ff7a3602b56]
+	(No symbol) [0x0x7ff7a3638880]
+	(No symbol) [0x0x7ff7a3660dbe]
+	(No symbol) [0x0x7ff7a3638443]
+	(No symbol) [0x0x7ff7a3601311]
+	(No symbol) [0x0x7ff7a36020a3]
+	GetHandleVerifier [0x0x7ff7a3ade26d+2926461]
+	GetHandleVerifier [0x0x7ff7a3ad8993+2903715]
+	GetHandleVerifier [0x0x7ff7a3af6aed+3026941]
+	GetHandleVerifier [0x0x7ff7a38416fe+187406]
+	GetHandleVerifier [0x0x7ff7a38496ef+220159]
+	GetHandleVerifier [0x0x7ff7a382faf4+114692]
+	GetHandleVerifier [0x0x7ff7a382fca9+115129]
+	GetHandleVerifier [0x0x7ff7a38164d8+10728]
+	BaseThreadInitThunk [0x0x7ffc7acbe8d7+23]
+	RtlUserThreadStart [0x0x7ffc7ba8c48c+44]
+
+2026-03-30 15:32:22,567 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-30 15:32:22,880 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-30 15:32:23,056 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-30 15:32:23,271 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-30 15:32:23,781 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-30 15:32:26,073 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 北京
+2026-03-30 15:32:26,262 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 公司年会
+2026-03-30 15:32:26,345 - base.base_page - INFO - 输入起始时间：2026-05-01 -> 2026/05/01
+2026-03-30 15:32:26,710 - base.base_page - INFO - 输入结束时间：2026-05-02 -> 2026/05/02
+2026-03-30 15:32:26,899 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 50-100
+2026-03-30 15:32:37,014 - base.base_page - WARNING - 通过文本选择预算失败：5-10 万, 尝试索引方式：Message: Could not locate element with visible text: 5-10 万; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-30 15:32:37,101 - base.base_page - INFO - 选择活动预算：5-10 万 (索引：3)
+2026-03-30 15:32:37,281 - base.base_page - INFO - 输入手机号：13800138000
+2026-03-30 15:32:37,425 - base.base_page - INFO - 输入称呼：张三
+2026-03-30 15:32:37,616 - base.base_page - INFO - 输入需求描述：需要音响设备和舞台布置，要求专业灯光效果
+2026-03-30 15:32:37,708 - base.base_page - INFO - 点击提交按钮
+2026-03-30 15:32:38,213 - base.base_page - INFO - 接受弹窗: 提交失败：起始时间不能为空
+2026-03-30 15:32:38,282 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-30 15:32:38,284 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-30 15:32:38,286 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-30 15:32:38,287 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-30 15:32:40,472 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-30 15:32:40,475 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-30 15:32:40,477 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-30 15:32:42,050 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-30 15:32:42,214 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-30 15:32:42,280 - base.base_page - INFO - 页面加载完成
+2026-03-30 15:32:42,552 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-30 15:32:43,124 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-30 15:32:44,296 - base.base_page - ERROR - 点击元素失败: ('id', 'headerLoginBtn'), 错误: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7a3826f65+78965]
+	GetHandleVerifier [0x0x7ff7a3826fc0+79056]
+	(No symbol) [0x0x7ff7a35b9dda]
+	(No symbol) [0x0x7ff7a36182e9]
+	(No symbol) [0x0x7ff7a3615c82]
+	(No symbol) [0x0x7ff7a3612cd1]
+	(No symbol) [0x0x7ff7a3611c44]
+	(No symbol) [0x0x7ff7a36032a4]
+	(No symbol) [0x0x7ff7a363866a]
+	(No symbol) [0x0x7ff7a3602b56]
+	(No symbol) [0x0x7ff7a3638880]
+	(No symbol) [0x0x7ff7a3660dbe]
+	(No symbol) [0x0x7ff7a3638443]
+	(No symbol) [0x0x7ff7a3601311]
+	(No symbol) [0x0x7ff7a36020a3]
+	GetHandleVerifier [0x0x7ff7a3ade26d+2926461]
+	GetHandleVerifier [0x0x7ff7a3ad8993+2903715]
+	GetHandleVerifier [0x0x7ff7a3af6aed+3026941]
+	GetHandleVerifier [0x0x7ff7a38416fe+187406]
+	GetHandleVerifier [0x0x7ff7a38496ef+220159]
+	GetHandleVerifier [0x0x7ff7a382faf4+114692]
+	GetHandleVerifier [0x0x7ff7a382fca9+115129]
+	GetHandleVerifier [0x0x7ff7a38164d8+10728]
+	BaseThreadInitThunk [0x0x7ffc7acbe8d7+23]
+	RtlUserThreadStart [0x0x7ffc7ba8c48c+44]
+
+2026-03-30 15:32:44,296 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: element click intercepted: Element <button class="login-btn" id="headerLoginBtn">...</button> is not clickable at point (1189, 34). Other element would receive the click: <div class="modal active" id="loginModal">...</div>
+  (Session info: chrome=137.0.7151.56)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7a3826f65+78965]
+	GetHandleVerifier [0x0x7ff7a3826fc0+79056]
+	(No symbol) [0x0x7ff7a35b9dda]
+	(No symbol) [0x0x7ff7a36182e9]
+	(No symbol) [0x0x7ff7a3615c82]
+	(No symbol) [0x0x7ff7a3612cd1]
+	(No symbol) [0x0x7ff7a3611c44]
+	(No symbol) [0x0x7ff7a36032a4]
+	(No symbol) [0x0x7ff7a363866a]
+	(No symbol) [0x0x7ff7a3602b56]
+	(No symbol) [0x0x7ff7a3638880]
+	(No symbol) [0x0x7ff7a3660dbe]
+	(No symbol) [0x0x7ff7a3638443]
+	(No symbol) [0x0x7ff7a3601311]
+	(No symbol) [0x0x7ff7a36020a3]
+	GetHandleVerifier [0x0x7ff7a3ade26d+2926461]
+	GetHandleVerifier [0x0x7ff7a3ad8993+2903715]
+	GetHandleVerifier [0x0x7ff7a3af6aed+3026941]
+	GetHandleVerifier [0x0x7ff7a38416fe+187406]
+	GetHandleVerifier [0x0x7ff7a38496ef+220159]
+	GetHandleVerifier [0x0x7ff7a382faf4+114692]
+	GetHandleVerifier [0x0x7ff7a382fca9+115129]
+	GetHandleVerifier [0x0x7ff7a38164d8+10728]
+	BaseThreadInitThunk [0x0x7ffc7acbe8d7+23]
+	RtlUserThreadStart [0x0x7ffc7ba8c48c+44]
+
+2026-03-30 15:32:44,451 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-30 15:32:44,630 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-30 15:32:44,717 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-30 15:32:44,970 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-30 15:32:45,481 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-30 15:32:47,693 - base.base_page - INFO - 选择下拉框 ('id', 'activityLocation') 选项: 北京
+2026-03-30 15:32:47,784 - base.base_page - INFO - 选择下拉框 ('id', 'activityType') 选项: 演唱会
+2026-03-30 15:32:47,844 - base.base_page - INFO - 输入起始时间：2026/05/01 -> 2026/05/01
+2026-03-30 15:32:47,911 - base.base_page - INFO - 输入结束时间：2026-05-02 -> 2026/05/02
+2026-03-30 15:32:48,096 - base.base_page - INFO - 选择下拉框 ('id', 'participantCount') 选项: 500-1000
+2026-03-30 15:32:58,238 - base.base_page - WARNING - 通过文本选择预算失败：50 万+, 尝试索引方式：Message: Could not locate element with visible text: 50 万+; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2026-03-30 15:32:58,366 - base.base_page - INFO - 选择活动预算：50 万+ (索引：6)
+2026-03-30 15:32:58,481 - base.base_page - INFO - 输入手机号：13800138007
+2026-03-30 15:32:58,599 - base.base_page - INFO - 输入称呼：钱十一
+2026-03-30 15:32:58,743 - base.base_page - INFO - 输入需求描述：测试非法日期格式
+2026-03-30 15:32:58,878 - base.base_page - INFO - 点击提交按钮
+2026-03-30 15:32:59,384 - base.base_page - INFO - 接受弹窗: 提交失败：起始时间不能为空
+2026-03-30 15:32:59,421 - utils.db_cleaner - INFO - 数据库连接成功：localhost:3306/eventplanning_management
+2026-03-30 15:32:59,422 - utils.db_cleaner - INFO - 找到 userid=3004 的活动申请记录：0 条
+2026-03-30 15:32:59,424 - utils.db_cleaner - INFO - 成功删除 userid=3004 的活动申请记录：0 条
+2026-03-30 15:32:59,424 - utils.db_cleaner - INFO - 数据库连接已关闭
+2026-03-30 15:33:01,541 - base.driver_manager - INFO - WebDriver已关闭

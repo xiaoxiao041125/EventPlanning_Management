@@ -1,0 +1,1872 @@
+{
+  "info": {
+    "_postman_id": "event-planning-management-complete",
+    "name": "活动策划管理平台 - 完整接口测试",
+    "description": "覆盖所有后端接口的完整测试集合，包含参数化测试",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "用户管理",
+      "item": [
+        {
+          "name": "登录接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text"
+                },
+                {
+                  "key": "roleId",
+                  "value": "{{roleId}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "login"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('登录接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('登录接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('登录接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('登录接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    // 根据测试数据判断预期的 flag 值",
+                  "    if (pm.iterationData.get('description').includes('正常登录')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "注册接口（用户）",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text"
+                },
+                {
+                  "key": "roleId",
+                  "value": "{{roleId}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "register"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('注册接口（用户）响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('注册接口（用户）返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('注册接口（用户）响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('注册接口（用户）返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    // 根据测试数据判断预期的 flag 值",
+                  "    if (pm.iterationData.get('description').includes('正常注册')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "注册接口（员工）",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text"
+                },
+                {
+                  "key": "employeeName",
+                  "value": "{{employeeName}}",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "{{phone}}",
+                  "type": "text"
+                },
+                {
+                  "key": "sex",
+                  "value": "{{sex}}",
+                  "type": "text"
+                },
+                {
+                  "key": "post",
+                  "value": "{{post}}",
+                  "type": "text"
+                },
+                {
+                  "key": "city",
+                  "value": "{{city}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/EmployeeRegister",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "EmployeeRegister"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('注册接口（员工）响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('注册接口（员工）返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('注册接口（员工）响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('注册接口（员工）返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    // 根据测试数据判断预期的 flag 值",
+                  "    if (pm.iterationData.get('description').includes('正常注册')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "修改密码接口",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "oldPassword",
+                  "value": "{{oldPassword}}",
+                  "type": "text"
+                },
+                {
+                  "key": "newPassword",
+                  "value": "{{newPassword}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/changePassword",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "changePassword"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('修改密码接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('修改密码接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('修改密码接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('修改密码接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    // 根据测试数据判断预期的 flag 值",
+                  "    if (pm.iterationData.get('description').includes('成功')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+
+        {
+          "name": "获取所有用户接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/ShowAllUser",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "ShowAllUser"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('获取所有用户接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('获取所有用户接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('获取所有用户接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('获取所有用户接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    pm.expect(jsonData.flag).to.eql('success');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "根据ID获取用户接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/showUserByID",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "showUserByID"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('根据ID获取用户接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('根据ID获取用户接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('根据 ID 获取用户接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('根据ID获取用户接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    // 根据测试数据判断预期的 flag 值",
+                  "    if (pm.iterationData.get('description').includes('存在的')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "活动管理",
+      "item": [
+        {
+          "name": "申请活动接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "activity_place",
+                  "value": "{{activity_place}}",
+                  "type": "text"
+                },
+                {
+                  "key": "activity_type",
+                  "value": "{{activity_type}}",
+                  "type": "text"
+                },
+                {
+                  "key": "start_time",
+                  "value": "{{start_time}}",
+                  "type": "text"
+                },
+                {
+                  "key": "end_time",
+                  "value": "{{end_time}}",
+                  "type": "text"
+                },
+                {
+                  "key": "activity_people",
+                  "value": "{{activity_people}}",
+                  "type": "text"
+                },
+                {
+                  "key": "activity_budget",
+                  "value": "{{activity_budget}}",
+                  "type": "text"
+                },
+                {
+                  "key": "activity_progress",
+                  "value": "{{activity_progress}}",
+                  "type": "text"
+                },
+                {
+                  "key": "requirement_desc",
+                  "value": "{{requirement_desc}}",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "{{phone}}",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "{{name}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/applyActivity",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "applyActivity"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('申请活动接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('申请活动接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('申请活动接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('申请活动接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    // 根据测试数据判断预期的 flag 值",
+                  "    if (pm.iterationData.get('description').includes('正常活动申请') || pm.iterationData.get('description').includes('边界测试')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "取消活动接口",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "demand_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "userId",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/CancelActivity",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "CancelActivity"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('取消活动接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('取消活动接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('取消活动接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "更新活动进度接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/UpdateActivityProgress?demandId={{demandId}}&activityProgress={{activityProgress}}&refuseReason={{refuseReason}}&principalUserId={{principalUserId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "UpdateActivityProgress"
+              ],
+              "query": [
+                {
+                  "key": "demandId",
+                  "value": "{{demandId}}"
+                },
+                {
+                  "key": "activityProgress",
+                  "value": "{{activityProgress}}"
+                },
+                {
+                  "key": "refuseReason",
+                  "value": "{{refuseReason}}"
+                },
+                {
+                  "key": "principalUserId",
+                  "value": "{{principalUserId}}"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('更新活动进度接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('更新活动进度接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('更新活动进度接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('更新活动进度接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('正常更新活动')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "获取所有活动需求接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/ShowAllActivityDemand",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "ShowAllActivityDemand"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('获取所有活动需求接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('获取所有活动需求接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('获取所有活动需求接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('获取所有活动需求接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    pm.expect(jsonData.flag).to.eql('success');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "根据ID获取活动需求接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "demandId",
+                  "value": "{{demand_id}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/ShowActivityDemandById",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "ShowActivityDemandById"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('根据ID获取活动需求接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('根据ID获取活动需求接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('根据 ID 获取活动需求接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('根据ID获取活动需求接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    // 根据测试数据判断预期的 flag 值",
+                  "    if (pm.iterationData.get('description').includes('存在的')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "根据用户ID获取活动需求接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/ShowActivityDemandByUserId",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "ShowActivityDemandByUserId"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('根据用户ID获取活动需求接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('根据用户ID获取活动需求接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('根据用户 ID 获取活动需求接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('根据用户ID获取活动需求接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    // 根据测试数据判断预期的 flag 值",
+                  "    if (pm.iterationData.get('description').includes('存在的')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "员工管理",
+      "item": [
+        {
+          "name": "处理员工注册接口",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "registerId",
+                  "value": "{{registerId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text"
+                },
+                {
+                  "key": "post",
+                  "value": "{{post}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/HandleEmployeeRegister",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "HandleEmployeeRegister"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('处理员工注册接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('处理员工注册接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('处理员工注册接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('处理员工注册接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('通过申请') || pm.iterationData.get('description').includes('拒绝申请')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "获取所有员工接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/ShowEmployee",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "ShowEmployee"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('获取所有员工接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('获取所有员工接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('获取所有员工接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('获取所有员工接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    pm.expect(jsonData.flag).to.eql('success');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "薪资管理",
+      "item": [
+        {
+          "name": "计算薪资接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "year",
+                  "value": "{{year}}",
+                  "type": "text"
+                },
+                {
+                  "key": "month",
+                  "value": "{{month}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/CalculateSalary",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "CalculateSalary"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('计算薪资接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('计算薪资接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('计算薪资接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('计算薪资接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('存在的员工') || pm.iterationData.get('description').includes('业务管理员')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "发放薪资接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "recordId",
+                  "value": "{{recordId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "year",
+                  "value": "{{year}}",
+                  "type": "text"
+                },
+                {
+                  "key": "month",
+                  "value": "{{month}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/PaySalary",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "PaySalary"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('发放薪资接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('发放薪资接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('发放薪资接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('发放薪资接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('发放薪资')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "获取我的薪资接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/GetMySalary?userId={{userId}}&year={{year}}&month={{month}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "GetMySalary"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}"
+                },
+                {
+                  "key": "year",
+                  "value": "{{year}}"
+                },
+                {
+                  "key": "month",
+                  "value": "{{month}}"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('获取我的薪资接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('获取我的薪资接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('获取我的薪资接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('获取我的薪资接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('存在的记录') || pm.iterationData.get('description').includes('业务管理员')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "获取所有薪资记录接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/GetAllSalaryRecords",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "GetAllSalaryRecords"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('获取所有薪资记录接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('获取所有薪资记录接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('获取所有薪资记录接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('获取所有薪资记录接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    pm.expect(jsonData.flag).to.eql('success');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "物料管理",
+      "item": [
+        {
+          "name": "添加物料接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "materialType",
+                  "value": "{{materialType}}",
+                  "type": "text"
+                },
+                {
+                  "key": "quantity",
+                  "value": "{{quantity}}",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "{{price}}",
+                  "type": "text"
+                },
+                {
+                  "key": "remarks",
+                  "value": "{{remarks}}",
+                  "type": "text"
+                },
+                {
+                  "key": "category",
+                  "value": "{{category}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/AddMaterial",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "AddMaterial"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('添加物料接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('添加物料接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('添加物料接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('添加物料接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('正常添加')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "物料出库接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "demandId",
+                  "value": "{{demandId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "materialId",
+                  "value": "{{materialId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "materialTotalPrice",
+                  "value": "{{materialTotalPrice}}",
+                  "type": "text"
+                },
+                {
+                  "key": "quantity",
+                  "value": "{{quantity}}",
+                  "type": "text"
+                },
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/AddMaterialOutbound",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "AddMaterialOutbound"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('物料出库接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('物料出库接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('物料出库接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('物料出库接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('正常出库')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "物料租赁接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "materialId",
+                  "value": "{{materialId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "rentQuantity",
+                  "value": "{{rentQuantity}}",
+                  "type": "text"
+                },
+                {
+                  "key": "unitPrice",
+                  "value": "{{unitPrice}}",
+                  "type": "text"
+                },
+                {
+                  "key": "rentUserName",
+                  "value": "{{rentUserName}}",
+                  "type": "text"
+                },
+                {
+                  "key": "rentPhone",
+                  "value": "{{rentPhone}}",
+                  "type": "text"
+                },
+                {
+                  "key": "returnTime",
+                  "value": "{{returnTime}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/AddMaterialRent",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "AddMaterialRent"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('物料租赁接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('物料租赁接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('物料租赁接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('物料租赁接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('正常租赁')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "获取仓库物料接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/GetWarehouseMaterials",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "GetWarehouseMaterials"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('获取仓库物料接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('获取仓库物料接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('获取仓库物料接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('获取仓库物料接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    pm.expect(jsonData.flag).to.eql('success');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "报销管理",
+      "item": [
+        {
+          "name": "添加报销申请接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "reimbursementType",
+                  "value": "{{reimbursementType}}",
+                  "type": "text"
+                },
+                {
+                  "key": "amount",
+                  "value": "{{amount}}",
+                  "type": "text"
+                },
+                {
+                  "key": "expenseDate",
+                  "value": "{{expenseDate}}",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/AddReimbursementApplication",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "AddReimbursementApplication"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('添加报销申请接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('添加报销申请接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('添加报销申请接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('添加报销申请接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description_detail').includes('正常添加')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "审批报销申请接口",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "reimbursementId",
+                  "value": "{{reimbursementId}}",
+                  "type": "text"
+                },
+                {
+                  "key": "status",
+                  "value": "{{status}}",
+                  "type": "text"
+                },
+                {
+                  "key": "approverId",
+                  "value": "{{approverId}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/ApproveReimbursementApplication",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "ApproveReimbursementApplication"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('审批报销申请接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('审批报销申请接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('审批报销申请接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('审批报销申请接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('批准') || pm.iterationData.get('description').includes('拒绝')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "获取所有报销申请接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/GetAllReimbursementApplications",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "GetAllReimbursementApplications"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('获取所有报销申请接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('获取所有报销申请接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('获取所有报销申请接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('获取所有报销申请接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    pm.expect(jsonData.flag).to.eql('success');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "根据用户ID获取报销申请接口",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/EventPlanning_Management/GetReimbursementApplicationsByUserId?userId={{userId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "EventPlanning_Management",
+                "GetReimbursementApplicationsByUserId"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "{{userId}}"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('根据用户ID获取报销申请接口响应状态码为 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('根据用户ID获取报销申请接口返回 JSON 格式', function () {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('根据用户 ID 获取报销申请接口响应时间小于 3000ms', function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "",
+                  "pm.test('根据用户ID获取报销申请接口返回正确的 flag 值', function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('flag');",
+                  "    if (pm.iterationData.get('description').includes('存在的用户')) {",
+                  "        pm.expect(jsonData.flag).to.eql('success');",
+                  "    } else {",
+                  "        pm.expect(jsonData.flag).to.eql('fail');",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": []
+}

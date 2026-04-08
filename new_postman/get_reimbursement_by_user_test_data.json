@@ -1,0 +1,22 @@
+[
+  {
+    "id": "GET_REIMBURSEMENT_BY_USER_001",
+    "userId": "1",
+    "description": "根据用户ID获取报销申请 - 存在的用户（userId=1有报销记录）"
+  },
+  {
+    "id": "GET_REIMBURSEMENT_BY_USER_002",
+    "userId": "3149",
+    "description": "根据用户ID获取报销申请 - 存在的用户（userId=3149有报销记录）"
+  },
+  {
+    "id": "GET_REIMBURSEMENT_BY_USER_003",
+    "userId": "999999",
+    "description": "根据用户ID获取报销申请 - 不在的用户"
+  },
+  {
+    "id": "GET_REIMBURSEMENT_BY_USER_004",
+    "userId": "",
+    "description": "根据用户ID获取报销申请 - 空userId"
+  }
+]

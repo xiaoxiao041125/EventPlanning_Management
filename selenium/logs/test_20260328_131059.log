@@ -1,0 +1,23 @@
+2026-03-28 13:11:00,389 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:00,392 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:02,901 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:03,573 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:11:07,639 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:07,640 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:09,963 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:10,940 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:11:14,002 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:14,005 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:16,095 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:38,075 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:39,553 - base.driver_manager - WARNING - 使用webdriver-manager失败，尝试使用本地驱动: Could not reach host. Are you offline?
+2026-03-28 13:11:41,939 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:11:41,940 - WDM - INFO - ====== WebDriver manager ======
+2026-03-28 13:11:43,857 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:49,266 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:11:55,397 - WDM - INFO - There is no [win64] chromedriver "137.0.7151.119" for browser google-chrome "137.0.7151" in cache
+2026-03-28 13:11:55,397 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-03-28 13:12:12,879 - WDM - INFO - WebDriver version 137.0.7151.119 selected
+2026-03-28 13:12:12,884 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/win32/chromedriver-win32.zip
+2026-03-28 13:12:12,884 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/win32/chromedriver-win32.zip
+2026-03-28 13:12:13,701 - WDM - INFO - Driver downloading response is 200

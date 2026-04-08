@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件上传示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        .upload-container {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-container:hover {
+            border-color: #2c74c9;
+            background-color: #f9f9f9;
+        }
+        
+        .upload-container.dragover {
+            border-color: #2c74c9;
+            background-color: #e3f2fd;
+        }
+        
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .upload-btn {
+            background-color: #2c74c9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .upload-btn:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .upload-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .file-list {
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .file-name {
+            flex: 1;
+        }
+        
+        .file-size {
+            color: #666;
+            margin-right: 10px;
+        }
+        
+        .remove-btn {
+            background-color: #ff4d4f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .result.success {
+            background-color: #f6ffed;
+            border: 1px solid #b7eb8f;
+            color: #52c41a;
+        }
+        
+        .result.error {
+            background-color: #fff2f0;
+            border: 1px solid #ffccc7;
+            color: #ff4d4f;
+        }
+        
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>文件上传示例</h2>
+    
+    <div class="upload-container" id="uploadContainer">
+        <div class="upload-icon">📁</div>
+        <p>点击或拖拽文件到此处上传</p>
+        <p style="color: #999; font-size: 12px;">支持 JPG、PNG、GIF、PDF、Word、Excel 等格式，单个文件不超过 10MB</p>
+        <input type="file" class="file-input" id="fileInput" multiple>
+    </div>
+    
+    <div class="file-list" id="fileList"></div>
+    
+    <button class="upload-btn" id="uploadBtn" disabled>开始上传</button>
+    
+    <div class="result" id="result"></div>
+
+    <script src="../JS/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function() {
+            let selectedFiles = [];
+            
+            // 点击上传区域触发文件选择
+            $('#uploadContainer').click(function() {
+                $('#fileInput').click();
+            });
+            
+            // 文件选择事件
+            $('#fileInput').change(function() {
+                const files = Array.from(this.files);
+                files.forEach(file => {
+                    // 检查文件大小（10MB）
+                    if (file.size > 10 * 1024 * 1024) {
+                        alert('文件 "' + file.name + '" 超过 10MB 限制');
+                        return;
+                    }
+                    selectedFiles.push(file);
+                });
+                updateFileList();
+            });
+            
+            // 拖拽上传
+            const uploadContainer = document.getElementById('uploadContainer');
+            
+            uploadContainer.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('dragover');
+            });
+            
+            uploadContainer.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                this.classList.remove('dragover');
+            });
+            
+            uploadContainer.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('dragover');
+                
+                const files = Array.from(e.dataTransfer.files);
+                files.forEach(file => {
+                    if (file.size > 10 * 1024 * 1024) {
+                        alert('文件 "' + file.name + '" 超过 10MB 限制');
+                        return;
+                    }
+                    selectedFiles.push(file);
+                });
+                updateFileList();
+            });
+            
+            // 更新文件列表
+            function updateFileList() {
+                const fileList = $('#fileList');
+                fileList.empty();
+                
+                selectedFiles.forEach((file, index) => {
+                    const fileSize = formatFileSize(file.size);
+                    const fileItem = $(`
+                        <div class="file-item">
+                            <span class="file-name">${file.name}</span>
+                            <span class="file-size">${fileSize}</span>
+                            <button class="remove-btn" data-index="${index}">删除</button>
+                        </div>
+                    `);
+                    fileList.append(fileItem);
+                    
+                    // 如果是图片，显示预览
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            fileItem.append(`<img src="${e.target.result}" class="preview-image">`);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+                
+                // 更新上传按钮状态
+                $('#uploadBtn').prop('disabled', selectedFiles.length === 0);
+            }
+            
+            // 删除文件
+            $(document).on('click', '.remove-btn', function() {
+                const index = $(this).data('index');
+                selectedFiles.splice(index, 1);
+                updateFileList();
+            });
+            
+            // 上传按钮点击事件
+            $('#uploadBtn').click(function() {
+                if (selectedFiles.length === 0) {
+                    alert('请选择要上传的文件');
+                    return;
+                }
+                
+                $(this).prop('disabled', true).text('上传中...');
+                
+                let uploadCount = 0;
+                let successCount = 0;
+                let failCount = 0;
+                
+                selectedFiles.forEach(file => {
+                    const formData = new FormData();
+                    formData.append('file', file);
+                    
+                    $.ajax({
+                        url: '../FileUpload',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            uploadCount++;
+                            if (response.flag === 'success') {
+                                successCount++;
+                                console.log('文件上传成功:', response);
+                            } else {
+                                failCount++;
+                                console.error('文件上传失败:', response.data);
+                            }
+                            
+                            if (uploadCount === selectedFiles.length) {
+                                showResult(successCount, failCount);
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            uploadCount++;
+                            failCount++;
+                            console.error('上传请求失败:', error);
+                            
+                            if (uploadCount === selectedFiles.length) {
+                                showResult(successCount, failCount);
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // 显示上传结果
+            function showResult(success, fail) {
+                const result = $('#result');
+                if (fail === 0) {
+                    result.removeClass('error').addClass('success');
+                    result.html(`<strong>上传成功！</strong><br>成功上传 ${success} 个文件`);
+                } else {
+                    result.removeClass('success').addClass('error');
+                    result.html(`<strong>上传完成</strong><br>成功: ${success} 个，失败: ${fail} 个`);
+                }
+                result.show();
+                
+                $('#uploadBtn').prop('disabled', false).text('开始上传');
+                
+                // 清空文件列表
+                selectedFiles = [];
+                updateFileList();
+            }
+            
+            // 格式化文件大小
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备状态管理 - 爱情海文化传媒</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* 隐藏滚动条但保持滚动功能 */
+        /* 对于WebKit浏览器 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 对于Firefox */
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        .equipment-status {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .status-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .search-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .search-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .search-label {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .search-control {
+            padding: 8px 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 14px;
+            min-width: 150px;
+        }
+        
+        .search-control:focus {
+            border-color: #2c74c9;
+            box-shadow: 0 0 0 2px rgba(44, 116, 201, 0.2);
+            outline: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: #2c74c9;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        
+        .btn-success {
+            background-color: #52c41a;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #389e0d;
+        }
+        
+        .btn-danger {
+            background-color: #ff4d4f;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background-color: #cf1322;
+        }
+        
+        .equipment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .equipment-table th,
+        .equipment-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .equipment-table th {
+            background-color: #fafafa;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .equipment-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .status-available {
+            background-color: #f6ffed;
+            color: #52c41a;
+        }
+        
+        .status-borrowed {
+            background-color: #fff7e6;
+            color: #fa8c16;
+        }
+        
+        .status-maintenance {
+            background-color: #e6f7ff;
+            color: #1890ff;
+        }
+        
+        .status-damaged {
+            background-color: #fff1f0;
+            color: #ff4d4f;
+        }
+        
+        .status-lost {
+            background-color: #f5f5f5;
+            color: #999;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            animation: slideIn 0.3s;
+        }
+        
+        .modal-header {
+            background-color: #2c74c9;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-footer {
+            padding: 15px 20px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        .modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            cursor: pointer;
+        }
+        
+        .modal-close:hover {
+            color: #000;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #2c74c9;
+            box-shadow: 0 0 0 2px rgba(44, 116, 201, 0.2);
+            outline: none;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .page-btn {
+            padding: 8px 16px;
+            background-color: #fff;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover {
+            border-color: #2c74c9;
+            color: #2c74c9;
+        }
+        
+        .page-btn.active {
+            background-color: #2c74c9;
+            color: white;
+            border-color: #2c74c9;
+        }
+        
+        .page-btn:disabled {
+            background-color: #f5f5f5;
+            color: #999;
+            cursor: not-allowed;
+            border-color: #d9d9d9;
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        @keyframes slideIn {
+            from {transform: translateY(-30px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/employee.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../IMG/LOGO.jpg" alt="爱情海文化传媒">
+                <span class="logo-text">活动策划管理平台</span>
+            </div>
+            <div class="city-selector">
+                <div class="city-current">
+                    武汉 <span class="arrow">↓</span>
+                </div>
+                <div class="city-dropdown">
+                    <div class="business-distribution">业务分布</div>
+                    <div class="city-grid">
+                        <div class="city-row">
+                            <div class="city-item">武汉</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">南京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">杭州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">苏州</div>
+                        </div>
+                        <div class="city-row">
+                            <div class="city-item">北京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">广州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">深圳</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">其他</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+            </ul>
+            <div class="navbar-user-info" id="navbarUserInfo">
+            </div>
+            <button class="login-btn" id="headerLoginBtn">退出登录</button>
+            <button class="switch-version-btn" id="switchToUserBtn">切换用户版</button>
+        </div>
+    </nav>
+
+    <!-- 设备状态管理内容 -->
+    <section class="equipment-status">
+        <div class="container">
+            <h2 class="section-title">设备状态管理</h2>
+            
+            <div class="status-container">
+                <!-- 搜索和筛选 -->
+                <div class="search-container">
+                    <div class="search-group">
+                        <label class="search-label" for="searchName">设备名称：</label>
+                        <input type="text" class="search-control" id="searchName" placeholder="请输入设备名称">
+                    </div>
+                    <div class="search-group">
+                        <label class="search-label" for="searchType">设备类型：</label>
+                        <select class="search-control" id="searchType">
+                            <option value="">全部类型</option>
+                            <option value="音响设备">音响设备</option>
+                            <option value="灯光设备">灯光设备</option>
+                            <option value="视频设备">视频设备</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label class="search-label" for="searchStatus">设备状态：</label>
+                        <select class="search-control" id="searchStatus">
+                            <option value="">全部状态</option>
+                            <option value="available">可用</option>
+                            <option value="borrowed">已借出</option>
+                            <option value="maintenance">维护中</option>
+                            <option value="damaged">已损坏</option>
+                            <option value="lost">已丢失</option>
+                        </select>
+                    </div>
+                    <div class="search-group" style="margin-left: auto;">
+                        <button class="btn btn-primary" id="searchBtn">搜索</button>
+                        <button class="btn btn-secondary" id="resetBtn">重置</button>
+                    </div>
+                </div>
+                
+                <!-- 设备列表 -->
+                <table class="equipment-table">
+                    <thead>
+                        <tr>
+                            <th>设备ID</th>
+                            <th>设备名称</th>
+                            <th>设备类型</th>
+                            <th>状态</th>
+                            <th>所在位置</th>
+                            <th>最后更新时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="equipmentTableBody">
+                        <!-- 动态加载内容 -->
+                    </tbody>
+                </table>
+                
+                <!-- 分页 -->
+                <div class="pagination" id="pagination">
+                    <!-- 动态加载内容 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 编辑设备状态弹窗 -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div class="modal-header">
+                <h2>编辑设备状态</h2>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <input type="hidden" id="editEquipmentId">
+                    <div class="form-group">
+                        <label class="form-label" for="editEquipmentName">设备名称</label>
+                        <input type="text" class="form-control" id="editEquipmentName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="editEquipmentType">设备类型</label>
+                        <input type="text" class="form-control" id="editEquipmentType" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="editStatus">设备状态</label>
+                        <select class="form-control" id="editStatus" required>
+                            <option value="available">可用</option>
+                            <option value="borrowed">已借出</option>
+                            <option value="maintenance">维护中</option>
+                            <option value="damaged">已损坏</option>
+                            <option value="lost">已丢失</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="editLocation">所在位置</label>
+                        <input type="text" class="form-control" id="editLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="editNotes">备注</label>
+                        <textarea class="form-control" id="editNotes" rows="3" placeholder="请输入备注信息"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelBtn">取消</button>
+                <button type="button" class="btn btn-primary" id="saveBtn">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            // 模拟设备数据
+            const mockEquipmentData = [
+                { id: 1, name: "音响系统", type: "音响设备", status: "available", location: "仓库A区", updateTime: "2026-02-01 10:00:00" },
+                { id: 2, name: "LED显示屏", type: "视频设备", status: "borrowed", location: "活动现场", updateTime: "2026-01-30 14:30:00" },
+                { id: 3, name: "舞台灯光", type: "灯光设备", status: "maintenance", location: "维修区", updateTime: "2026-01-28 09:15:00" },
+                { id: 4, name: "投影仪", type: "视频设备", status: "available", location: "仓库B区", updateTime: "2026-02-01 11:20:00" },
+                { id: 5, name: "麦克风", type: "音响设备", status: "damaged", location: "维修区", updateTime: "2026-01-25 16:45:00" },
+                { id: 6, name: "调音台", type: "音响设备", status: "available", location: "仓库A区", updateTime: "2026-02-01 10:30:00" },
+                { id: 7, name: "电脑", type: "其他", status: "borrowed", location: "办公室", updateTime: "2026-01-29 13:20:00" },
+                { id: 8, name: "相机", type: "视频设备", status: "available", location: "仓库C区", updateTime: "2026-02-01 12:00:00" }
+            ];
+            
+            let currentPage = 1;
+            const pageSize = 5;
+            let filteredData = [...mockEquipmentData];
+            
+            // 初始化页面
+            function initPage() {
+                renderEquipmentList();
+                renderPagination();
+            }
+            
+            // 渲染设备列表
+            function renderEquipmentList() {
+                const startIndex = (currentPage - 1) * pageSize;
+                const endIndex = startIndex + pageSize;
+                const pageData = filteredData.slice(startIndex, endIndex);
+                
+                const tbody = $('#equipmentTableBody');
+                tbody.empty();
+                
+                if (pageData.length === 0) {
+                    tbody.append('<tr><td colspan="7" style="text-align: center; color: #999; padding: 40px;">暂无设备数据</td></tr>');
+                    return;
+                }
+                
+                pageData.forEach(equipment => {
+                    let statusClass = '';
+                    let statusText = '';
+                    
+                    switch(equipment.status) {
+                        case 'available':
+                            statusClass = 'status-available';
+                            statusText = '可用';
+                            break;
+                        case 'borrowed':
+                            statusClass = 'status-borrowed';
+                            statusText = '已借出';
+                            break;
+                        case 'maintenance':
+                            statusClass = 'status-maintenance';
+                            statusText = '维护中';
+                            break;
+                        case 'damaged':
+                            statusClass = 'status-damaged';
+                            statusText = '已损坏';
+                            break;
+                        case 'lost':
+                            statusClass = 'status-lost';
+                            statusText = '已丢失';
+                            break;
+                        default:
+                            statusClass = 'status-available';
+                            statusText = '可用';
+                    }
+                    
+                    const row = `
+                        <tr>
+                            <td>${equipment.id}</td>
+                            <td>${equipment.name}</td>
+                            <td>${equipment.type}</td>
+                            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+                            <td>${equipment.location}</td>
+                            <td>${equipment.updateTime}</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn btn-primary edit-btn" data-id="${equipment.id}">编辑</button>
+                                    <button class="btn btn-secondary detail-btn" data-id="${equipment.id}">详情</button>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                    tbody.append(row);
+                });
+                
+                // 绑定编辑按钮事件
+                $('.edit-btn').click(function() {
+                    const equipmentId = $(this).data('id');
+                    openEditModal(equipmentId);
+                });
+                
+                // 绑定详情按钮事件
+                $('.detail-btn').click(function() {
+                    const equipmentId = $(this).data('id');
+                    alert('查看设备详情：' + equipmentId);
+                });
+            }
+            
+            // 渲染分页
+            function renderPagination() {
+                const totalPages = Math.ceil(filteredData.length / pageSize);
+                const pagination = $('#pagination');
+                pagination.empty();
+                
+                // 上一页按钮
+                const prevBtn = $('<button class="page-btn">上一页</button>');
+                if (currentPage === 1) {
+                    prevBtn.prop('disabled', true);
+                } else {
+                    prevBtn.click(function() {
+                        currentPage--;
+                        renderEquipmentList();
+                        renderPagination();
+                    });
+                }
+                pagination.append(prevBtn);
+                
+                // 页码按钮
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageBtn = $('<button class="page-btn">' + i + '</button>');
+                    if (i === currentPage) {
+                        pageBtn.addClass('active');
+                    } else {
+                        pageBtn.click(function() {
+                            currentPage = i;
+                            renderEquipmentList();
+                            renderPagination();
+                        });
+                    }
+                    pagination.append(pageBtn);
+                }
+                
+                // 下一页按钮
+                const nextBtn = $('<button class="page-btn">下一页</button>');
+                if (currentPage === totalPages) {
+                    nextBtn.prop('disabled', true);
+                } else {
+                    nextBtn.click(function() {
+                        currentPage++;
+                        renderEquipmentList();
+                        renderPagination();
+                    });
+                }
+                pagination.append(nextBtn);
+            }
+            
+            // 打开编辑模态框
+            function openEditModal(equipmentId) {
+                const equipment = mockEquipmentData.find(item => item.id === equipmentId);
+                if (!equipment) return;
+                
+                // 填充表单数据
+                $('#editEquipmentId').val(equipment.id);
+                $('#editEquipmentName').val(equipment.name);
+                $('#editEquipmentType').val(equipment.type);
+                $('#editStatus').val(equipment.status);
+                $('#editLocation').val(equipment.location);
+                
+                // 显示模态框
+                $('#editModal').show();
+            }
+            
+            // 搜索按钮点击事件
+            $('#searchBtn').click(function() {
+                const searchName = $('#searchName').val().toLowerCase();
+                const searchType = $('#searchType').val();
+                const searchStatus = $('#searchStatus').val();
+                
+                filteredData = mockEquipmentData.filter(equipment => {
+                    const nameMatch = equipment.name.toLowerCase().includes(searchName);
+                    const typeMatch = !searchType || equipment.type === searchType;
+                    const statusMatch = !searchStatus || equipment.status === searchStatus;
+                    
+                    return nameMatch && typeMatch && statusMatch;
+                });
+                
+                currentPage = 1;
+                renderEquipmentList();
+                renderPagination();
+            });
+            
+            // 重置按钮点击事件
+            $('#resetBtn').click(function() {
+                $('#searchName').val('');
+                $('#searchType').val('');
+                $('#searchStatus').val('');
+                
+                filteredData = [...mockEquipmentData];
+                currentPage = 1;
+                renderEquipmentList();
+                renderPagination();
+            });
+            
+            // 模态框关闭按钮
+            $('#modalClose').click(function() {
+                $('#editModal').hide();
+            });
+            
+            // 取消按钮点击事件
+            $('#cancelBtn').click(function() {
+                $('#editModal').hide();
+            });
+            
+            // 保存按钮点击事件
+            $('#saveBtn').click(function() {
+                const equipmentId = parseInt($('#editEquipmentId').val());
+                const newStatus = $('#editStatus').val();
+                const newLocation = $('#editLocation').val();
+                const newNotes = $('#editNotes').val();
+                
+                // 更新模拟数据
+                const equipmentIndex = mockEquipmentData.findIndex(item => item.id === equipmentId);
+                if (equipmentIndex !== -1) {
+                    mockEquipmentData[equipmentIndex].status = newStatus;
+                    mockEquipmentData[equipmentIndex].location = newLocation;
+                    mockEquipmentData[equipmentIndex].updateTime = new Date().toLocaleString('zh-CN');
+                    
+                    // 重新过滤和渲染
+                    $('#searchBtn').click();
+                    
+                    // 关闭模态框
+                    $('#editModal').hide();
+                    
+                    // 显示成功消息
+                    alert('设备状态更新成功！');
+                }
+            });
+            
+            // 点击模态框外部关闭
+            $(window).click(function(event) {
+                if (event.target.id === 'editModal') {
+                    $('#editModal').hide();
+                }
+            });
+            
+            // 初始化页面
+            initPage();
+        });
+    </script>
+</body>
+</html>

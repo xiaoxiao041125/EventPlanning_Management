@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工主页 - 爱情海文化传媒</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* 隐藏滚动条但保持滚动功能 */
+        /* 对于WebKit浏览器 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 对于Firefox */
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/employee.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../IMG/LOGO.jpg" alt="爱情海文化传媒">
+                <span class="logo-text">活动策划管理平台</span>
+            </div>
+            <div class="city-selector">
+                <div class="city-current">
+                    武汉 <span class="arrow">↓</span>
+                </div>
+                <div class="city-dropdown">
+                    <div class="business-distribution">业务分布</div>
+                    <div class="city-grid">
+                        <div class="city-row">
+                            <div class="city-item">武汉</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">南京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">杭州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">苏州</div>
+                        </div>
+                        <div class="city-row">
+                            <div class="city-item">北京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">广州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">深圳</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">其他</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="employee.html" class="active">员工主页</a></li>
+                <li><a href="salary.html">我的薪资</a></li>
+                <li><a href="employee_list.html">员工花名册</a></li>
+                <li><a href="approval.html">审批/报销</a></li>
+                <li><a href="index.html">用户版首页</a></li>
+            </ul>
+            <div class="navbar-user-info" id="navbarUserInfo">
+            </div>
+            <button class="login-btn" id="headerLoginBtn">退出登录</button>
+            <button class="switch-version-btn" id="switchToUserBtn">切换用户版</button>
+        </div>
+    </nav>
+
+    <!-- 员工主页内容 -->
+    <section class="employee-home">
+        <div class="container">
+            <h2 class="section-title">欢迎回来，员工！</h2>
+            <div class="employee-dashboard">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>待办事项</h3>
+                        <button class="btn-more" id="todoDetailsBtn">详细</button>
+                    </div>
+                    <div class="todo-list" id="todoList">
+                        <!-- 待办事项将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>近期活动</h3>
+                        <button class="btn-more" id="moreActivitiesBtn">更多</button>
+                    </div>
+                    <div class="activity-list" id="activityList">
+                        <!-- 活动数据将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>个人信息</h3>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <span class="info-label">姓名：</span>
+                            <span class="info-value" id="infoName">张三</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">职位：</span>
+                            <span class="info-value" id="infoPost">业务管理员</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">工号：</span>
+                            <span class="info-value" id="infoUserId">--</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">电话：</span>
+                            <span class="info-value" id="infoPhone">--</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">城市：</span>
+                            <span class="info-value" id="infoCity">--</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">入职时间：</span>
+                            <span class="info-value" id="infoJoinDate">2023-06-15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .employee-home {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .employee-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .dashboard-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        .dashboard-card h3 {
+            font-size: 20px;
+            color: #2c74c9;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        
+        .card-header h3 {
+            font-size: 20px;
+            color: #2c74c9;
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .btn-more {
+            background-color: #2c74c9;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-more:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .activity-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-item h4 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .activity-item p {
+            font-size: 14px;
+            color: #666;
+            margin: 4px 0;
+        }
+        
+        .todo-list {
+            list-style: none;
+        }
+        
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .todo-item:last-child {
+            border-bottom: none;
+        }
+        
+        .todo-text {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .todo-deadline {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .activity-list {
+            list-style: none;
+        }
+        
+        .activity-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-item h4 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .activity-item p {
+            font-size: 14px;
+            color: #666;
+            margin: 4px 0;
+        }
+        
+        .personal-info {
+            list-style: none;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .info-label {
+            font-size: 14px;
+            color: #666;
+            width: 100px;
+        }
+        
+        .info-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* 下拉菜单样式 */
+        .nav-menu li.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nav-menu li.dropdown a.dropdown-toggle {
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            position: relative;
+        }
+        
+        .nav-menu li.dropdown a.dropdown-toggle:hover {
+            color: #2c74c9;
+        }
+        
+        .nav-menu li.dropdown a.dropdown-toggle.active {
+            color: #2c74c9;
+            font-weight: bold;
+        }
+        
+        .nav-menu li.dropdown a.dropdown-toggle::after {
+            content: ' ▼';
+            font-size: 8px;
+            margin-left: 5px;
+        }
+        
+        .nav-menu li.dropdown ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-menu li.dropdown:hover ul.dropdown-menu {
+            display: block;
+        }
+        
+        .nav-menu li.dropdown ul.dropdown-menu li.dropdown-item {
+            padding: 0;
+        }
+        
+        .nav-menu li.dropdown ul.dropdown-menu li.dropdown-item a {
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu li.dropdown ul.dropdown-menu li.dropdown-item a:hover {
+            background-color: #f5f5f5;
+            color: #2c74c9;
+        }
+        
+        .nav-menu li.dropdown ul.dropdown-menu li.dropdown-item a.active {
+            background-color: #e6f0fa;
+            color: #2c74c9;
+            font-weight: bold;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/employee.js"></script>
+    <!-- 修改密码模态框 -->
+    <div class="modal" id="changePasswordModal">
+        <div class="modal-content">
+            <span class="modal-close" id="changePasswordClose">&times;</span>
+            <div class="modal-header">
+                <h2>修改密码</h2>
+            </div>
+            
+            <div class="modal-body">
+                <form id="changePasswordForm">
+                    <div class="modal-input-group">
+                        <label for="oldPassword">旧密码</label>
+                        <input type="password" id="oldPassword" placeholder="请输入旧密码" required>
+                    </div>
+                    <div class="modal-input-group">
+                        <label for="newPassword">新密码</label>
+                        <input type="password" id="newPassword" placeholder="请输入新密码" required>
+                    </div>
+                    <div class="modal-input-group">
+                        <label for="confirmNewPassword">确认新密码</label>
+                        <input type="password" id="confirmNewPassword" placeholder="请再次输入新密码" required>
+                        <span class="password-error" id="changePasswordError" style="display: none; color: #ff4d4f; font-size: 12px; margin-top: 5px;">两次输入的密码不一致</span>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="submit" form="changePasswordForm" class="modal-btn login-modal-btn" id="submitChangePasswordBtn">确认修改</button>
+                <button type="button" class="modal-btn register-modal-btn" id="cancelChangePasswordBtn">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 修改信息模态框 -->
+    <div class="modal" id="changeInfoModal">
+        <div class="modal-content">
+            <span class="modal-close" id="changeInfoClose">&times;</span>
+            <div class="modal-header">
+                <h2>修改信息</h2>
+            </div>
+            
+            <div class="modal-body">
+                <form id="changeInfoForm">
+                    <div class="modal-input-group">
+                        <label>头像</label>
+                        <div class="avatar-upload">
+                            <img id="currentAvatar" src="../IMG/默认头像webp.webp" alt="当前头像">
+                            <input type="file" id="avatarFile" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="modal-input-group">
+                        <label for="changeName">姓名</label>
+                        <input type="text" id="changeName" placeholder="请输入姓名" required>
+                    </div>
+                    <div class="modal-input-group">
+                        <label for="changeSex">性别</label>
+                        <select id="changeSex">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                    <div class="modal-input-group">
+                        <label for="changePhone">电话</label>
+                        <input type="tel" id="changePhone" placeholder="请输入电话">
+                    </div>
+                </form>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="submit" form="changeInfoForm" class="modal-btn login-modal-btn" id="submitChangeInfoBtn">确认修改</button>
+                <button type="button" class="modal-btn register-modal-btn" id="cancelChangeInfoBtn">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 方案进度模态框 -->
+    <div class="modal" id="planProgressModal">
+        <div class="modal-content" style="width: 80%; max-width: 1200px;">
+            <span class="modal-close" id="planProgressClose">&times;</span>
+            <div class="modal-header">
+                <h2>方案进度</h2>
+                <div class="modal-header-actions">
+                    <button class="btn btn-primary" id="refreshReportBtn">刷新数据</button>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="report-list-container" id="modalReportListBody">
+                    <!-- 动态生成的活动项将显示在这里 -->
+                </div>
+                <div class="no-data" id="modalNoDataMsg" style="display: none;">
+                    暂无活动需求数据
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="planProgressCancelBtn">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 活动详情模态框 -->
+    <div class="modal" id="activityDetailModal">
+        <div class="modal-content" style="width: 60%; max-width: 800px;">
+            <span class="modal-close" id="activityDetailClose">&times;</span>
+            <div class="modal-header">
+                <h2>活动详情</h2>
+            </div>
+            
+            <div class="modal-body">
+                <div class="detail-info">
+                    <div class="detail-item">
+                        <label>活动ID:</label>
+                        <span id="detailDemandId">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>活动类型:</label>
+                        <span id="detailActivityType">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>活动地点:</label>
+                        <span id="detailActivityPlace">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>活动时间:</label>
+                        <span id="detailActivityTime">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>参与人数:</label>
+                        <span id="detailParticipantCount">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>预算:</label>
+                        <span id="detailBudget">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>需求描述:</label>
+                        <span id="detailDescription">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>状态:</label>
+                        <span id="detailStatus">--</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>提交时间:</label>
+                        <span id="detailSubmitTime">--</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="activityDetailCancelBtn">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            $("#switchToUserBtn").click(function() {
+                $("body").addClass("fade-out");
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 300);
+            });
+            
+            // 加载近期活动数据
+            loadRecentActivities();
+            
+            // 加载待办事项
+            loadTodoItems();
+            
+            // 更新个人信息
+            updatePersonalInfo();
+            
+            // 更多按钮点击事件
+            $("#moreActivitiesBtn").click(function() {
+                // 这里可以实现查看所有活动的功能
+                alert("查看所有活动功能将在后续实现");
+            });
+            
+            // 详细按钮点击事件
+            $("#todoDetailsBtn").click(function() {
+                const role = localStorage.getItem("post") || "";
+                switch(role) {
+                    case "业务管理员":
+                        window.location.href = "manage_activity_applications.html";
+                        break;
+                    case "工人":
+                        window.location.href = "attendance.html";
+                        break;
+                    case "用户管理员":
+                        window.location.href = "employee_registration_approval.html";
+                        break;
+                    default:
+                        alert("暂无详细页面");
+                }
+            });
+        });
+        
+        // 加载近期活动数据
+        function loadRecentActivities() {
+            $.ajax({
+                url: 'http://localhost:8080/EventPlanning_Management/ShowAllActivityDemand',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    if(response.flag === 'success' && response.data) {
+                        // 筛选数据：activity_progress=2 且时间大于今天
+                        const filteredActivities = filterActivities(response.data);
+                        // 渲染活动数据，只显示前两条
+                        renderActivities(filteredActivities.slice(0, 2));
+                    }
+                },
+                error: function() {
+                    console.error('获取活动数据失败');
+                }
+            });
+        }
+        
+        // 筛选活动数据
+        function filterActivities(activities) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            return activities.filter(activity => {
+                // 筛选 activity_progress>=2
+                if(activity.activity_progress < 2) {
+                    return false;
+                }
+                
+                // 筛选时间大于今天
+                if(activity.start_time) {
+                    const startTime = new Date(activity.start_time);
+                    return startTime > today;
+                }
+                return false;
+            });
+        }
+        
+        // 渲染活动数据
+        function renderActivities(activities) {
+            const activityList = $("#activityList");
+            activityList.empty();
+            
+            if(activities.length === 0) {
+                activityList.html('<div class="no-activity">暂无近期活动</div>');
+                return;
+            }
+            
+            activities.forEach(activity => {
+                // 第一行为地点+活动（黑体加粗）
+                const activityName = activity.activity_place + activity.activity_type;
+                // 第二行为时间 为起始时间
+                const startTime = formatDate(activity.start_time);
+                // 第三行为地点
+                const location = activity.activity_place;
+                
+                const activityItem = `
+                    <div class="activity-item">
+                        <h4>${activityName}</h4>
+                        <p>时间：${startTime}</p>
+                        <p>地点：${location}</p>
+                    </div>
+                `;
+                activityList.append(activityItem);
+            });
+        }
+        
+        // 格式化日期
+        function formatDate(dateString) {
+            if(!dateString) return '-';
+            const date = new Date(dateString);
+            return date.getFullYear() + '-' + 
+                   String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+                   String(date.getDate()).padStart(2, '0');
+        }
+        
+        // 加载待办事项
+        function loadTodoItems() {
+            const role = localStorage.getItem("post") || "";
+            const todoList = $("#todoList");
+            todoList.empty();
+            
+            let todoItems = [];
+            
+            switch(role) {
+                case "业务管理员":
+                    todoItems = [
+                        { text: "审核用户活动申请" },
+                        { text: "活动人员安排" },
+                        { text: "更新活动案例库" },
+                        { text: "整理用户联系方式" },
+                        { text: "参加团队会议" }
+                    ];
+                    break;
+                case "工人":
+                    todoItems = [
+                        { text: "查看工作安排" },
+                        { text: "检查场地设备" },
+                        { text: "准备活动物料" },
+                        { text: "参加安全培训" },
+                        { text: "参加团队会议" }
+                    ];
+                    break;
+                case "用户管理员":
+                    todoItems = [
+                        { text: "审核员工注册批准" },
+                        { text: "员工/用户权限管理" },
+                        { text: "更新用户信息" },
+                        { text: "处理用户反馈" },
+                        { text: "参加团队会议" }
+                    ];
+                    break;
+                case "仓库管理员":
+                    todoItems = [
+                        { text: "盘点仓库物资" },
+                        { text: "审核物料申请" },
+                        { text: "设备维护保养" },
+                        { text: "整理仓库布局" },
+                        { text: "参加团队会议" }
+                    ];
+                    break;
+                case "会计":
+                    todoItems = [
+                        { text: "计算员工薪资" },
+                        { text: "处理报销申请" },
+                        { text: "核对活动收支" },
+                        { text: "准备财务报表" },
+                        { text: "参加团队会议" }
+                    ];
+                    break;
+                default:
+                    todoItems = [
+                        { text: "完成日常工作" },
+                        { text: "学习业务知识" },
+                        { text: "整理工作文档" },
+                        { text: "与同事沟通协作" },
+                        { text: "参加团队会议" }
+                    ];
+            }
+            
+            todoItems.forEach(item => {
+                const todoItem = `
+                    <div class="todo-item">
+                        <span class="todo-text">${item.text}</span>
+                    </div>
+                `;
+                todoList.append(todoItem);
+            });
+        }
+        
+        // 更新个人信息
+        function updatePersonalInfo() {
+            const user = JSON.parse(localStorage.getItem("user")) || {};
+            const name = localStorage.getItem("name") || user.name || user.username || "员工";
+            const post = localStorage.getItem("post") || "工人";
+            const userId = localStorage.getItem("userId") || user.userId || user.id || "--";
+            const phone = user.phone || "--";
+            const city = "武汉"; // 默认城市，可以根据需要从用户数据中获取
+            
+            // 更新个人信息显示
+            $("#infoName").text(name);
+            $("#infoPost").text(post);
+            $("#infoUserId").text(userId);
+            $("#infoPhone").text(phone);
+            $("#infoCity").text(city);
+        }
+    </script>
+</body>
+</html>

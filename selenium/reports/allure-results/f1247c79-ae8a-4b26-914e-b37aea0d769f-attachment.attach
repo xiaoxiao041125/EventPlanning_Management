@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_012",
+  "case_name": "正常活动申请 - 路演巡展",
+  "activity_place": "杭州",
+  "activity_type": "路演巡展",
+  "start_time": "2026-07-15",
+  "end_time": "2026-07-20",
+  "activity_people": "100-200",
+  "activity_budget": "10-20 万",
+  "requirement_desc": "连续 5 天的路演活动，需要移动舞台",
+  "phone": "13912345678",
+  "name": "刘经理",
+  "expected": "活动需求提交成功！"
+}

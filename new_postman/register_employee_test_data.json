@@ -1,0 +1,82 @@
+[
+  {
+    "id": "EMP_001",
+    "username": "test_employee1",
+    "password": "123456",
+    "employeeName": "测试员工1",
+    "phone": "13800138006",
+    "description": "正常注册 - 新员工"
+  },
+  {
+    "id": "EMP_002",
+    "username": "",
+    "password": "123456",
+    "employeeName": "测试员工2",
+    "phone": "13800138007",
+    "description": "异常注册 - 空用户名"
+  },
+  {
+    "id": "EMP_003",
+    "username": "test_employee3",
+    "password": "",
+    "employeeName": "测试员工3",
+    "phone": "13800138008",
+    "description": "异常注册 - 空密码"
+  },
+  {
+    "id": "EMP_004",
+    "username": "test_employee4",
+    "password": "123456",
+    "employeeName": "",
+    "phone": "13800138009",
+    "description": "异常注册 - 空员工姓名"
+  },
+  {
+    "id": "EMP_005",
+    "username": "test_employee5",
+    "password": "123456",
+    "employeeName": "测试员工5",
+    "phone": "",
+    "description": "异常注册 - 空手机号"
+  },
+  {
+    "id": "EMP_006",
+    "username": "admin",
+    "password": "123456",
+    "employeeName": "管理员",
+    "phone": "13800138010",
+    "description": "异常注册 - 用户名已存在（用户表）"
+  },
+  {
+    "id": "EMP_007",
+    "username": "worker_lihao",
+    "password": "123456",
+    "employeeName": "李浩",
+    "phone": "13800138011",
+    "description": "异常注册 - 用户名已存在（员工表）"
+  },
+  {
+    "id": "EMP_008",
+    "username": "test_employee8",
+    "password": "123456",
+    "employeeName": "测试员工8",
+    "phone": "138001380",
+    "description": "异常注册 - 手机号格式错误（长度不足）"
+  },
+  {
+    "id": "EMP_009",
+    "username": "test_employee9",
+    "password": "123456",
+    "employeeName": "测试员工9",
+    "phone": "138001380123",
+    "description": "异常注册 - 手机号格式错误（长度过长）"
+  },
+  {
+    "id": "EMP_010",
+    "username": "test_employee10",
+    "password": "123456",
+    "employeeName": "测试员工10",
+    "phone": "13800138012",
+    "description": "正常注册 - 新员工（边界测试）"
+  }
+]

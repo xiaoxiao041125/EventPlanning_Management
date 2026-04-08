@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ADD_REIMBURSEMENT_001",
+    "userId": "1",
+    "reimbursementType": "1",
+    "amount": "500.00",
+    "expenseDate": "2026-04-07",
+    "description": "出差报销差旅费",
+    "description_detail": "添加报销申请 - 正常添加（差旅费type=1）"
+  },
+  {
+    "id": "ADD_REIMBURSEMENT_002",
+    "userId": "1",
+    "reimbursementType": "4",
+    "amount": "200.00",
+    "expenseDate": "2026-04-07",
+    "description": "客户招待餐饮费",
+    "description_detail": "添加报销申请 - 正常添加（餐饮费type=4）"
+  },
+  {
+    "id": "ADD_REIMBURSEMENT_003",
+    "userId": "",
+    "reimbursementType": "1",
+    "amount": "100.00",
+    "expenseDate": "2026-04-07",
+    "description": "缺少userId",
+    "description_detail": "添加报销申请 - 缺少userId"
+  },
+  {
+    "id": "ADD_REIMBURSEMENT_004",
+    "userId": "1",
+    "reimbursementType": "6",
+    "amount": "100.00",
+    "expenseDate": "2026-04-07",
+    "description": "报销类型超出范围",
+    "description_detail": "添加报销申请 - 报销类型超出范围（type=6）"
+  }
+]

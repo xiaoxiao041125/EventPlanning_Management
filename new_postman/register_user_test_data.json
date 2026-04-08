@@ -1,0 +1,72 @@
+[
+  {
+    "id": "REG_001",
+    "username": "test_user1",
+    "password": "123456",
+    "name": "测试用户1",
+    "phone": "13800138013",
+    "sex": "男",
+    "roleId": "user",
+    "description": "正常注册 - 新用户"
+  },
+  {
+    "id": "REG_002",
+    "username": "",
+    "password": "123456",
+    "name": "测试用户2",
+    "phone": "13800138014",
+    "sex": "女",
+    "roleId": "user",
+    "description": "异常注册 - 空用户名"
+  },
+  {
+    "id": "REG_003",
+    "username": "test_user3",
+    "password": "",
+    "name": "测试用户3",
+    "phone": "13800138015",
+    "sex": "男",
+    "roleId": "user",
+    "description": "异常注册 - 空密码"
+  },
+  {
+    "id": "REG_004",
+    "username": "test_user4",
+    "password": "123456",
+    "name": "测试用户4",
+    "phone": "13800138016",
+    "sex": "女",
+    "roleId": "",
+    "description": "异常注册 - 空角色"
+  },
+  {
+    "id": "REG_005",
+    "username": "admin",
+    "password": "123456",
+    "name": "管理员",
+    "phone": "13800138017",
+    "sex": "男",
+    "roleId": "user",
+    "description": "异常注册 - 用户名已存在"
+  },
+  {
+    "id": "REG_006",
+    "username": "test_user6",
+    "password": "123456",
+    "name": "测试用户6",
+    "phone": "138001380",
+    "sex": "男",
+    "roleId": "user",
+    "description": "异常注册 - 手机号格式错误"
+  },
+  {
+    "id": "REG_007",
+    "username": "test_user7",
+    "password": "123456",
+    "name": "测试用户7",
+    "phone": "13800138018",
+    "sex": "女",
+    "roleId": "employee",
+    "description": "正常注册 - 新员工用户"
+  }
+]

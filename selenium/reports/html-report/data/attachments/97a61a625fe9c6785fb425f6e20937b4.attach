@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_002",
+  "case_name": "正常活动申请 - 周年庆典",
+  "activity_place": "上海",
+  "activity_type": "周年庆典",
+  "start_time": "2026-06-15",
+  "end_time": "2026-06-16",
+  "activity_people": "100-200",
+  "activity_budget": "10-20 万",
+  "requirement_desc": "周年庆典活动，需要红毯和背景板",
+  "phone": "13900139000",
+  "name": "李四",
+  "expected": "活动需求提交成功！"
+}

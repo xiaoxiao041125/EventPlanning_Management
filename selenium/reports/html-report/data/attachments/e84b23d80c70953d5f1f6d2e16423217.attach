@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_003",
+  "case_name": "无效时间-结束时间早于起始时间",
+  "activity_place": "深圳",
+  "activity_type": "新品发布会",
+  "start_time": "2026-05-10",
+  "end_time": "2026-05-05",
+  "activity_people": "50-100",
+  "activity_budget": "3-5 万",
+  "requirement_desc": "测试时间错误",
+  "phone": "13800138003",
+  "name": "孙七",
+  "expected": "结束时间必须晚于起始时间"
+}

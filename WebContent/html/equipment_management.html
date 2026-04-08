@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备借用/归还登记 - 爱情海文化传媒</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* 隐藏滚动条但保持滚动功能 */
+        /* 对于WebKit浏览器 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 对于Firefox */
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        .equipment-management {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .management-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tab-container {
+            margin-bottom: 30px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #666;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn:hover {
+            color: #2c74c9;
+        }
+        
+        .tab-btn.active {
+            color: #2c74c9;
+            border-bottom-color: #2c74c9;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #2c74c9;
+            box-shadow: 0 0 0 2px rgba(44, 116, 201, 0.2);
+            outline: none;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: #2c74c9;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a5cb5;
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        
+        .form-actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
+        .success-message {
+            color: #52c41a;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .error-message {
+            color: #ff4d4f;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../IMG/LOGO.jpg" alt="爱情海文化传媒">
+                <span class="logo-text">活动策划管理平台</span>
+            </div>
+            <div class="city-selector">
+                <div class="city-current">
+                    武汉 <span class="arrow">↓</span>
+                </div>
+                <div class="city-dropdown">
+                    <div class="business-distribution">业务分布</div>
+                    <div class="city-grid">
+                        <div class="city-row">
+                            <div class="city-item">武汉</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">南京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">杭州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">苏州</div>
+                        </div>
+                        <div class="city-row">
+                            <div class="city-item">北京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">广州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">深圳</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">其他</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+            </ul>
+            <div class="navbar-user-info" id="navbarUserInfo">
+            </div>
+            <button class="login-btn" id="headerLoginBtn">退出登录</button>
+            <button class="switch-version-btn" id="switchToUserBtn">切换用户版</button>
+        </div>
+    </nav>
+
+    <!-- 设备借用/归还登记内容 -->
+    <section class="equipment-management">
+        <div class="container">
+            <h2 class="section-title">设备借用/归还登记</h2>
+            
+            <div class="management-container">
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="borrow">设备借用</button>
+                        <button class="tab-btn" data-tab="return">设备归还</button>
+                    </div>
+                    
+                    <!-- 设备借用表单 -->
+                    <div class="tab-content active" id="borrow">
+                        <form id="borrowForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="equipmentName">设备名称</label>
+                                    <input type="text" class="form-control" id="equipmentName" placeholder="请输入设备名称" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="equipmentType">设备类型</label>
+                                    <select class="form-control" id="equipmentType" required>
+                                        <option value="">请选择设备类型</option>
+                                        <option value="音响设备">音响设备</option>
+                                        <option value="灯光设备">灯光设备</option>
+                                        <option value="视频设备">视频设备</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="borrower">借用人</label>
+                                    <input type="text" class="form-control" id="borrower" placeholder="请输入借用人姓名" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="borrowDate">借用日期</label>
+                                    <input type="date" class="form-control" id="borrowDate" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="returnDate">预计归还日期</label>
+                                <input type="date" class="form-control" id="returnDate" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="purpose">借用用途</label>
+                                <input type="text" class="form-control" id="purpose" placeholder="请输入借用用途" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="notes">备注</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="请输入备注信息"></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="resetBorrowBtn">重置</button>
+                                <button type="submit" class="btn btn-primary" id="submitBorrowBtn">提交借用</button>
+                            </div>
+                            
+                            <div id="borrowMessage" class="success-message" style="display: none;"></div>
+                        </form>
+                    </div>
+                    
+                    <!-- 设备归还表单 -->
+                    <div class="tab-content" id="return">
+                        <form id="returnForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="returnEquipmentName">设备名称</label>
+                                    <input type="text" class="form-control" id="returnEquipmentName" placeholder="请输入设备名称" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="returnEquipmentType">设备类型</label>
+                                    <select class="form-control" id="returnEquipmentType" required>
+                                        <option value="">请选择设备类型</option>
+                                        <option value="音响设备">音响设备</option>
+                                        <option value="灯光设备">灯光设备</option>
+                                        <option value="视频设备">视频设备</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="returnBorrower">借用人</label>
+                                    <input type="text" class="form-control" id="returnBorrower" placeholder="请输入借用人姓名" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="actualReturnDate">实际归还日期</label>
+                                    <input type="date" class="form-control" id="actualReturnDate" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="equipmentCondition">设备状态</label>
+                                <select class="form-control" id="equipmentCondition" required>
+                                    <option value="">请选择设备状态</option>
+                                    <option value="完好">完好</option>
+                                    <option value="轻微损坏">轻微损坏</option>
+                                    <option value="严重损坏">严重损坏</option>
+                                    <option value="丢失">丢失</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="returnNotes">备注</label>
+                                <textarea class="form-control" id="returnNotes" rows="3" placeholder="请输入备注信息"></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="resetReturnBtn">重置</button>
+                                <button type="submit" class="btn btn-primary" id="submitReturnBtn">提交归还</button>
+                            </div>
+                            
+                            <div id="returnMessage" class="success-message" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/employee.js"></script>
+    <script>
+        $(function() {
+            // 获取当前日期
+            var today = new Date().toISOString().split('T')[0];
+            
+            // 设置默认日期
+            $('#borrowDate').val(today);
+            $('#actualReturnDate').val(today);
+            
+            // 标签页切换
+            $('.tab-btn').click(function() {
+                var tabId = $(this).data('tab');
+                
+                // 更新标签状态
+                $('.tab-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                // 更新内容显示
+                $('.tab-content').removeClass('active');
+                $('#' + tabId).addClass('active');
+            });
+            
+            // 设备借用表单重置
+            $('#resetBorrowBtn').click(function() {
+                $('#borrowForm')[0].reset();
+                $('#borrowDate').val(today);
+                $('#borrowMessage').hide();
+            });
+            
+            // 设备借用表单提交
+            $('#borrowForm').submit(function(e) {
+                e.preventDefault();
+                
+                // 获取表单数据
+                const formData = {
+                    equipmentName: $('#equipmentName').val(),
+                    equipmentType: $('#equipmentType').val(),
+                    borrower: $('#borrower').val(),
+                    borrowDate: $('#borrowDate').val(),
+                    returnDate: $('#returnDate').val(),
+                    purpose: $('#purpose').val(),
+                    notes: $('#notes').val()
+                };
+                
+                // 模拟API调用
+                setTimeout(function() {
+                    console.log('提交设备借用数据:', formData);
+                    
+                    // 显示成功消息
+                    $('#borrowMessage').text('设备借用登记成功！').removeClass('error-message').addClass('success-message').show();
+                    
+                    // 重置表单
+                    $('#borrowForm')[0].reset();
+                    $('#borrowDate').val(today);
+                }, 1000);
+            });
+            
+            // 设备归还表单重置
+            $('#resetReturnBtn').click(function() {
+                $('#returnForm')[0].reset();
+                $('#actualReturnDate').val(today);
+                $('#returnMessage').hide();
+            });
+            
+            // 设备归还表单提交
+            $('#returnForm').submit(function(e) {
+                e.preventDefault();
+                
+                // 获取表单数据
+                const formData = {
+                    equipmentName: $('#returnEquipmentName').val(),
+                    equipmentType: $('#returnEquipmentType').val(),
+                    borrower: $('#returnBorrower').val(),
+                    actualReturnDate: $('#actualReturnDate').val(),
+                    equipmentCondition: $('#equipmentCondition').val(),
+                    returnNotes: $('#returnNotes').val()
+                };
+                
+                // 模拟API调用
+                setTimeout(function() {
+                    console.log('提交设备归还数据:', formData);
+                    
+                    // 显示成功消息
+                    $('#returnMessage').text('设备归还登记成功！').removeClass('error-message').addClass('success-message').show();
+                    
+                    // 重置表单
+                    $('#returnForm')[0].reset();
+                    $('#actualReturnDate').val(today);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "case_id": "ACT_007",
+  "case_name": "无效称呼-空称呼",
+  "activity_place": "重庆",
+  "activity_type": "答谢会",
+  "start_time": "2026-10-01",
+  "end_time": "2026-10-02",
+  "activity_people": "100-200",
+  "activity_budget": "5-10 万",
+  "requirement_desc": "测试空称呼",
+  "phone": "13800138004",
+  "name": "",
+  "expected": "称呼不能为空"
+}

@@ -1,0 +1,88 @@
+2026-03-28 13:53:21,500 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:53:21,501 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 13:53:22,986 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 13:53:23,600 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 13:53:23,611 - base.base_page - INFO - 页面加载完成
+2026-03-28 13:53:23,634 - base.base_page - DEBUG - 找到元素: ('id', 'loginBtn')
+2026-03-28 13:53:33,677 - base.base_page - ERROR - 查找元素超时: ('id', 'username')
+2026-03-28 13:53:35,124 - base.base_page - INFO - 截图保存: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\screenshots\element_not_found_1774677213
+2026-03-28 13:53:37,534 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 13:53:37,550 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:53:37,552 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 13:53:39,782 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 13:53:39,954 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 13:53:40,009 - base.base_page - INFO - 页面加载完成
+2026-03-28 13:53:43,262 - base.base_page - ERROR - 输入文本失败: ('id', 'username'), 错误: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=137.0.7151.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6ead26f65+78965]
+	GetHandleVerifier [0x0x7ff6ead26fc0+79056]
+	(No symbol) [0x0x7ff6eaab9dda]
+	(No symbol) [0x0x7ff6eaaa61e1]
+	(No symbol) [0x0x7ff6eaaa614c]
+	(No symbol) [0x0x7ff6eaaa48dc]
+	(No symbol) [0x0x7ff6eaaa559f]
+	(No symbol) [0x0x7ff6eaabf331]
+	(No symbol) [0x0x7ff6eaabfe27]
+	(No symbol) [0x0x7ff6eaac482c]
+	(No symbol) [0x0x7ff6eaac48ff]
+	(No symbol) [0x0x7ff6eab0fb97]
+	(No symbol) [0x0x7ff6eab1059c]
+	(No symbol) [0x0x7ff6eab63f37]
+	(No symbol) [0x0x7ff6eab386af]
+	(No symbol) [0x0x7ff6eab60dbe]
+	(No symbol) [0x0x7ff6eab38443]
+	(No symbol) [0x0x7ff6eab01311]
+	(No symbol) [0x0x7ff6eab020a3]
+	GetHandleVerifier [0x0x7ff6eafde26d+2926461]
+	GetHandleVerifier [0x0x7ff6eafd8993+2903715]
+	GetHandleVerifier [0x0x7ff6eaff6aed+3026941]
+	GetHandleVerifier [0x0x7ff6ead416fe+187406]
+	GetHandleVerifier [0x0x7ff6ead496ef+220159]
+	GetHandleVerifier [0x0x7ff6ead2faf4+114692]
+	GetHandleVerifier [0x0x7ff6ead2fca9+115129]
+	GetHandleVerifier [0x0x7ff6ead164d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+
+2026-03-28 13:53:45,376 - base.driver_manager - INFO - WebDriver已关闭
+2026-03-28 13:53:45,406 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 13:53:45,406 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 13:53:46,760 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 13:53:47,100 - base.base_page - INFO - 打开URL: http://localhost:8080/EventPlanning_Management/html/index.html
+2026-03-28 13:53:47,200 - base.base_page - INFO - 页面加载完成
+2026-03-28 13:53:48,239 - base.base_page - ERROR - 输入文本失败: ('id', 'username'), 错误: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=137.0.7151.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6ead26f65+78965]
+	GetHandleVerifier [0x0x7ff6ead26fc0+79056]
+	(No symbol) [0x0x7ff6eaab9dda]
+	(No symbol) [0x0x7ff6eaaa61e1]
+	(No symbol) [0x0x7ff6eaaa614c]
+	(No symbol) [0x0x7ff6eaaa48dc]
+	(No symbol) [0x0x7ff6eaaa559f]
+	(No symbol) [0x0x7ff6eaabf331]
+	(No symbol) [0x0x7ff6eaabfe27]
+	(No symbol) [0x0x7ff6eaac482c]
+	(No symbol) [0x0x7ff6eaac48ff]
+	(No symbol) [0x0x7ff6eab0fb97]
+	(No symbol) [0x0x7ff6eab1059c]
+	(No symbol) [0x0x7ff6eab63f37]
+	(No symbol) [0x0x7ff6eab386af]
+	(No symbol) [0x0x7ff6eab60dbe]
+	(No symbol) [0x0x7ff6eab38443]
+	(No symbol) [0x0x7ff6eab01311]
+	(No symbol) [0x0x7ff6eab020a3]
+	GetHandleVerifier [0x0x7ff6eafde26d+2926461]
+	GetHandleVerifier [0x0x7ff6eafd8993+2903715]
+	GetHandleVerifier [0x0x7ff6eaff6aed+3026941]
+	GetHandleVerifier [0x0x7ff6ead416fe+187406]
+	GetHandleVerifier [0x0x7ff6ead496ef+220159]
+	GetHandleVerifier [0x0x7ff6ead2faf4+114692]
+	GetHandleVerifier [0x0x7ff6ead2fca9+115129]
+	GetHandleVerifier [0x0x7ff6ead164d8+10728]
+	BaseThreadInitThunk [0x0x7ff93f16e8d7+23]
+	RtlUserThreadStart [0x0x7ff93fccc40c+44]
+

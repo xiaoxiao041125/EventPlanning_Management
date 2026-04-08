@@ -1,0 +1,42 @@
+[
+  {
+    "id": "USER_001",
+    "userId": "1",
+    "description": "根据ID获取用户 - 存在的用户（管理员）"
+  },
+  {
+    "id": "USER_002",
+    "userId": "2",
+    "description": "根据ID获取用户 - 存在的用户（普通用户）"
+  },
+  {
+    "id": "USER_003",
+    "userId": "3004",
+    "description": "根据ID获取用户 - 存在的用户（员工）"
+  },
+  {
+    "id": "USER_004",
+    "userId": "3005",
+    "description": "根据ID获取用户 - 存在的用户（禁用）"
+  },
+  {
+    "id": "USER_005",
+    "userId": "3044",
+    "description": "根据ID获取用户 - 存在的用户（业务管理员）"
+  },
+  {
+    "id": "USER_006",
+    "userId": "999999",
+    "description": "根据ID获取用户 - 不存在的用户"
+  },
+  {
+    "id": "USER_007",
+    "userId": "",
+    "description": "根据ID获取用户 - 空用户ID"
+  },
+  {
+    "id": "USER_008",
+    "userId": "abc",
+    "description": "根据ID获取用户 - 非数字用户ID"
+  }
+]

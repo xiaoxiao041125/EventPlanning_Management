@@ -1,0 +1,22 @@
+2026-03-28 14:42:06,095 - base.driver_manager - INFO - 创建chrome浏览器驱动，无头模式: False
+2026-03-28 14:42:06,097 - base.driver_manager - INFO - 使用本地Chrome驱动: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\driver\chromedriver.exe
+2026-03-28 14:42:07,219 - base.driver_manager - INFO - WebDriver配置完成
+2026-03-28 14:42:07,481 - data.test_data_manager - INFO - 加载JSON文件成功: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\data\login_data.json
+2026-03-28 14:42:07,647 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:42:08,754 - base.base_page - INFO - 点击元素: ('id', 'headerLoginBtn')
+2026-03-28 14:42:09,304 - base.base_page - INFO - 已点击顶部登录按钮，登录表单已显示
+2026-03-28 14:42:09,478 - base.base_page - INFO - 输入文本到 ('id', 'modalUsername'): user_lisi
+2026-03-28 14:42:09,721 - base.base_page - INFO - 输入文本到 ('id', 'modalPassword'): lisi@456
+2026-03-28 14:42:09,813 - base.base_page - INFO - 选择下拉框 ('id', 'loginRole') 选项: 普通用户
+2026-03-28 14:42:10,062 - base.base_page - INFO - 点击元素: ('id', 'loginBtn')
+2026-03-28 14:42:10,572 - base.base_page - INFO - 接受弹窗: 登录成功！
+2026-03-28 14:42:10,708 - base.base_page - INFO - 页面加载完成
+2026-03-28 14:42:16,902 - base.base_page - ERROR - 查找可见元素超时: ('id', 'headerLoginBtn')
+2026-03-28 14:42:17,345 - base.base_page - INFO - 截图保存: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\screenshots\element_not_visible_1774680136
+2026-03-28 14:42:17,345 - base.base_page - WARNING - 点击顶部登录按钮失败或登录表单已显示: Message: 元素不可见: ('id', 'headerLoginBtn')
+
+2026-03-28 14:42:27,817 - base.base_page - ERROR - 查找可见元素超时: ('id', 'modalUsername')
+2026-03-28 14:42:28,252 - base.base_page - INFO - 截图保存: E:\毕业论文\Java_Project\EventPlanning_Management\selenium\screenshots\element_not_visible_1774680147
+2026-03-28 14:42:28,254 - base.base_page - ERROR - 输入文本失败: ('id', 'modalUsername'), 错误: Message: 元素不可见: ('id', 'modalUsername')
+
+2026-03-28 14:42:30,640 - base.driver_manager - INFO - WebDriver已关闭

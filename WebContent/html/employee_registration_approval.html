@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工注册批准 - 爱情海文化传媒</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* 隐藏滚动条但保持滚动功能 */
+        /* 对于WebKit浏览器 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 对于Firefox */
+        html {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="../IMG/LOGO.jpg" alt="爱情海文化传媒">
+                <span class="logo-text">活动策划管理平台</span>
+            </div>
+            <div class="city-selector">
+                <div class="city-current">
+                    武汉 <span class="arrow">↓</span>
+                </div>
+                <div class="city-dropdown">
+                    <div class="business-distribution">业务分布</div>
+                    <div class="city-grid">
+                        <div class="city-row">
+                            <div class="city-item">武汉</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">南京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">杭州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">苏州</div>
+                        </div>
+                        <div class="city-row">
+                            <div class="city-item">北京</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">广州</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">深圳</div>
+                            <div class="city-divider">|</div>
+                            <div class="city-item">其他</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu"></ul>
+            <div class="navbar-user-info" id="navbarUserInfo">
+                <div class="user-info">
+                    <img src="../IMG/默认头像webp.webp" alt="用户头像" class="user-avatar">
+                    <span class="user-name">用户名</span>
+                </div>
+                <div class="dropdown-menu">
+                    <button class="dropdown-item" id="userInfoBtn">个人信息</button>
+                    <button class="dropdown-item" id="logoutBtn">退出登录</button>
+                </div>
+            </div>
+            <button class="login-btn" id="headerLoginBtn" style="display: none;">退出登录</button>
+            <button class="switch-version-btn" id="switchToUserBtn">切换用户版</button>
+        </div>
+    </nav>
+
+    <!-- 员工注册批准内容 -->
+    <section class="employee-registration-approval">
+        <div class="container">
+            <h2 class="section-title">员工注册批准</h2>
+            
+            <div class="approval-container">
+                <!-- 选项卡 -->
+                <div class="approval-tabs">
+                    <button class="tab-btn active" data-tab="pending">待批准</button>
+                    <button class="tab-btn" data-tab="approved">已批准</button>
+                    <button class="tab-btn" data-tab="rejected">已拒绝</button>
+                </div>
+                
+                <!-- 待批准列表 -->
+                <div class="tab-content active" id="pending">
+                    <div class="approval-list">
+                        <div class="list-container">
+                            <!-- 数据将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 已批准列表 -->
+                <div class="tab-content" id="approved">
+                    <div class="approval-list">
+                        <div class="list-container">
+                            <!-- 数据将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 已拒绝列表 -->
+                <div class="tab-content" id="rejected">
+                    <div class="approval-list">
+                        <div class="list-container">
+                            <!-- 数据将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <style>
+        .employee-registration-approval {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .approval-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .approval-tabs {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #666;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-right: 10px;
+        }
+        
+        .tab-btn:hover {
+            color: #2c74c9;
+        }
+        
+        .tab-btn.active {
+            color: #2c74c9;
+            border-bottom-color: #2c74c9;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .approval-list {
+            margin-bottom: 20px;
+        }
+        
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .approval-item {
+            background-color: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #2c74c9;
+        }
+        
+        .approval-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .approval-type {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .approval-status {
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+        
+        .approval-status.pending {
+            background-color: #fff7e6;
+            color: #fa8c16;
+        }
+        
+        .approval-status.approved {
+            background-color: #f6ffed;
+            color: #52c41a;
+        }
+        
+        .approval-status.rejected {
+            background-color: #fff1f0;
+            color: #ff4d4f;
+        }
+        
+        .approval-info {
+            margin-bottom: 15px;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .info-label {
+            color: #666;
+            width: 120px;
+        }
+        
+        .info-value {
+            color: #333;
+        }
+        
+        .approval-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .approve-btn, .reject-btn {
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+        
+        .approve-btn {
+            background-color: #52c41a;
+            color: #fff;
+        }
+        
+        .approve-btn:hover {
+            background-color: #389e0d;
+        }
+        
+        .reject-btn {
+            background-color: #ff4d4f;
+            color: #fff;
+        }
+        
+        .reject-btn:hover {
+            background-color: #cf1322;
+        }
+    </style>
+
+    <script src="../JS/jquery-3.4.1.min.js"></script>
+    <script src="../JS/login.js"></script>
+    <script src="../JS/employee.js"></script>
+    <script>
+        // 全局变量存储所有申请数据
+        let allApplications = [];
+        
+        // 页面加载完成后获取数据
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化选项卡切换功能
+            initTabs();
+            
+            // 从接口获取数据
+            fetchApplications();
+        });
+        
+        // 初始化选项卡切换功能
+        function initTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // 移除所有按钮的active类
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    // 添加当前按钮的active类
+                    this.classList.add('active');
+                    
+                    // 隐藏所有内容
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    // 显示当前内容
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        }
+        
+        // 从接口获取所有员工注册申请
+        function fetchApplications() {
+            $.ajax({
+                url: 'http://localhost:8080/EventPlanning_Management/ShowAllEmployeeRegister',
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    // 检查返回数据格式，通常后端会返回包含data字段的对象
+                    if (response && response.data) {
+                        allApplications = response.data;
+                    } else {
+                        // 如果直接返回数组则使用原始数据
+                        allApplications = response;
+                    }
+                    // 渲染数据
+                    renderApplications();
+                },
+                error: function(xhr, status, error) {
+                    console.error('获取数据失败:', error);
+                    alert('获取数据失败，请检查网络连接');
+                }
+            });
+        }
+        
+        // 渲染申请数据到对应的选项卡中
+        function renderApplications() {
+            // 清空所有选项卡内容
+            document.querySelector('#pending .list-container').innerHTML = '';
+            document.querySelector('#approved .list-container').innerHTML = '';
+            document.querySelector('#rejected .list-container').innerHTML = '';
+            
+            // 检查数据是否为空
+            if (!allApplications || allApplications.length === 0) {
+                // 显示空数据提示
+                document.querySelectorAll('.list-container').forEach(container => {
+                    container.innerHTML = '<p style="text-align: center; color: #999; padding: 20px;">暂无数据</p>';
+                });
+                return;
+            }
+            
+            // 根据status字段分类渲染数据
+            allApplications.forEach(application => {
+                // 确保字段名称匹配后端返回的格式
+                const register_id = application.register_id || application.id || '';
+                const username = application.username || '';
+                const employee_name = application.employee_name || application.name || '';
+                const phone = application.phone || '';
+                const sex = application.sex || '';
+                const register_time = application.register_time || application.create_time || '';
+                const status = application.status || 0;
+                const reason = application.reason || '';
+                
+                // 确定要显示的职位，支持多种可能的字段名称
+                const displayPost = application.post || application.position || application.job || '-';
+                // 确定要显示的城市，支持多种可能的字段名称
+                const displayCity = application.city || application.city_name || application.location || '-';
+                
+                // 调试：输出完整的申请数据，查看实际的字段名称
+                
+                // 创建申请项HTML
+                let applicationHTML = `
+                    <div class="approval-item" data-id="${register_id}">
+                        <div class="approval-header">
+                            <span class="approval-type">员工注册</span>
+                            <span class="approval-status ${getStatusClass(status)}">${getStatusText(status)}</span>
+                        </div>
+                        <div class="approval-info">
+                            <div class="info-row">
+                                <span class="info-label">申请人：</span>
+                                <span class="info-value">${employee_name}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">用户名：</span>
+                                <span class="info-value">${username}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">职位：</span>
+                                <span class="info-value">${displayPost}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">城市：</span>
+                                <span class="info-value">${displayCity}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">性别：</span>
+                                <span class="info-value">${sex || '-'}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">联系电话：</span>
+                                <span class="info-value">${phone || '-'}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">申请日期：</span>
+                                <span class="info-value">${formatDateTime(register_time)}</span>
+                            </div>
+                `;
+                
+                // 如果是已拒绝状态，显示拒绝原因
+                if (status === 2 && reason) {
+                    applicationHTML += `
+                            <div class="info-row">
+                                <span class="info-label">拒绝原因：</span>
+                                <span class="info-value">${reason}</span>
+                            </div>
+                    `;
+                }
+                
+                applicationHTML += `
+                        </div>
+                        <div class="approval-actions">
+                            ${getStatusActions(status, register_id)}
+                        </div>
+                    </div>
+                `;
+                
+                // 根据status添加到对应的选项卡
+                // 假设后端返回：0=待处理，1=已批准，2=已拒绝
+                if (status === 0) {
+                    document.querySelector('#pending .list-container').innerHTML += applicationHTML;
+                } else if (status === 1) {
+                    document.querySelector('#approved .list-container').innerHTML += applicationHTML;
+                } else if (status === 2) {
+                    document.querySelector('#rejected .list-container').innerHTML += applicationHTML;
+                }
+            });
+            
+            // 绑定按钮事件
+            bindActionEvents();
+        }
+        
+        // 根据status获取状态类名
+        function getStatusClass(status) {
+            switch(status) {
+                case 0: return 'pending';
+                case 1: return 'approved';
+                case 2: return 'rejected';
+                default: return 'pending';
+            }
+        }
+        
+        // 根据status获取状态文本
+        function getStatusText(status) {
+            switch(status) {
+                case 0: return '待批准';
+                case 1: return '已批准';
+                case 2: return '已拒绝';
+                default: return '待批准';
+            }
+        }
+        
+        // 根据status获取操作按钮
+        function getStatusActions(status, registerId) {
+            // 只有待处理的申请才显示操作按钮
+            if (status === 0) {
+                return `
+                    <button class="approve-btn" data-id="${registerId}">批准</button>
+                    <button class="reject-btn" data-id="${registerId}">拒绝</button>
+
+                `;
+            } else {
+                // 已处理的申请不显示操作按钮
+                return '';
+            }
+        }
+        
+        // 绑定操作按钮事件
+        function bindActionEvents() {
+            // 批准按钮点击事件
+            document.querySelectorAll('.approve-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const registerId = this.getAttribute('data-id');
+                    approveApplication(registerId);
+                });
+            });
+            
+            // 拒绝按钮点击事件
+            document.querySelectorAll('.reject-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const registerId = this.getAttribute('data-id');
+                    rejectApplication(registerId);
+                });
+            });
+            
+
+        }
+        
+        // 批准申请
+        function approveApplication(registerId) {
+            // 找到对应的申请数据，获取职位信息
+            const application = allApplications.find(app => {
+                return app.register_id === registerId || app.id === registerId;
+            });
+            
+            // 获取职位信息
+            const post = application ? (application.post || application.position || application.job || '') : '';
+            // 调试：输出职位信息
+            
+            if(confirm('确定要批准该申请吗？')) {
+                // 使用新的API接口：HandleEmployeeRegister，传递参数：registerId、status=1、post
+                $.ajax({
+                    url: `http://localhost:8080/EventPlanning_Management/HandleEmployeeRegister?registerId=${registerId}&status=1&post=${encodeURIComponent(post)}`,
+                    type: 'GET',
+                    // 不指定dataType，让jQuery自动判断
+                    success: function(response) {
+                        // 调试：输出完整返回数据
+                        console.log('批准API返回数据:', response);
+                        
+                        // 尝试解析JSON（如果是字符串）
+                        var result = response;
+                        if (typeof response === 'string') {
+                            try {
+                                result = JSON.parse(response);
+                            } catch (e) {
+                                console.error('JSON解析错误:', e);
+                                // 如果解析失败，假设API处理成功
+                                alert('批准成功');
+                                fetchApplications();
+                                return;
+                            }
+                        }
+                        
+                        // 宽松的成功判断
+                        var isSuccess = false;
+                        if(result) {
+                            // 检查flag字段
+                            if(result.flag) {
+                                var flagLower = String(result.flag).toLowerCase();
+                                isSuccess = flagLower === "success" || flagLower === "ok" || flagLower === "true";
+                            } else if(result.data && (String(result.data).toLowerCase().includes("成功") || String(result.data).toLowerCase().includes("success"))) {
+                                // 处理直接返回data的情况
+                                isSuccess = true;
+                            }
+                        }
+                        
+                        if (isSuccess) {
+                            alert('批准成功');
+                            // 重新获取数据刷新页面
+                            fetchApplications();
+                        } else {
+                            alert('批准失败：' + (result.msg || result.data || '未知错误'));
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('批准失败:', error);
+                        console.error('xhr对象:', xhr);
+                        console.error('xhr.responseText:', xhr.responseText);
+                        alert('批准失败，请检查网络连接或查看控制台日志');
+                    }
+                });
+            }
+        }
+        
+        // 拒绝申请
+        function rejectApplication(registerId) {
+            if(confirm('确定要拒绝该申请吗？')) {
+                // 使用新的API接口：HandleEmployeeRegister，传递两个参数：registerId、status=0
+                $.ajax({
+                    url: `http://localhost:8080/EventPlanning_Management/HandleEmployeeRegister?registerId=${registerId}&status=2`,
+                    type: 'GET',
+                    // 不指定dataType，让jQuery自动判断
+                    success: function(response) {
+                        // 调试：输出完整返回数据
+                        console.log('拒绝API返回数据:', response);
+                        
+                        // 尝试解析JSON（如果是字符串）
+                        var result = response;
+                        if (typeof response === 'string') {
+                            try {
+                                result = JSON.parse(response);
+                            } catch (e) {
+                                console.error('JSON解析错误:', e);
+                                // 如果解析失败，假设API处理成功
+                                alert('拒绝成功');
+                                fetchApplications();
+                                return;
+                            }
+                        }
+                        
+                        // 宽松的成功判断
+                        var isSuccess = false;
+                        if(result) {
+                            // 检查flag字段
+                            if(result.flag) {
+                                var flagLower = String(result.flag).toLowerCase();
+                                isSuccess = flagLower === "success" || flagLower === "ok" || flagLower === "true";
+                            } else if(result.data && (String(result.data).toLowerCase().includes("成功") || String(result.data).toLowerCase().includes("success"))) {
+                                // 处理直接返回data的情况
+                                isSuccess = true;
+                            }
+                        }
+                        
+                        if (isSuccess) {
+                            alert('拒绝成功');
+                            // 重新获取数据刷新页面
+                            fetchApplications();
+                        } else {
+                            alert('拒绝失败：' + (result.msg || result.data || '未知错误'));
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('拒绝失败:', error);
+                        console.error('xhr对象:', xhr);
+                        console.error('xhr.responseText:', xhr.responseText);
+                        alert('拒绝失败，请检查网络连接或查看控制台日志');
+                    }
+                });
+            }
+        }
+        
+        // 全局变量，当前正在操作的注册ID
+        let currentRegisterId = null;
+        
+        // 格式化日期时间
+        function formatDateTime(dateTimeStr) {
+            if (!dateTimeStr) return '-';
+            
+            try {
+                const date = new Date(dateTimeStr);
+                // 检查日期是否有效
+                if (isNaN(date.getTime())) {
+                    return '-';
+                }
+                return date.toLocaleDateString('zh-CN', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            } catch (error) {
+                console.error('日期格式化错误:', error);
+                return '-';
+            }
+        }
+        
+        $(function() {
+            $("#switchToUserBtn").click(function() {
+                $("body").addClass("fade-out");
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 300);
+            });
+        });
+    </script>
+    <script src="../JS/index.js"></script>
+</body>
+</html>
